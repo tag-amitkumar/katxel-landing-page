@@ -287,6 +287,13 @@ section{position:relative}
 .ci .ico svg{width:20px;height:20px;stroke:var(--teal)}
 .ci b{display:block;font-size:15px}
 .ci span{color:var(--slate);font-size:14.5px}
+.ci a span{transition:color .15s}
+.ci a:hover span{color:var(--teal)}
+/* floating whatsapp */
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:90;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 28px rgba(37,211,102,.45);transition:transform .2s ease}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:32px;height:32px}
+@media(max-width:680px){.wa-float{width:52px;height:52px;right:16px;bottom:16px}.wa-float svg{width:28px;height:28px}}
 .form{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow-sm)}
 .field{margin-bottom:18px}
 .field label{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);display:block;margin-bottom:7px}
@@ -348,12 +355,24 @@ footer{background:var(--navy-deep);color:#fff;padding:64px 0 28px;border-top:1px
 <header class="nav">
   <div class="wrap nav-inner">
     <a href="#top" class="logo" aria-label="Katxel home">
-      <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="40" height="40" rx="10" fill="#00C2A8"/>
-        <path d="M11 28V12M11 20l9-8M11 20l9 8" stroke="#071427" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="28" cy="13" r="3" fill="#FF7A00"/>
+      <svg class="mark" viewBox="0 0 128 128" role="img" aria-label="Katxel logo" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="katxelG" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/>
+          </linearGradient>
+          <mask id="kMask">
+            <rect width="128" height="128" fill="black"/>
+            <polygon fill="white" points="64,8 20,32 20,96 64,120 108,96 108,32"/>
+            <line x1="-20" y1="85.54" x2="148" y2="-4.92" stroke="black" stroke-width="14" stroke-linecap="round"/>
+            <line x1="-20" y1="42.46" x2="148" y2="132.92" stroke="black" stroke-width="14" stroke-linecap="round"/>
+          </mask>
+        </defs>
+        <g mask="url(#kMask)">
+          <polygon fill="url(#katxelG)" points="64,8 20,32 20,96 64,120 108,96 108,32"/>
+          <polygon fill="none" stroke="#0EA5E9" stroke-width="3" points="64,8 20,32 20,96 64,120 108,96 108,32"/>
+        </g>
       </svg>
-      Kat<b>xel</b>
+      KATXEL
     </a>
     <nav class="nav-links" id="navLinks">
       <a href="#solutions">Solutions</a>
@@ -748,8 +767,9 @@ footer{background:var(--navy-deep);color:#fff;padding:64px 0 28px;border-top:1px
       <h2 class="section-title">Schedule a consultation</h2>
       <p class="section-lead">Tell us about your perils and portfolio. We'll show you exactly what Katxel can see.</p>
       <div class="contact-info">
-        <div class="ci"><div class="ico"><svg fill="none" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg></div><div><b>Email</b><span>hello@katxel.in</span></div></div>
-        <div class="ci"><div class="ico"><svg fill="none" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 3.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L7.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg></div><div><b>Phone</b><span>+91 (0) 000 000 0000</span></div></div>
+        <div class="ci"><div class="ico"><svg fill="none" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg></div><div><b>Email</b><a href="mailto:info.katxel@gmail.com"><span>info.katxel@gmail.com</span></a></div></div>
+        <div class="ci"><div class="ico"><svg fill="none" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 3.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L7.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg></div><div><b>Mobile</b><a href="tel:+919971673480"><span>+91-9971673480</span></a></div></div>
+        <div class="ci"><div class="ico" style="background:rgba(37,211,102,.14)"><svg viewBox="0 0 24 24" fill="#25D366" stroke="none"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .15 11.9C.15 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.41 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.68-1.45L.06 24zM6.6 20.13c1.68 1 3.28 1.6 5.4 1.6 5.45 0 9.9-4.44 9.9-9.9 0-5.46-4.4-9.9-9.9-9.9-5.46 0-9.9 4.44-9.9 9.9 0 2.23.65 3.9 1.74 5.65l-1 3.62 3.76-.97zm11.39-5.55c-.07-.12-.27-.2-.57-.35-.3-.15-1.76-.87-2.03-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg></div><div><b>WhatsApp</b><a href="https://wa.me/919971673480" target="_blank" rel="noopener"><span>+91-9971673480</span></a></div></div>
         <div class="ci"><div class="ico"><svg fill="none" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><b>Office</b><span>Delhi NCR, India · serving clients globally</span></div></div>
       </div>
     </div>
@@ -782,11 +802,16 @@ footer{background:var(--navy-deep);color:#fff;padding:64px 0 28px;border-top:1px
 </section>
 
 <!-- FOOTER -->
+<!-- FLOATING WHATSAPP -->
+<a class="wa-float" href="https://wa.me/919971673480" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" stroke="none"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .15 11.9C.15 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.41 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.68-1.45L.06 24zM6.6 20.13c1.68 1 3.28 1.6 5.4 1.6 5.45 0 9.9-4.44 9.9-9.9 0-5.46-4.4-9.9-9.9-9.9-5.46 0-9.9 4.44-9.9 9.9 0 2.23.65 3.9 1.74 5.65l-1 3.62 3.76-.97zm11.39-5.55c-.07-.12-.27-.2-.57-.35-.3-.15-1.76-.87-2.03-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
+</a>
+
 <footer>
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a href="#top" class="logo"><svg class="mark" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="10" fill="#00C2A8"/><path d="M11 28V12M11 20l9-8M11 20l9 8" stroke="#071427" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="28" cy="13" r="3" fill="#FF7A00"/></svg>Kat<b>xel</b></a>
+        <a href="#top" class="logo"><svg class="mark" viewBox="0 0 128 128" role="img" aria-label="Katxel logo"><defs><linearGradient id="katxelG2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient><mask id="kMask2"><rect width="128" height="128" fill="black"/><polygon fill="white" points="64,8 20,32 20,96 64,120 108,96 108,32"/><line x1="-20" y1="85.54" x2="148" y2="-4.92" stroke="black" stroke-width="14" stroke-linecap="round"/><line x1="-20" y1="42.46" x2="148" y2="132.92" stroke="black" stroke-width="14" stroke-linecap="round"/></mask></defs><g mask="url(#kMask2)"><polygon fill="url(#katxelG2)" points="64,8 20,32 20,96 64,120 108,96 108,32"/><polygon fill="none" stroke="#0EA5E9" stroke-width="3" points="64,8 20,32 20,96 64,120 108,96 108,32"/></g></svg>KATXEL</a>
         <p>Next-generation catastrophe and climate risk intelligence for a resilient future.</p>
       </div>
       <div class="foot-col">
