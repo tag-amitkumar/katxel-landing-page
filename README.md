@@ -8,6 +8,7 @@ index.html      Umbrella homepage — "Three Lenses" hero that routes to a divis
 geo.html        Katxel Geo   — GIS, survey, data collection & processing
 ops.html        Katxel Ops   — HRMS, project planning, internal tools
 risk.html       Katxel Risk  — catastrophe & climate risk modelling
+vercel.json     Clean-URL config (see Deploying)
 
 assets/
   site.css          Shared design system (all four pages)
@@ -21,14 +22,16 @@ hero_anim_preview.jpg   Social/OG preview image for risk.html
 
 ## Running it locally
 
-Any static server works. From the repo root:
+Use the Vercel CLI so local routing matches production:
 
 ```bash
-python -m http.server 8080
+npx vercel dev
 ```
 
-Then open <http://localhost:8080>. Opening the files directly with `file://`
-mostly works too, but a server is closer to production.
+A plain static server (`python -m http.server 8080`) also serves the site, but
+it doesn't honour `cleanUrls`, so `/geo` will 404 there — you'd have to browse
+`/geo.html` instead. Internal links point at the clean URLs, so `file://`
+browsing no longer works.
 
 ## The design system
 
@@ -95,6 +98,34 @@ carries a hidden `division` field (`Katxel`, `Katxel Geo`, `Katxel Ops`,
 
 ## Deploying
 
-Static hosting, nothing else required — GitHub Pages, Netlify, Cloudflare Pages
-or any web host. Point `katxel.in` at it and update the `canonical` and `og:url`
-tags if the domain ever changes.
+Deployed on Vercel as a static site — no build command, no output directory.
+Point `katxel.in` at it and update the `canonical` and `og:url` tags if the
+domain ever changes.
+
+### Clean URLs
+
+`vercel.json` sets `cleanUrls: true`, so pages are served without the `.html`
+extension and every internal link uses the short form:
+
+| File | URL |
+|---|---|
+| `index.html` | `/` |
+| `geo.html` | `/geo` |
+| `ops.html` | `/ops` |
+| `risk.html` | `/risk` |
+
+Vercel also 308-redirects `/geo.html` → `/geo` automatically, so older links
+and bookmarks keep working. `/home` and `/index` redirect to `/`.
+
+Two things to keep in mind when editing:
+
+- **`trailingSlash` must stay `false`.** Assets are referenced relatively
+  (`assets/site.css`). At `/geo` that resolves to `/assets/site.css`; at
+  `/geo/` it would resolve to `/geo/assets/site.css` and 404.
+- **`index.html` keeps its name.** It is the document a web server returns for
+  `/`, so renaming it to `home.html` would make the root URL 404 unless a
+  rewrite is added. Nobody sees the filename anyway — the homepage URL is
+  just `katxel.in`.
+
+Moving to a host without this feature (GitHub Pages, plain Apache) means
+either restoring the `.html` links or configuring equivalent rewrites.

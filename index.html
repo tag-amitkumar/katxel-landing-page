@@ -29,9 +29,9 @@
   "address":{"@type":"PostalAddress","addressRegion":"Delhi NCR","addressCountry":"IN"},
   "description":"Geospatial data services, business software engineering, and catastrophe & climate risk modelling.",
   "department":[
-    {"@type":"Organization","name":"Katxel Geo","url":"https://katxel.in/geo.html"},
-    {"@type":"Organization","name":"Katxel Ops","url":"https://katxel.in/ops.html"},
-    {"@type":"Organization","name":"Katxel Risk","url":"https://katxel.in/risk.html"}
+    {"@type":"Organization","name":"Katxel Geo","url":"https://katxel.in/geo"},
+    {"@type":"Organization","name":"Katxel Ops","url":"https://katxel.in/ops"},
+    {"@type":"Organization","name":"Katxel Risk","url":"https://katxel.in/risk"}
   ]
 }
 </script>
@@ -42,7 +42,7 @@
 <!-- NAV -->
 <header class="nav">
   <div class="wrap nav-inner">
-    <a href="index.html" class="logo" aria-label="Katxel home">
+    <a href="/" class="logo" aria-label="Katxel home">
       <svg class="mark" viewBox="0 0 128 128" role="img" aria-label="Katxel logo" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="kg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient>
@@ -58,9 +58,9 @@
           <svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="dd-panel">
-          <a class="dd-item" href="geo.html"><i class="di-dot" style="background:var(--geo)"></i><span><b>Katxel Geo</b><span>GIS, survey, data collection &amp; processing</span></span></a>
-          <a class="dd-item" href="ops.html"><i class="di-dot" style="background:var(--ops)"></i><span><b>Katxel Ops</b><span>HRMS, project planning &amp; internal tools</span></span></a>
-          <a class="dd-item" href="risk.html"><i class="di-dot" style="background:var(--risk)"></i><span><b>Katxel Risk</b><span>Catastrophe &amp; climate risk modelling</span></span></a>
+          <a class="dd-item" href="/geo"><i class="di-dot" style="background:var(--geo)"></i><span><b>Katxel Geo</b><span>GIS, survey, data collection &amp; processing</span></span></a>
+          <a class="dd-item" href="/ops"><i class="di-dot" style="background:var(--ops)"></i><span><b>Katxel Ops</b><span>HRMS, project planning &amp; internal tools</span></span></a>
+          <a class="dd-item" href="/risk"><i class="di-dot" style="background:var(--risk)"></i><span><b>Katxel Risk</b><span>Catastrophe &amp; climate risk modelling</span></span></a>
         </div>
       </div>
       <a href="#why">Why Katxel</a>
@@ -116,7 +116,7 @@
 <section class="lens-band">
   <div class="wrap">
     <div class="lens-rail" id="lensRail" role="group" aria-label="Katxel divisions">
-      <a class="lens" data-lens="geo" data-active="true" href="geo.html">
+      <a class="lens" data-lens="geo" data-active="true" href="/geo">
         <span class="tick" aria-hidden="true"></span>
         <span class="lens-n">01 — GEOSPATIAL</span>
         <b><i aria-hidden="true"></i>Katxel Geo</b>
@@ -124,7 +124,7 @@
         <span class="lens-svcs">Topographic &amp; cadastral survey · Drone &amp; LiDAR · Remote sensing · GIS database build · Web mapping</span>
         <span class="go">Explore Geo →</span>
       </a>
-      <a class="lens" data-lens="ops" data-active="false" href="ops.html">
+      <a class="lens" data-lens="ops" data-active="false" href="/ops">
         <span class="tick" aria-hidden="true"></span>
         <span class="lens-n">02 — SOFTWARE</span>
         <b><i aria-hidden="true"></i>Katxel Ops</b>
@@ -132,7 +132,7 @@
         <span class="lens-svcs">HRMS &amp; payroll · Project planning · Dashboards · Workflow automation · Spreadsheet migration</span>
         <span class="go">Explore Ops →</span>
       </a>
-      <a class="lens" data-lens="risk" data-active="false" href="risk.html">
+      <a class="lens" data-lens="risk" data-active="false" href="/risk">
         <span class="tick" aria-hidden="true"></span>
         <span class="lens-n">03 — RISK</span>
         <b><i aria-hidden="true"></i>Katxel Risk</b>
@@ -165,21 +165,21 @@
   <div class="wrap">
     <div class="grid-3 stagger">
 
-      <a class="card" href="geo.html" style="--accent:var(--geo);--accent-rgb:var(--geo-rgb)">
+      <a class="card" href="/geo" style="--accent:var(--geo);--accent-rgb:var(--geo-rgb)">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M9 3L3 6v15l6-3 6 3 6-3V3l-6 3-6-3zM9 3v15M15 6v15"/></svg></div>
         <h3>Katxel Geo</h3>
         <p>GIS and remote sensing, topographic and drone survey, field data collection, and the processing pipeline that turns raw capture into clean, analysis-ready layers.</p>
         <span class="more">Survey → processing → delivery →</span>
       </a>
 
-      <a class="card" href="ops.html" style="--accent:var(--ops);--accent-rgb:var(--ops-rgb)">
+      <a class="card" href="/ops" style="--accent:var(--ops);--accent-rgb:var(--ops-rgb)">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 12h10M4 19h7"/><circle cx="18" cy="12" r="2"/><circle cx="14" cy="19" r="2"/></svg></div>
         <h3>Katxel Ops</h3>
         <p>Internal business software — HRMS, attendance and payroll, project planning and scheduling — designed around your existing process rather than a vendor's template.</p>
         <span class="more">Scope → build → run →</span>
       </a>
 
-      <a class="card" href="risk.html" style="--accent:var(--risk);--accent-rgb:var(--risk-rgb)">
+      <a class="card" href="/risk" style="--accent:var(--risk);--accent-rgb:var(--risk-rgb)">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 18c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 10c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg></div>
         <h3>Katxel Risk</h3>
         <p>Catastrophe and climate risk modelling — flood, earthquake, cyclone, wildfire — with hazard layers, vulnerability curves and portfolio loss analytics.</p>
@@ -313,16 +313,16 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a href="index.html" class="logo"><svg class="mark" viewBox="0 0 128 128" role="img" aria-label="Katxel logo"><defs><linearGradient id="kgf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient><mask id="kmf"><rect width="128" height="128" fill="black"/><polygon fill="white" points="64,8 20,32 20,96 64,120 108,96 108,32"/><line x1="-20" y1="85.54" x2="148" y2="-4.92" stroke="black" stroke-width="14" stroke-linecap="round"/><line x1="-20" y1="42.46" x2="148" y2="132.92" stroke="black" stroke-width="14" stroke-linecap="round"/></mask></defs><g mask="url(#kmf)"><polygon fill="url(#kgf)" points="64,8 20,32 20,96 64,120 108,96 108,32"/><polygon fill="none" stroke="#0EA5E9" stroke-width="3" points="64,8 20,32 20,96 64,120 108,96 108,32"/></g></svg>KATXEL</a>
+        <a href="/" class="logo"><svg class="mark" viewBox="0 0 128 128" role="img" aria-label="Katxel logo"><defs><linearGradient id="kgf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient><mask id="kmf"><rect width="128" height="128" fill="black"/><polygon fill="white" points="64,8 20,32 20,96 64,120 108,96 108,32"/><line x1="-20" y1="85.54" x2="148" y2="-4.92" stroke="black" stroke-width="14" stroke-linecap="round"/><line x1="-20" y1="42.46" x2="148" y2="132.92" stroke="black" stroke-width="14" stroke-linecap="round"/></mask></defs><g mask="url(#kmf)"><polygon fill="url(#kgf)" points="64,8 20,32 20,96 64,120 108,96 108,32"/><polygon fill="none" stroke="#0EA5E9" stroke-width="3" points="64,8 20,32 20,96 64,120 108,96 108,32"/></g></svg>KATXEL</a>
         <p>Geospatial data, business software, and catastrophe risk intelligence — engineered by one team.</p>
       </div>
       <div class="foot-col">
         <h4>Divisions</h4>
-        <a href="geo.html">Katxel Geo</a><a href="ops.html">Katxel Ops</a><a href="risk.html">Katxel Risk</a>
+        <a href="/geo">Katxel Geo</a><a href="/ops">Katxel Ops</a><a href="/risk">Katxel Risk</a>
       </div>
       <div class="foot-col">
         <h4>Services</h4>
-        <a href="geo.html#services">Survey &amp; GIS</a><a href="ops.html#services">HRMS &amp; planning tools</a><a href="risk.html#services">Hazard modelling</a><a href="risk.html#services">Portfolio analytics</a>
+        <a href="/geo#services">Survey &amp; GIS</a><a href="/ops#services">HRMS &amp; planning tools</a><a href="/risk#services">Hazard modelling</a><a href="/risk#services">Portfolio analytics</a>
       </div>
       <div class="foot-col">
         <h4>Company</h4>
