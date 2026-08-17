@@ -166,7 +166,7 @@ section{position:relative}
    off into empty canvas on the right.
    ------------------------------------------------------------------------ */
 .lens-hero .hero-inner{
-  padding:56px 0 0;display:grid;grid-template-columns:1.08fr .92fr;
+  padding:64px 0 76px;display:grid;grid-template-columns:1.08fr .92fr;
   gap:24px 60px;align-items:center;
 }
 .lens-hero .hero-copy{max-width:660px}
@@ -197,10 +197,15 @@ section{position:relative}
 .lp-foot{font-family:var(--font-mono);font-size:11px;letter-spacing:.045em;color:rgba(255,255,255,.52);display:flex;align-items:center;gap:9px;line-height:1.5}
 .lp-foot::before{content:"";width:7px;height:7px;border-radius:2px;background:var(--accent);flex:none;transition:background .4s}
 
+/* Own band, outside .hero — the hero canvas is inset:0 of .hero, so anything
+   left inside it gets the animation running behind its translucent panels. */
+.lens-band{
+  position:relative;z-index:2;
+  background:linear-gradient(180deg,var(--navy-2),var(--navy-deep));
+  border-top:1px solid rgba(255,255,255,.08);
+}
 .lens-rail{
-  grid-column:1/-1;
-  position:relative;z-index:3;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
-  padding:28px 0 38px;margin-top:14px;border-top:1px solid rgba(255,255,255,.1);
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:40px 0 44px;
 }
 .lens{
   position:relative;text-align:left;cursor:pointer;overflow:hidden;
@@ -555,7 +560,7 @@ html.anim .stagger.in>*:nth-child(8){transition-delay:.49s}
   .lens-hero .hero-inner{grid-template-columns:1fr;gap:34px}
   .lens-hero .hero-copy{max-width:none}
   .lens-panel{display:none}
-  .lens-rail{grid-template-columns:1fr;gap:12px;margin-top:8px;padding-top:26px}
+  .lens-rail{grid-template-columns:1fr;gap:12px;padding:32px 0 36px}
   .lens-copy{min-height:0}
   .hrms{grid-template-columns:1fr}
 }
@@ -570,7 +575,7 @@ html.anim .stagger.in>*:nth-child(8){transition-delay:.49s}
   .pad{padding:66px 0}
   .pad-sm{padding:54px 0}
   .hero-inner{padding:54px 0 64px}
-  .lens-hero .hero-inner{padding:44px 0 0}
+  .lens-hero .hero-inner{padding:44px 0 54px}
   .foot-bottom{flex-direction:column;align-items:flex-start}
   .step{padding:0}
   .kb-col{min-height:0}
