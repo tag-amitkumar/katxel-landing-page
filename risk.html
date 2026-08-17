@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Katxel Risk — Catastrophe &amp; Climate Risk Modelling</title>
+<meta name="description" content="Katxel Risk turns catastrophe data into actionable risk intelligence for insurers, reinsurers, governments and infrastructure owners. Flood, earthquake, cyclone, wildfire and climate risk modelling.">
+<link rel="canonical" href="https://katxel.in/risk.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Katxel">
+<meta property="og:url" content="https://katxel.in/risk.html">
+<meta property="og:title" content="Katxel Risk — Catastrophe & Climate Risk Modelling">
+<meta property="og:description" content="Flood, earthquake, cyclone, wildfire and climate risk modelling with portfolio loss analytics.">
+<meta property="og:image" content="https://katxel.in/hero_anim_preview.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://katxel.in/hero_anim_preview.jpg">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script>document.documentElement.classList.add('anim')</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","serviceType":"Catastrophe and climate risk modelling","name":"Katxel Risk",
+"provider":{"@type":"Organization","name":"Katxel","url":"https://katxel.in/"},
+"areaServed":"Global","url":"https://katxel.in/risk.html",
+"description":"Flood, earthquake, cyclone, wildfire and climate risk modelling with exposure services and portfolio loss analytics."}
+</script>
+</head>
+<body data-vertical="risk">
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo" aria-label="Katxel Risk home">
+      <svg class="mark" viewBox="0 0 128 128" role="img" aria-label="Katxel logo" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="kg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient>
+          <mask id="km"><rect width="128" height="128" fill="black"/><polygon fill="white" points="64,8 20,32 20,96 64,120 108,96 108,32"/><line x1="-20" y1="85.54" x2="148" y2="-4.92" stroke="black" stroke-width="14" stroke-linecap="round"/><line x1="-20" y1="42.46" x2="148" y2="132.92" stroke="black" stroke-width="14" stroke-linecap="round"/></mask>
+        </defs>
+        <g mask="url(#km)"><polygon fill="url(#kg)" points="64,8 20,32 20,96 64,120 108,96 108,32"/><polygon fill="none" stroke="#0EA5E9" stroke-width="3" points="64,8 20,32 20,96 64,120 108,96 108,32"/></g>
+      </svg>
+      KATXEL<span class="div-sep">/</span><span class="div-name">Risk</span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <div class="dd" data-open="false">
+        <button type="button" aria-expanded="false" aria-haspopup="true">Divisions
+          <svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="dd-panel">
+          <a class="dd-item" href="geo.html"><i class="di-dot" style="background:var(--geo)"></i><span><b>Katxel Geo</b><span>GIS, survey, data collection &amp; processing</span></span></a>
+          <a class="dd-item" href="ops.html"><i class="di-dot" style="background:var(--ops)"></i><span><b>Katxel Ops</b><span>HRMS, project planning &amp; internal tools</span></span></a>
+          <a class="dd-item" href="risk.html" aria-current="page"><i class="di-dot" style="background:var(--risk)"></i><span><b>Katxel Risk</b><span>Catastrophe &amp; climate risk modelling</span></span></a>
+        </div>
+      </div>
+      <a href="#services">Services</a>
+      <a href="#hazards">Hazards</a>
+      <a href="#model">Model output</a>
+      <a href="#platform">Platform</a>
+      <a href="#cases">Case studies</a>
+      <a href="#contact" class="only-mobile">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-ghost">Talk to us</a>
+      <a href="#contact" class="btn btn-primary">Request a demo</a>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">Katxel Risk · catastrophe intelligence</span>
+      <h1>Transforming catastrophe data into <span class="hl">actionable risk intelligence</span></h1>
+      <p class="sub">Next-generation catastrophe modelling and climate resilience for insurers, reinsurers, governments and infrastructure owners — built on transparent science and cloud-native engineering.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Request a demo <span class="arrow">→</span></a>
+        <a href="#model" class="btn btn-ghost">See model output</a>
+      </div>
+      <div class="hero-tags">
+        <span>FLOOD</span><span>EARTHQUAKE</span><span>CYCLONE</span><span>WILDFIRE</span><span>CLIMATE</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat"><div class="num" data-count="5" data-suffix="+">0<span class="suf">+</span></div><div class="lab">Hazard models</div></div>
+    <div class="stat"><div class="num" data-count="3" data-suffix="">0</div><div class="lab">Countries covered</div></div>
+    <div class="stat"><div class="num" data-count="1" data-suffix="">0</div><div class="lab">Global flood model</div></div>
+    <div class="stat"><div class="num" data-count="10" data-suffix="+">0<span class="suf">+</span></div><div class="lab">Years of expertise</div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="pad" id="services">
+  <div class="wrap center reveal">
+    <span class="eyebrow">What we model</span>
+    <h2 class="section-title">A complete catastrophe stack</h2>
+    <p class="section-lead">From peril science to portfolio loss — every layer engineered for accuracy, traceability, and scale.</p>
+  </div>
+  <div class="wrap">
+    <div class="grid-3 stagger">
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 18c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 10c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg></div>
+        <h3>Flood risk modelling</h3>
+        <p>High-resolution fluvial, pluvial, and coastal hazard with depth-damage loss estimation down to the property footprint.</p>
+        <span class="more">Up to 5 m resolution →</span>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 13l3-7 4 14 4-11 3 6h4"/></svg></div>
+        <h3>Earthquake risk modelling</h3>
+        <p>Probabilistic seismic hazard with site amplification, ground-motion fields, and structural vulnerability curves.</p>
+        <span class="more">Full PSHA workflow →</span>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 12a4 4 0 1 0-4-4M12 12a4 4 0 1 1 4 4M12 12c-3 3-7 2-9-1M12 12c3-3 7-2 9 1"/></svg></div>
+        <h3>Cyclone &amp; wind risk</h3>
+        <p>Tropical cyclone tracks, gust fields, and storm-surge inundation calibrated to historical and synthetic event sets.</p>
+        <span class="more">Surge + wind coupled →</span>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3v3M5 8l2 2M19 8l-2 2M3 16h4M17 16h4M12 9a5 5 0 0 1 5 7H7a5 5 0 0 1 5-7z"/></svg></div>
+        <h3>Climate risk analytics</h3>
+        <p>Forward-looking peril shifts under SSP/RCP pathways for 2030, 2050, and 2100 climate horizons.</p>
+        <span class="more">SSP1–SSP5 scenarios →</span>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3zM4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
+        <h3>Exposure database services</h3>
+        <p>Cleansing, enrichment, and high-precision geocoding to turn messy schedules into model-ready exposure.</p>
+        <span class="more">Rooftop geocoding →</span>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18M7 15l4-5 3 3 5-7"/></svg></div>
+        <h3>Portfolio risk analysis</h3>
+        <p>Accumulation, AAL, and full OEP/AEP loss curves with reinsurance structures applied across your book.</p>
+        <span class="more">OEP / AEP curves →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODEL OUTPUT -->
+<section class="pad soft" id="model">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Model output</span>
+    <h2 class="section-title">What a flood model actually produces</h2>
+    <p class="section-lead">Ganges floodplain at Patna, Bihar — modelled inundation extent and depth cycling through return periods.</p>
+  </div>
+  <div class="wrap">
+    <div class="showcase">
+      <div class="reveal">
+        <div class="panel">
+          <h3>Return periods, not a single map</h3>
+          <p class="desc">A flood model isn't one boundary line. It's a family of scenarios — each with its own probability, extent, and depth field — which is what lets you price risk instead of merely marking a zone.</p>
+          <div class="metrics">
+            <div class="hm"><div class="k">Location</div><div class="v">Patna, Bihar · 25.61°N 85.14°E</div></div>
+            <div class="hm"><div class="k">Return periods</div><div class="v">2 – 1,500 yr</div></div>
+            <div class="hm"><div class="k">Max modelled depth</div><div class="v">7 m</div></div>
+            <div class="hm"><div class="k">Output grid</div><div class="v">10 – 30 m</div></div>
+          </div>
+          <p style="margin-top:22px;color:var(--slate);font-size:15px">
+            The same output drives everything downstream — property-level depth lookups, depth-damage curves, and portfolio accumulation.
+          </p>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="frame">
+          <div class="frame-bar">
+            <span class="fb-dot"></span><span class="fb-dot"></span><span class="fb-dot"></span>
+            <span class="fb-title">katxel-risk · flood model · ganges floodplain</span>
+            <span class="fb-live"><b></b>RP CYCLE</span>
+          </div>
+          <img class="model-media" src="flood_ganges.gif" width="620" height="413" loading="lazy" decoding="async"
+               alt="Animated map of modelled Ganges floodplain inundation at Patna, Bihar, cycling through return periods from 2 to 1,500 years, with flood depth shaded from 0 to 7 metres.">
+        </div>
+        <p class="frame-cap">Katxel flood model output. Inundated area and maximum depth update with each return period in the cycle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HAZARD EXPLORER -->
+<section class="pad" id="hazards">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Featured hazard models</span>
+    <h2 class="section-title">Explore the perils we model</h2>
+    <p class="section-lead">Select a hazard to inspect its coverage, resolution, return periods, and headline risk metric.</p>
+  </div>
+  <div class="wrap">
+    <div class="showcase">
+      <div class="reveal">
+        <div class="chips" id="hazChips" role="group" aria-label="Hazard">
+          <button class="chip" type="button" data-haz="flood"     aria-pressed="true"><i></i>Flood</button>
+          <button class="chip" type="button" data-haz="quake"     aria-pressed="false"><i></i>Earthquake</button>
+          <button class="chip" type="button" data-haz="cyclone"   aria-pressed="false"><i></i>Cyclone</button>
+          <button class="chip" type="button" data-haz="wildfire"  aria-pressed="false"><i></i>Wildfire</button>
+          <button class="chip" type="button" data-haz="landslide" aria-pressed="false"><i></i>Landslide</button>
+          <button class="chip" type="button" data-haz="drought"   aria-pressed="false"><i></i>Drought</button>
+        </div>
+        <div class="panel">
+          <h3 id="hazTitle">Flood</h3>
+          <p class="desc" id="hazDesc">Combined fluvial, pluvial, and coastal flood hazard with depth grids and property-level loss.</p>
+          <div class="metrics">
+            <div class="hm"><div class="k">Coverage area</div><div class="v" id="hazCoverage">Global (1 model)</div></div>
+            <div class="hm"><div class="k">Resolution</div><div class="v" id="hazRes">10 – 30 m</div></div>
+            <div class="hm"><div class="k">Return periods</div><div class="v" id="hazRP">2 – 1,500 yr</div></div>
+            <div class="hm"><div class="k">Risk metric</div><div class="v" id="hazMetric">Inundation depth</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="vis reveal">
+        <span class="vlabel" id="visLabel">FLOOD HAZARD — RP-100</span>
+        <svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g id="contours"></g></svg>
+        <div class="vmetric"><div class="big" id="visBig">8.4 m</div><small id="visSmall">MAX MODELLED DEPTH</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM -->
+<section class="pad soft" id="platform">
+  <div class="wrap showcase" style="margin-top:0">
+    <div class="reveal">
+      <span class="eyebrow">Risk intelligence platform</span>
+      <h2 class="section-title">See every peril on one map</h2>
+      <p class="section-lead">A single workspace to query hazard layers, score locations, and analyse portfolio loss — no GIS expertise required.</p>
+      <ul style="margin:26px 0 30px;display:flex;flex-direction:column;gap:14px;list-style:none">
+        <li style="display:flex;gap:12px;align-items:flex-start;color:var(--slate);font-size:16px"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:var(--accent-soft);display:grid;place-items:center;margin-top:2px"><svg viewBox="0 0 24 24" style="width:12px;height:12px;stroke:var(--accent);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round"><path d="M5 13l4 4L19 7"/></svg></span>Interactive GIS maps with switchable hazard and exposure layers</li>
+        <li style="display:flex;gap:12px;align-items:flex-start;color:var(--slate);font-size:16px"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:var(--accent-soft);display:grid;place-items:center;margin-top:2px"><svg viewBox="0 0 24 24" style="width:12px;height:12px;stroke:var(--accent);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round"><path d="M5 13l4 4L19 7"/></svg></span>Location-level risk scores returned in milliseconds</li>
+        <li style="display:flex;gap:12px;align-items:flex-start;color:var(--slate);font-size:16px"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:var(--accent-soft);display:grid;place-items:center;margin-top:2px"><svg viewBox="0 0 24 24" style="width:12px;height:12px;stroke:var(--accent);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round"><path d="M5 13l4 4L19 7"/></svg></span>Portfolio loss analytics with return-period breakdowns</li>
+        <li style="display:flex;gap:12px;align-items:flex-start;color:var(--slate);font-size:16px"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:var(--accent-soft);display:grid;place-items:center;margin-top:2px"><svg viewBox="0 0 24 24" style="width:12px;height:12px;stroke:var(--accent);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round"><path d="M5 13l4 4L19 7"/></svg></span>Side-by-side present-day and future climate scenarios</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary">Experience Katxel Intelligence <span class="arrow">→</span></a>
+    </div>
+
+    <div class="reveal" aria-hidden="true">
+      <div style="background:linear-gradient(160deg,var(--navy-deep),var(--navy));border-radius:var(--radius-lg);padding:22px;color:#fff;box-shadow:var(--shadow-md);border:1px solid rgba(255,255,255,.08)">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+          <b style="font-family:var(--font-display);font-size:15px">Katxel Intelligence — Portfolio: Coastal Book 2026</b>
+          <span><span style="width:9px;height:9px;border-radius:50%;display:inline-block;margin-left:5px;background:rgba(255,255,255,.25)"></span><span style="width:9px;height:9px;border-radius:50%;display:inline-block;margin-left:5px;background:rgba(255,255,255,.25)"></span><span style="width:9px;height:9px;border-radius:50%;display:inline-block;margin-left:5px;background:rgba(255,255,255,.25)"></span></span>
+        </div>
+        <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:14px">
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px;position:relative;overflow:hidden;min-height:200px">
+            <div style="font-family:var(--font-mono);font-size:10.5px;color:rgba(255,255,255,.55);letter-spacing:.1em">HAZARD HEATMAP — FLOOD RP-100</div>
+            <div style="position:absolute;border-radius:50%;filter:blur(1px);width:70px;height:70px;background:radial-gradient(circle,rgba(255,122,0,.8),transparent 70%);top:30px;left:40px"></div>
+            <div style="position:absolute;border-radius:50%;filter:blur(1px);width:48px;height:48px;background:radial-gradient(circle,rgba(0,194,168,.7),transparent 70%);top:90px;left:120px"></div>
+            <div style="position:absolute;border-radius:50%;filter:blur(1px);width:90px;height:90px;background:radial-gradient(circle,rgba(255,122,0,.55),transparent 70%);top:70px;left:150px"></div>
+            <div style="position:absolute;border-radius:50%;filter:blur(1px);width:40px;height:40px;background:radial-gradient(circle,rgba(0,194,168,.6),transparent 70%);top:130px;left:60px"></div>
+            <svg viewBox="0 0 100 60" style="position:absolute;inset:0;width:100%;height:100%;opacity:.18">
+              <path d="M0 30 Q25 10 50 30 T100 30" fill="none" stroke="#00C2A8" stroke-width=".6"/>
+              <path d="M0 42 Q25 22 50 42 T100 42" fill="none" stroke="#00C2A8" stroke-width=".6"/>
+            </svg>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px"><div style="font-family:var(--font-mono);font-size:10.5px;color:rgba(255,255,255,.55);letter-spacing:.08em">PORTFOLIO AAL</div><div style="font-family:var(--font-display);font-size:24px;font-weight:700;margin-top:4px;color:#00C2A8">$24.7M</div></div>
+            <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px"><div style="font-family:var(--font-mono);font-size:10.5px;color:rgba(255,255,255,.55);letter-spacing:.08em">1-IN-100 OEP</div><div style="font-family:var(--font-display);font-size:24px;font-weight:700;margin-top:4px;color:var(--risk)">$182M</div></div>
+            <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px">
+              <div style="font-family:var(--font-mono);font-size:10.5px;color:rgba(255,255,255,.55);letter-spacing:.08em">LOCATIONS SCORED</div><div style="font-family:var(--font-display);font-size:24px;font-weight:700;margin-top:4px">48,210</div>
+              <div style="display:flex;align-items:flex-end;gap:6px;height:42px;margin-top:8px">
+                <i style="flex:1;background:linear-gradient(180deg,var(--risk),rgba(255,122,0,.2));border-radius:3px 3px 0 0;display:block;height:40%"></i>
+                <i style="flex:1;background:linear-gradient(180deg,var(--risk),rgba(255,122,0,.2));border-radius:3px 3px 0 0;display:block;height:62%"></i>
+                <i style="flex:1;background:linear-gradient(180deg,var(--risk),rgba(255,122,0,.2));border-radius:3px 3px 0 0;display:block;height:48%"></i>
+                <i style="flex:1;background:linear-gradient(180deg,var(--risk),rgba(255,122,0,.2));border-radius:3px 3px 0 0;display:block;height:80%"></i>
+                <i style="flex:1;background:linear-gradient(180deg,var(--risk),rgba(255,122,0,.2));border-radius:3px 3px 0 0;display:block;height:55%"></i>
+                <i style="flex:1;background:linear-gradient(180deg,var(--risk),rgba(255,122,0,.2));border-radius:3px 3px 0 0;display:block;height:92%"></i>
+                <i style="flex:1;background:linear-gradient(180deg,var(--risk),rgba(255,122,0,.2));border-radius:3px 3px 0 0;display:block;height:70%"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="pad" id="cases">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Case studies</span>
+    <h2 class="section-title">Outcomes, not just outputs</h2>
+  </div>
+  <div class="wrap">
+    <div class="grid-2 stagger">
+      <div class="cs">
+        <div class="top"><svg viewBox="0 0 400 140" preserveAspectRatio="none"><rect width="400" height="140" fill="#0B1F3A"/><path d="M0 90 Q100 60 200 90 T400 90 V140 H0Z" fill="rgba(255,122,0,.3)"/><path d="M0 110 Q100 85 200 110 T400 110 V140 H0Z" fill="rgba(255,122,0,.55)"/></svg></div>
+        <div class="body">
+          <span class="tag">Public sector</span>
+          <h3>National flood risk assessment</h3>
+          <p>Nationwide RP flood layers delivered to a government agency to guide zoning and resilience funding.</p>
+          <div class="stat-line"><div><b>1.2M</b><span>BUILDINGS</span></div><div><b>5 m</b><span>RESOLUTION</span></div></div>
+        </div>
+      </div>
+      <div class="cs">
+        <div class="top"><svg viewBox="0 0 400 140" preserveAspectRatio="none"><rect width="400" height="140" fill="#0B1F3A"/><polyline points="0,110 60,80 120,95 180,50 240,70 300,30 360,55 400,40" fill="none" stroke="#FF7A00" stroke-width="3"/></svg></div>
+        <div class="body">
+          <span class="tag">Insurance</span>
+          <h3>Portfolio optimization</h3>
+          <p>Re-priced a multi-peril book by identifying loss-driving accumulations, cutting tail exposure.</p>
+          <div class="stat-line"><div><b>-31%</b><span>TAIL LOSS</span></div><div><b>$210M</b><span>CAPITAL FREED</span></div></div>
+        </div>
+      </div>
+      <div class="cs">
+        <div class="top"><svg viewBox="0 0 400 140" preserveAspectRatio="none"><rect width="400" height="140" fill="#0B1F3A"/><g fill="rgba(255,122,0,.45)"><rect x="40" y="60" width="34" height="80"/><rect x="100" y="40" width="34" height="100"/><rect x="160" y="75" width="34" height="65"/><rect x="220" y="30" width="34" height="110"/><rect x="280" y="55" width="34" height="85"/><rect x="340" y="45" width="34" height="95"/></g></svg></div>
+        <div class="body">
+          <span class="tag">Infrastructure</span>
+          <h3>Resilience planning</h3>
+          <p>Ranked critical assets by multi-hazard exposure to sequence a decade of hardening investment.</p>
+          <div class="stat-line"><div><b>8,400</b><span>ASSETS</span></div><div><b>6</b><span>PERILS</span></div></div>
+        </div>
+      </div>
+      <div class="cs">
+        <div class="top"><svg viewBox="0 0 400 140" preserveAspectRatio="none"><rect width="400" height="140" fill="#0B1F3A"/><path d="M0 100 Q100 60 200 80 T400 50" fill="none" stroke="#00C2A8" stroke-width="3"/><path d="M0 120 Q100 95 200 105 T400 90" fill="none" stroke="#FF7A00" stroke-width="3" stroke-dasharray="6 6"/></svg></div>
+        <div class="body">
+          <span class="tag">Climate</span>
+          <h3>Climate adaptation analytics</h3>
+          <p>Quantified peril shifts to 2050 so a utility could stress-test assets under warming scenarios.</p>
+          <div class="stat-line"><div><b>2050</b><span>HORIZON</span></div><div><b>4</b><span>SSP PATHWAYS</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="pad soft">
+  <div class="wrap center reveal">
+    <span class="eyebrow">In their words</span>
+    <h2 class="section-title">What partners say</h2>
+  </div>
+  <div class="wrap">
+    <div class="grid-3 stagger">
+      <div class="quote">
+        <div class="mark">&ldquo;</div>
+        <p>The transparency is what sold us. We can finally trace a loss number back to its hazard and vulnerability assumptions in front of a regulator.</p>
+        <div class="who"><div class="av">CR</div><div><b>Chief Risk Officer</b><span>Regional Primary Insurer</span></div></div>
+      </div>
+      <div class="quote">
+        <div class="mark">&ldquo;</div>
+        <p>Katxel's flood layers gave our national resilience program a defensible, consistent basis for funding decisions across every district.</p>
+        <div class="who"><div class="av">DG</div><div><b>Director General</b><span>Disaster Management Authority</span></div></div>
+      </div>
+      <div class="quote">
+        <div class="mark">&ldquo;</div>
+        <p>The API dropped into our underwriting flow in a sprint. Risk scores at the point of quote changed how the whole team works.</p>
+        <div class="who"><div class="av">HU</div><div><b>Head of Underwriting</b><span>Specialty Reinsurer</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNOLOGY -->
+<section class="pad deep" id="technology">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Technology</span>
+    <h2 class="section-title on-dark">The engine behind the maps</h2>
+    <p class="section-lead on-dark">A modular stack — use the whole platform or plug a single component into yours.</p>
+  </div>
+  <div class="wrap">
+    <div class="grid-4 stagger">
+      <div class="tech-card"><div class="badge">SIMULATION</div><h3>Katxel <span>Engine</span></h3><p>Cloud-native catastrophe simulation that runs millions of synthetic events in parallel.</p></div>
+      <div class="tech-card"><div class="badge">GEOSPATIAL</div><h3>Katxel <span>GIS</span></h3><p>Interactive risk visualization built on vector tiles and on-the-fly raster sampling.</p></div>
+      <div class="tech-card"><div class="badge">FORWARD-LOOKING</div><h3>Katxel <span>Climate</span></h3><p>Climate-adjusted projections across IPCC pathways and multiple time horizons.</p></div>
+      <div class="tech-card"><div class="badge">INTEGRATION</div><h3>Katxel <span>API</span></h3><p>Real-time risk scoring endpoints that drop straight into underwriting workflows.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CROSS-LINKS -->
+<section class="pad-sm dark">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Also from Katxel</span>
+    <h2 class="section-title on-dark">The other two divisions</h2>
+  </div>
+  <div class="wrap">
+    <div class="cross stagger">
+      <a class="cross-card" href="geo.html"><i class="cdot" style="background:var(--geo)"></i><span><b>Katxel Geo</b><span>GIS, survey, data collection and processing</span></span><span class="arrow">→</span></a>
+      <a class="cross-card" href="ops.html"><i class="cdot" style="background:var(--ops)"></i><span><b>Katxel Ops</b><span>HRMS, project planning and internal tools</span></span><span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="pad" id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <span class="eyebrow">Get in touch</span>
+      <h2 class="section-title">Schedule a consultation</h2>
+      <p class="section-lead">Tell us about your perils and portfolio. We'll show you exactly what Katxel can see.</p>
+      <div class="contact-info">
+        <div class="ci"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg></div><div><b>Email</b><a href="mailto:info.katxel@gmail.com"><span>info.katxel@gmail.com</span></a></div></div>
+        <div class="ci"><div class="ico"><svg viewBox="0 0 24 24"><path d="M21 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 3.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L7.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg></div><div><b>Mobile</b><a href="tel:+919971673480"><span>+91-9971673480</span></a></div></div>
+        <div class="ci"><div class="ico" style="background:rgba(37,211,102,.14)"><svg viewBox="0 0 24 24" fill="#25D366" stroke="none"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .15 11.9C.15 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.41 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.68-1.45L.06 24zM6.6 20.13c1.68 1 3.28 1.6 5.4 1.6 5.45 0 9.9-4.44 9.9-9.9 0-5.46-4.4-9.9-9.9-9.9-5.46 0-9.9 4.44-9.9 9.9 0 2.23.65 3.9 1.74 5.65l-1 3.62 3.76-.97z"/></svg></div><div><b>WhatsApp</b><a href="https://wa.me/919971673480" target="_blank" rel="noopener"><span>+91-9971673480</span></a></div></div>
+        <div class="ci"><div class="ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><b>Office</b><span>Delhi NCR, India · serving clients globally</span></div></div>
+      </div>
+    </div>
+
+    <form class="form reveal" data-endpoint="" data-mailto="info.katxel@gmail.com" novalidate>
+      <input type="hidden" name="division" value="Katxel Risk">
+      <div class="row2">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" placeholder="Your full name" required></div>
+        <div class="field"><label for="f-company">Company</label><input id="f-company" name="company" type="text" placeholder="Organization"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" placeholder="you@company.com" required></div>
+        <div class="field"><label for="f-country">Country</label><input id="f-country" name="country" type="text" placeholder="Country"></div>
+      </div>
+      <div class="field"><label for="f-service">Service interest</label>
+        <select id="f-service" name="service">
+          <option>Flood risk modelling</option>
+          <option>Earthquake risk modelling</option>
+          <option>Cyclone &amp; wind risk</option>
+          <option>Climate risk analytics</option>
+          <option>Exposure database services</option>
+          <option>Portfolio risk analysis</option>
+          <option>Platform &amp; API access</option>
+        </select>
+      </div>
+      <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="What are you trying to assess?" required></textarea></div>
+      <button class="btn btn-primary" type="submit">Schedule a consultation <span class="arrow">→</span></button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+      <p class="form-note">We reply within one business day. No spam, ever.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<a class="wa-float" href="https://wa.me/919971673480" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" stroke="none"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .15 11.9C.15 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.41 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.68-1.45L.06 24zM6.6 20.13c1.68 1 3.28 1.6 5.4 1.6 5.45 0 9.9-4.44 9.9-9.9 0-5.46-4.4-9.9-9.9-9.9-5.46 0-9.9 4.44-9.9 9.9 0 2.23.65 3.9 1.74 5.65l-1 3.62 3.76-.97zm11.39-5.55c-.07-.12-.27-.2-.57-.35-.3-.15-1.76-.87-2.03-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
+</a>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="logo"><svg class="mark" viewBox="0 0 128 128" role="img" aria-label="Katxel logo"><defs><linearGradient id="kgf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient><mask id="kmf"><rect width="128" height="128" fill="black"/><polygon fill="white" points="64,8 20,32 20,96 64,120 108,96 108,32"/><line x1="-20" y1="85.54" x2="148" y2="-4.92" stroke="black" stroke-width="14" stroke-linecap="round"/><line x1="-20" y1="42.46" x2="148" y2="132.92" stroke="black" stroke-width="14" stroke-linecap="round"/></mask></defs><g mask="url(#kmf)"><polygon fill="url(#kgf)" points="64,8 20,32 20,96 64,120 108,96 108,32"/><polygon fill="none" stroke="#0EA5E9" stroke-width="3" points="64,8 20,32 20,96 64,120 108,96 108,32"/></g></svg>KATXEL</a>
+        <p>Geospatial data, business software, and catastrophe risk intelligence — engineered by one team.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Divisions</h4>
+        <a href="geo.html">Katxel Geo</a><a href="ops.html">Katxel Ops</a><a href="risk.html">Katxel Risk</a>
+      </div>
+      <div class="foot-col">
+        <h4>Risk services</h4>
+        <a href="#services">Flood modelling</a><a href="#services">Earthquake modelling</a><a href="#services">Climate analytics</a><a href="#services">Portfolio analysis</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="index.html#about">About</a><a href="#cases">Case studies</a><a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> Katxel. All rights reserved · katxel.in</span>
+      <div class="socials">
+        <a href="https://wa.me/919971673480" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 20.5l1.8-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg></a>
+        <a href="mailto:info.katxel@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M4 7l8 6 8-6"/></svg></a>
+        <a href="tel:+919971673480" aria-label="Phone"><svg viewBox="0 0 24 24"><path d="M21 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 3.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L7.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
+<script src="assets/hero-lenses.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var HAZ = {
+    flood:     {title:'Flood',      color:'#FF7A00', desc:'Combined fluvial, pluvial, and coastal flood hazard with depth grids and property-level loss.', coverage:'Global (1 model)', res:'10 – 30 m', rp:'2 – 1,500 yr', metric:'Inundation depth',        label:'FLOOD HAZARD — RP-100',        big:'8.4 m',    small:'MAX MODELLED DEPTH',        pattern:'wave'},
+    quake:     {title:'Earthquake', color:'#FF9B3D', desc:'Probabilistic seismic hazard with ground-motion fields and site amplification.',                coverage:'3+ countries',    res:'10 – 30 m', rp:'2 – 1,500 yr', metric:'Peak ground acceleration', label:'SEISMIC HAZARD — PGA',         big:'0.42 g',   small:'PEAK GROUND ACCELERATION',  pattern:'rings'},
+    cyclone:   {title:'Cyclone',    color:'#00C2A8', desc:'Tropical cyclone tracks, gust fields, and storm-surge inundation from synthetic event sets.',   coverage:'3+ countries',    res:'10 – 30 m', rp:'2 – 1,500 yr', metric:'3-sec gust speed',         label:'WIND HAZARD — RP-100',         big:'248 km/h', small:'3-SEC GUST SPEED',          pattern:'spiral'},
+    wildfire:  {title:'Wildfire',   color:'#FF5F57', desc:'Burn probability and fire intensity driven by fuel, weather, and terrain.',                     coverage:'3+ countries',    res:'10 – 30 m', rp:'2 – 1,500 yr', metric:'Burn probability',         label:'WILDFIRE HAZARD — BURN PROB',  big:'12.5%',    small:'ANNUAL BURN PROBABILITY',   pattern:'noise'},
+    landslide: {title:'Landslide',  color:'#00C2A8', desc:'Slope failure susceptibility from terrain, geology, and rainfall triggers.',                    coverage:'3+ countries',    res:'10 – 30 m', rp:'2 – 1,500 yr', metric:'Failure susceptibility',   label:'LANDSLIDE — SUSCEPTIBILITY',   big:'High',     small:'SLOPE FAILURE INDEX',       pattern:'contour'},
+    drought:   {title:'Drought',    color:'#FFC14D', desc:'Multi-month precipitation and soil-moisture deficits with severity classes.',                   coverage:'3+ countries',    res:'10 – 30 m', rp:'2 – 1,500 yr', metric:'SPI severity',             label:'DROUGHT — SPI INDEX',          big:'-2.1',     small:'STANDARDIZED PRECIP INDEX', pattern:'gradient'}
+  };
+
+  var ns = 'http://www.w3.org/2000/svg';
+  function buildContours(color, pattern) {
+    var g = document.getElementById('contours');
+    if (!g) return;
+    g.innerHTML = '';
+    function add(tag, attrs) {
+      var e = document.createElementNS(ns, tag);
+      for (var k in attrs) e.setAttribute(k, attrs[k]);
+      g.appendChild(e);
+    }
+    var i;
+    if (pattern === 'wave' || pattern === 'gradient' || pattern === 'noise') {
+      for (i = 0; i < 9; i++) {
+        var y = 40 + i * 40;
+        add('path', {class:'contour', d:'M-20 ' + y + ' Q120 ' + (y - 30) + ' 260 ' + y + ' T540 ' + y, stroke:color, 'stroke-opacity':0.12 + i * 0.07});
+      }
+    } else if (pattern === 'rings' || pattern === 'spiral') {
+      for (i = 0; i < 8; i++) add('circle', {class:'contour', cx:250, cy:200, r:30 + i * 30, stroke:color, 'stroke-opacity':0.5 - i * 0.05});
+    } else {
+      for (i = 0; i < 8; i++) {
+        var r = 30 + i * 32;
+        add('ellipse', {class:'contour', cx:250, cy:200, rx:r * 1.4, ry:r, stroke:color, 'stroke-opacity':0.5 - i * 0.05});
+      }
+    }
+  }
+
+  function setHazard(key) {
+    var h = HAZ[key];
+    var set = function (id, v) { var e = document.getElementById(id); if (e) e.textContent = v; };
+    set('hazTitle', h.title); set('hazDesc', h.desc);
+    set('hazCoverage', h.coverage); set('hazRes', h.res);
+    set('hazRP', h.rp); set('hazMetric', h.metric);
+    set('visLabel', h.label); set('visBig', h.big); set('visSmall', h.small);
+    buildContours(h.color, h.pattern);
+    document.querySelectorAll('#hazChips .chip').forEach(function (c) {
+      var on = c.dataset.haz === key;
+      c.setAttribute('aria-pressed', on ? 'true' : 'false');
+      c.querySelector('i').style.background = HAZ[c.dataset.haz].color;
+    });
+  }
+
+  document.querySelectorAll('#hazChips .chip').forEach(function (c) {
+    c.addEventListener('click', function () { setHazard(c.dataset.haz); });
+  });
+  setHazard('flood');
+});
+</script>
+</body>
+</html>

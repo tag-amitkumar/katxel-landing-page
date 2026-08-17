@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Katxel Geo — GIS, Survey &amp; Geospatial Data Processing</title>
+<meta name="description" content="Topographic and drone survey, LiDAR and photogrammetry, field data collection, remote sensing, and GIS data processing. Katxel Geo turns raw capture into analysis-ready spatial layers.">
+<link rel="canonical" href="https://katxel.in/geo.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Katxel">
+<meta property="og:url" content="https://katxel.in/geo.html">
+<meta property="og:title" content="Katxel Geo — GIS, Survey & Geospatial Data Processing">
+<meta property="og:description" content="Survey, capture, and processing that turns terrain into decision-ready layers.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script>document.documentElement.classList.add('anim')</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","serviceType":"Geospatial data services","name":"Katxel Geo",
+"provider":{"@type":"Organization","name":"Katxel","url":"https://katxel.in/"},
+"areaServed":"Global","url":"https://katxel.in/geo.html",
+"description":"GIS, topographic and drone survey, LiDAR and photogrammetry, field data collection, remote sensing and geospatial data processing."}
+</script>
+</head>
+<body data-vertical="geo">
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo" aria-label="Katxel Geo home">
+      <svg class="mark" viewBox="0 0 128 128" role="img" aria-label="Katxel logo" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="kg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient>
+          <mask id="km"><rect width="128" height="128" fill="black"/><polygon fill="white" points="64,8 20,32 20,96 64,120 108,96 108,32"/><line x1="-20" y1="85.54" x2="148" y2="-4.92" stroke="black" stroke-width="14" stroke-linecap="round"/><line x1="-20" y1="42.46" x2="148" y2="132.92" stroke="black" stroke-width="14" stroke-linecap="round"/></mask>
+        </defs>
+        <g mask="url(#km)"><polygon fill="url(#kg)" points="64,8 20,32 20,96 64,120 108,96 108,32"/><polygon fill="none" stroke="#0EA5E9" stroke-width="3" points="64,8 20,32 20,96 64,120 108,96 108,32"/></g>
+      </svg>
+      KATXEL<span class="div-sep">/</span><span class="div-name">Geo</span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <div class="dd" data-open="false">
+        <button type="button" aria-expanded="false" aria-haspopup="true">Divisions
+          <svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="dd-panel">
+          <a class="dd-item" href="geo.html" aria-current="page"><i class="di-dot" style="background:var(--geo)"></i><span><b>Katxel Geo</b><span>GIS, survey, data collection &amp; processing</span></span></a>
+          <a class="dd-item" href="ops.html"><i class="di-dot" style="background:var(--ops)"></i><span><b>Katxel Ops</b><span>HRMS, project planning &amp; internal tools</span></span></a>
+          <a class="dd-item" href="risk.html"><i class="di-dot" style="background:var(--risk)"></i><span><b>Katxel Risk</b><span>Catastrophe &amp; climate risk modelling</span></span></a>
+        </div>
+      </div>
+      <a href="#services">Services</a>
+      <a href="#pipeline">Pipeline</a>
+      <a href="#process">How we work</a>
+      <a href="#stack">Stack</a>
+      <a href="#contact" class="only-mobile">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-ghost">Talk to us</a>
+      <a href="#contact" class="btn btn-primary">Request a quote</a>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">Katxel Geo · geospatial data services</span>
+      <h1>From the field to a <span class="hl">layer you can build on</span></h1>
+      <p class="sub">Topographic and drone survey, LiDAR and photogrammetry, field data collection, remote sensing, and the processing pipeline that turns all of it into clean, projected, analysis-ready GIS.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Request a quote <span class="arrow">→</span></a>
+        <a href="#pipeline" class="btn btn-ghost">See the pipeline</a>
+      </div>
+      <div class="hero-tags">
+        <span>DGPS</span><span>UAV / LiDAR</span><span>PHOTOGRAMMETRY</span><span>REMOTE SENSING</span><span>WEB GIS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat"><div class="num" data-count="5" data-suffix=" cm">0<span class="suf"> cm</span></div><div class="lab">Achievable survey accuracy</div></div>
+    <div class="stat"><div class="num" data-count="6" data-suffix="">0</div><div class="lab">Capture &amp; processing services</div></div>
+    <div class="stat"><div class="num" data-count="10" data-suffix="+">0<span class="suf">+</span></div><div class="lab">Years in spatial engineering</div></div>
+    <div class="stat"><div class="num" data-count="100" data-suffix="%">0<span class="suf">%</span></div><div class="lab">Open formats on delivery</div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="pad" id="services">
+  <div class="wrap center reveal">
+    <span class="eyebrow">What we do</span>
+    <h2 class="section-title">Capture, process, deliver</h2>
+    <p class="section-lead">Engage us for the whole chain or for the one link you're missing. Every output ships in open, portable formats.</p>
+  </div>
+  <div class="wrap">
+    <div class="grid-3 stagger">
+
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h3>Topographic &amp; cadastral survey</h3>
+        <p>DGPS, total station, and level surveys for boundaries, contours, and detailed site plans — with control networks you can re-occupy later.</p>
+        <span class="more">Ground control →</span>
+      </div>
+
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 12l7-4-7-4-7 4 7 4zM5 8v6l7 4 7-4V8M12 12v10"/></svg></div>
+        <h3>Drone survey &amp; photogrammetry</h3>
+        <p>UAV flight planning and capture through to orthomosaics, dense point clouds, DSM/DTM, and volumetric computation.</p>
+        <span class="more">Ortho · DSM · DTM →</span>
+      </div>
+
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/><circle cx="8" cy="7" r="1.6"/><circle cx="15" cy="12" r="1.6"/><circle cx="11" cy="17" r="1.6"/></svg></div>
+        <h3>Field data collection</h3>
+        <p>Mobile form design, offline-capable capture, asset inventories, and ground truthing — with validation applied at the point of entry, not after.</p>
+        <span class="more">Offline-first forms →</span>
+      </div>
+
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg></div>
+        <h3>Remote sensing &amp; image analysis</h3>
+        <p>Multispectral and SAR analysis, land-use and land-cover classification, change detection, and time-series monitoring at scale.</p>
+        <span class="more">LULC · change detection →</span>
+      </div>
+
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3zM4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
+        <h3>Data processing &amp; GIS build</h3>
+        <p>Cleaning, projection and datum handling, topology repair, geocoding, and a properly indexed spatial database instead of a folder of shapefiles.</p>
+        <span class="more">PostGIS delivery →</span>
+      </div>
+
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M9 3L3 6v15l6-3 6 3 6-3V3l-6 3-6-3zM9 3v15M15 6v15"/></svg></div>
+        <h3>Cartography &amp; web GIS</h3>
+        <p>Print-ready map series and interactive web viewers with switchable layers, so the people who need the data don't need a GIS licence to read it.</p>
+        <span class="more">Tiles &amp; viewers →</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PIPELINE SHOWCASE -->
+<section class="pad soft" id="pipeline">
+  <div class="wrap center reveal">
+    <span class="eyebrow">The pipeline</span>
+    <h2 class="section-title">Four stages, one chain of custody</h2>
+    <p class="section-lead">Step through what happens between the field crew leaving site and you opening a finished layer.</p>
+  </div>
+  <div class="wrap">
+    <div class="showcase">
+      <div class="reveal">
+        <div class="chips" id="geoChips" role="group" aria-label="Pipeline stage">
+          <button class="chip" type="button" data-step="0" aria-pressed="true"><i></i>Raw capture</button>
+          <button class="chip" type="button" data-step="1" aria-pressed="false"><i></i>Point cloud</button>
+          <button class="chip" type="button" data-step="2" aria-pressed="false"><i></i>Classified</button>
+          <button class="chip" type="button" data-step="3" aria-pressed="false"><i></i>Deliverable</button>
+        </div>
+        <div class="panel">
+          <h3 id="geoTitle">Raw capture</h3>
+          <p class="desc" id="geoDesc">Flight lines flown, imagery and GNSS logs collected, ground control observed. Nothing is interpreted yet — this is the evidence.</p>
+          <div class="metrics">
+            <div class="hm"><div class="k">Output</div><div class="v" id="geoOut">Georeferenced imagery + GNSS logs</div></div>
+            <div class="hm"><div class="k">Typical GSD</div><div class="v" id="geoGsd">2 – 5 cm</div></div>
+            <div class="hm"><div class="k">Formats</div><div class="v" id="geoFmt">JPG/TIFF, RINEX, CSV</div></div>
+            <div class="hm"><div class="k">Checks</div><div class="v" id="geoChk">Overlap, GCP residuals</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="frame">
+          <div class="frame-bar">
+            <span class="fb-dot"></span><span class="fb-dot"></span><span class="fb-dot"></span>
+            <span class="fb-title">katxel-geo · pipeline preview</span>
+            <span class="fb-live"><b></b>STAGE <span id="geoStageNo">1</span>/4</span>
+          </div>
+          <div class="frame-body">
+            <div class="layers" id="geoLayers">
+
+              <!-- 0 — raw capture -->
+              <div class="layer" data-on="true">
+                <svg viewBox="0 0 640 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <rect width="640" height="440" fill="#0d2136"/>
+                  <g opacity=".5">
+                    <path d="M0 300 Q120 250 240 290 T480 270 T640 300 V440 H0Z" fill="#123049"/>
+                    <path d="M0 350 Q160 310 320 345 T640 330 V440 H0Z" fill="#16394f"/>
+                  </g>
+                  <g stroke="#00C2A8" stroke-width="1.2" fill="none" opacity=".55" stroke-dasharray="7 6">
+                    <path d="M60 60 H580"/><path d="M60 130 H580"/><path d="M60 200 H580"/><path d="M60 270 H580"/><path d="M60 340 H580"/>
+                    <path d="M580 60 Q615 95 580 130"/><path d="M60 130 Q25 165 60 200"/><path d="M580 200 Q615 235 580 270"/><path d="M60 270 Q25 305 60 340"/>
+                  </g>
+                  <g fill="#00C2A8">
+                    <circle cx="60" cy="60" r="3.5"/><circle cx="580" cy="340" r="3.5"/>
+                  </g>
+                  <g stroke="rgba(255,255,255,.18)" stroke-width="1" fill="none">
+                    <rect x="90" y="80" width="140" height="100"/><rect x="230" y="80" width="140" height="100"/><rect x="370" y="80" width="140" height="100"/>
+                    <rect x="90" y="180" width="140" height="100"/><rect x="230" y="180" width="140" height="100"/><rect x="370" y="180" width="140" height="100"/>
+                  </g>
+                  <g fill="#FF7A00">
+                    <path d="M150 250l6 10h-12z"/><path d="M330 150l6 10h-12z"/><path d="M470 300l6 10h-12z"/>
+                  </g>
+                </svg>
+              </div>
+
+              <!-- 1 — point cloud -->
+              <div class="layer">
+                <svg viewBox="0 0 640 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <rect width="640" height="440" fill="#08192a"/>
+                  <g id="geoCloud"></g>
+                  <g stroke="#00C2A8" stroke-width="1" fill="none" opacity=".35">
+                    <path d="M40 360 Q160 320 280 350 T520 330 T620 355"/>
+                    <path d="M40 320 Q160 280 280 310 T520 290 T620 315"/>
+                    <path d="M40 280 Q160 240 280 270 T520 250 T620 275"/>
+                  </g>
+                </svg>
+              </div>
+
+              <!-- 2 — classified -->
+              <div class="layer">
+                <svg viewBox="0 0 640 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <rect width="640" height="440" fill="#0a1e30"/>
+                  <path d="M0 250 Q140 210 280 245 T560 225 T640 250 V440 H0Z" fill="rgba(0,194,168,.16)" stroke="rgba(0,194,168,.5)"/>
+                  <g fill="rgba(37,99,235,.45)" stroke="rgba(96,165,250,.7)" stroke-width="1.2">
+                    <path d="M0 130 Q90 150 170 128 T340 140 T520 118 T640 135 L640 165 Q520 148 340 170 T170 158 T0 160Z"/>
+                  </g>
+                  <g fill="rgba(255,122,0,.5)" stroke="rgba(255,160,80,.9)" stroke-width="1">
+                    <rect x="120" y="290" width="42" height="34"/><rect x="176" y="300" width="30" height="28"/>
+                    <rect x="222" y="286" width="52" height="38"/><rect x="292" y="304" width="34" height="26"/>
+                    <rect x="360" y="292" width="46" height="32"/><rect x="424" y="306" width="28" height="24"/>
+                    <rect x="470" y="288" width="50" height="36"/>
+                  </g>
+                  <g stroke="rgba(255,255,255,.55)" stroke-width="3" fill="none" stroke-linecap="round">
+                    <path d="M0 370 Q160 350 320 372 T640 358"/>
+                    <path d="M300 440 L318 372"/>
+                  </g>
+                  <g stroke="rgba(255,255,255,.2)" stroke-width="1" stroke-dasharray="4 4" fill="none">
+                    <path d="M0 220 H640"/><path d="M0 340 H640"/>
+                  </g>
+                </svg>
+              </div>
+
+              <!-- 3 — deliverable -->
+              <div class="layer">
+                <svg viewBox="0 0 640 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <rect width="640" height="440" fill="#f3f7fb"/>
+                  <g stroke="#9db4cc" stroke-width=".8" fill="none" opacity=".7">
+                    <path d="M0 90 Q140 60 280 92 T560 72 T640 96"/><path d="M0 130 Q140 100 280 132 T560 112 T640 136"/>
+                    <path d="M0 170 Q140 140 280 172 T560 152 T640 176"/><path d="M0 210 Q140 180 280 212 T560 192 T640 216"/>
+                    <path d="M0 250 Q140 220 280 252 T560 232 T640 256"/><path d="M0 290 Q140 260 280 292 T560 272 T640 296"/>
+                    <path d="M0 330 Q140 300 280 332 T560 312 T640 336"/>
+                  </g>
+                  <path d="M0 150 Q90 168 170 148 T340 160 T520 138 T640 155 L640 180 Q520 168 340 190 T170 178 T0 180Z" fill="#7fb2e0" opacity=".75"/>
+                  <g fill="#0B1F3A" opacity=".8">
+                    <rect x="120" y="300" width="42" height="34"/><rect x="176" y="310" width="30" height="28"/>
+                    <rect x="222" y="296" width="52" height="38"/><rect x="292" y="314" width="34" height="26"/>
+                    <rect x="360" y="302" width="46" height="32"/><rect x="470" y="298" width="50" height="36"/>
+                  </g>
+                  <path d="M0 380 Q160 360 320 382 T640 368" stroke="#0B1F3A" stroke-width="3.5" fill="none" opacity=".85"/>
+                  <g font-family="JetBrains Mono, monospace" font-size="11" fill="#41566f">
+                    <text x="26" y="34">SHEET 04 / 12 · EPSG:32644</text>
+                    <text x="26" y="418">0</text><text x="118" y="418">500 m</text>
+                  </g>
+                  <g stroke="#0B1F3A" stroke-width="2" opacity=".8"><path d="M26 402 H126"/><path d="M26 397 V407"/><path d="M126 397 V407"/></g>
+                  <g transform="translate(596,44)"><path d="M0 -22 L8 12 L0 4 L-8 12 Z" fill="#0B1F3A" opacity=".85"/><text x="-4" y="30" font-family="JetBrains Mono, monospace" font-size="12" fill="#0B1F3A">N</text></g>
+                </svg>
+              </div>
+
+              <div class="layer-steps" id="geoDots" role="group" aria-label="Jump to stage">
+                <button type="button" data-step="0" aria-pressed="true" aria-label="Stage 1: raw capture"></button>
+                <button type="button" data-step="1" aria-pressed="false" aria-label="Stage 2: point cloud"></button>
+                <button type="button" data-step="2" aria-pressed="false" aria-label="Stage 3: classified"></button>
+                <button type="button" data-step="3" aria-pressed="false" aria-label="Stage 4: deliverable"></button>
+              </div>
+              <div class="layer-cap">
+                <span id="geoCapK">Stage 01</span>
+                <b id="geoCapT">Flight lines, imagery and ground control</b>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="frame-cap">Illustrative rendering of the standard Katxel Geo pipeline — not client data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="pad" id="process">
+  <div class="wrap center reveal">
+    <span class="eyebrow">How we work</span>
+    <h2 class="section-title">Predictable from quote to handover</h2>
+  </div>
+  <div class="wrap">
+    <div class="steps stagger">
+      <div class="step"><div class="bar"></div><h3>Recce &amp; plan</h3><p>Site reconnaissance, accuracy specification, control network design, and flight or traverse planning agreed in writing before mobilisation.</p></div>
+      <div class="step"><div class="bar"></div><h3>Capture</h3><p>Field crews with redundant equipment and logged observations. Daily data backup, so a bad weather window costs a day and not a campaign.</p></div>
+      <div class="step"><div class="bar"></div><h3>Process &amp; QC</h3><p>Adjustment, residual reporting, and independent check points. You get the accuracy statement alongside the data, not on request.</p></div>
+      <div class="step"><div class="bar"></div><h3>Deliver</h3><p>Open formats, documented CRS and metadata, and a walkthrough with whoever will use the layers day to day.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section class="pad deep" id="stack">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Stack</span>
+    <h2 class="section-title on-dark">Open tools, portable output</h2>
+    <p class="section-lead on-dark">Nothing we deliver requires a licence you don't already own.</p>
+  </div>
+  <div class="wrap">
+    <div class="grid-4 stagger">
+      <div class="tech-card"><div class="badge">DESKTOP GIS</div><h3>QGIS <span>/ ArcGIS</span></h3><p>Project files delivered for whichever your team already runs, with styling and layer trees intact.</p></div>
+      <div class="tech-card"><div class="badge">DATABASE</div><h3>Post<span>GIS</span></h3><p>Indexed, topologically valid spatial tables — queryable rather than a folder of loose shapefiles.</p></div>
+      <div class="tech-card"><div class="badge">PROCESSING</div><h3>GDAL <span>/ Python</span></h3><p>Scripted, repeatable pipelines. Re-run next year's capture through the identical process.</p></div>
+      <div class="tech-card"><div class="badge">DELIVERY</div><h3>Web <span>viewers</span></h3><p>Vector and raster tiles served into a simple browser viewer for non-GIS stakeholders.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CROSS-LINKS -->
+<section class="pad-sm dark">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Also from Katxel</span>
+    <h2 class="section-title on-dark">The other two divisions</h2>
+  </div>
+  <div class="wrap">
+    <div class="cross stagger">
+      <a class="cross-card" href="ops.html"><i class="cdot" style="background:var(--ops)"></i><span><b>Katxel Ops</b><span>HRMS, project planning and internal tools</span></span><span class="arrow">→</span></a>
+      <a class="cross-card" href="risk.html"><i class="cdot" style="background:var(--risk)"></i><span><b>Katxel Risk</b><span>Catastrophe and climate risk modelling</span></span><span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="pad" id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <span class="eyebrow">Get in touch</span>
+      <h2 class="section-title">Request a survey quote</h2>
+      <p class="section-lead">Send us the site extent, the accuracy you need, and your deadline. We'll come back with scope, price, and a realistic date.</p>
+      <div class="contact-info">
+        <div class="ci"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg></div><div><b>Email</b><a href="mailto:info.katxel@gmail.com"><span>info.katxel@gmail.com</span></a></div></div>
+        <div class="ci"><div class="ico"><svg viewBox="0 0 24 24"><path d="M21 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 3.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L7.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg></div><div><b>Mobile</b><a href="tel:+919971673480"><span>+91-9971673480</span></a></div></div>
+        <div class="ci"><div class="ico" style="background:rgba(37,211,102,.14)"><svg viewBox="0 0 24 24" fill="#25D366" stroke="none"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .15 11.9C.15 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.41 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.68-1.45L.06 24zM6.6 20.13c1.68 1 3.28 1.6 5.4 1.6 5.45 0 9.9-4.44 9.9-9.9 0-5.46-4.4-9.9-9.9-9.9-5.46 0-9.9 4.44-9.9 9.9 0 2.23.65 3.9 1.74 5.65l-1 3.62 3.76-.97z"/></svg></div><div><b>WhatsApp</b><a href="https://wa.me/919971673480" target="_blank" rel="noopener"><span>+91-9971673480</span></a></div></div>
+        <div class="ci"><div class="ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><b>Office</b><span>Delhi NCR, India · projects across India and abroad</span></div></div>
+      </div>
+    </div>
+
+    <form class="form reveal" data-endpoint="" data-mailto="info.katxel@gmail.com" novalidate>
+      <input type="hidden" name="division" value="Katxel Geo">
+      <div class="row2">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" placeholder="Your full name" required></div>
+        <div class="field"><label for="f-company">Company</label><input id="f-company" name="company" type="text" placeholder="Organization"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" placeholder="you@company.com" required></div>
+        <div class="field"><label for="f-country">Country</label><input id="f-country" name="country" type="text" placeholder="Country"></div>
+      </div>
+      <div class="field"><label for="f-service">Service interest</label>
+        <select id="f-service" name="service">
+          <option>Topographic &amp; cadastral survey</option>
+          <option>Drone survey &amp; photogrammetry</option>
+          <option>Field data collection</option>
+          <option>Remote sensing &amp; image analysis</option>
+          <option>Data processing &amp; GIS build</option>
+          <option>Cartography &amp; web GIS</option>
+        </select>
+      </div>
+      <div class="field"><label for="f-msg">Site &amp; requirement</label><textarea id="f-msg" name="message" placeholder="Location, approximate area, accuracy needed, deadline" required></textarea></div>
+      <button class="btn btn-primary" type="submit">Send enquiry <span class="arrow">→</span></button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+      <p class="form-note">We reply within one business day. No spam, ever.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<a class="wa-float" href="https://wa.me/919971673480" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" stroke="none"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .15 11.9C.15 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.41 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.68-1.45L.06 24zM6.6 20.13c1.68 1 3.28 1.6 5.4 1.6 5.45 0 9.9-4.44 9.9-9.9 0-5.46-4.4-9.9-9.9-9.9-5.46 0-9.9 4.44-9.9 9.9 0 2.23.65 3.9 1.74 5.65l-1 3.62 3.76-.97zm11.39-5.55c-.07-.12-.27-.2-.57-.35-.3-.15-1.76-.87-2.03-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
+</a>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="logo"><svg class="mark" viewBox="0 0 128 128" role="img" aria-label="Katxel logo"><defs><linearGradient id="kgf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient><mask id="kmf"><rect width="128" height="128" fill="black"/><polygon fill="white" points="64,8 20,32 20,96 64,120 108,96 108,32"/><line x1="-20" y1="85.54" x2="148" y2="-4.92" stroke="black" stroke-width="14" stroke-linecap="round"/><line x1="-20" y1="42.46" x2="148" y2="132.92" stroke="black" stroke-width="14" stroke-linecap="round"/></mask></defs><g mask="url(#kmf)"><polygon fill="url(#kgf)" points="64,8 20,32 20,96 64,120 108,96 108,32"/><polygon fill="none" stroke="#0EA5E9" stroke-width="3" points="64,8 20,32 20,96 64,120 108,96 108,32"/></g></svg>KATXEL</a>
+        <p>Geospatial data, business software, and catastrophe risk intelligence — engineered by one team.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Divisions</h4>
+        <a href="geo.html">Katxel Geo</a><a href="ops.html">Katxel Ops</a><a href="risk.html">Katxel Risk</a>
+      </div>
+      <div class="foot-col">
+        <h4>Geo services</h4>
+        <a href="#services">Survey</a><a href="#services">Drone &amp; LiDAR</a><a href="#services">Remote sensing</a><a href="#services">Web GIS</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="index.html#about">About</a><a href="index.html#engage">How we engage</a><a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> Katxel. All rights reserved · katxel.in</span>
+      <div class="socials">
+        <a href="https://wa.me/919971673480" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 20.5l1.8-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg></a>
+        <a href="mailto:info.katxel@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M4 7l8 6 8-6"/></svg></a>
+        <a href="tel:+919971673480" aria-label="Phone"><svg viewBox="0 0 24 24"><path d="M21 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 3.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L7.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
+<script src="assets/hero-lenses.js" defer></script>
+<script>
+/* ---- pipeline stage switcher ---- */
+document.addEventListener('DOMContentLoaded', function () {
+  var STAGES = [
+    { t:'Raw capture',  d:'Flight lines flown, imagery and GNSS logs collected, ground control observed. Nothing is interpreted yet — this is the evidence.',
+      out:'Georeferenced imagery + GNSS logs', gsd:'2 – 5 cm', fmt:'JPG/TIFF, RINEX, CSV', chk:'Overlap, GCP residuals',
+      capK:'Stage 01', capT:'Flight lines, imagery and ground control' },
+    { t:'Point cloud',  d:'Photogrammetric or LiDAR densification into a georeferenced 3D cloud, then filtered into bare-earth and surface models.',
+      out:'Dense cloud, DSM and DTM', gsd:'5 – 10 cm', fmt:'LAS/LAZ, GeoTIFF', chk:'Check-point RMSE',
+      capK:'Stage 02', capT:'Dense cloud, filtered to bare earth' },
+    { t:'Classified',   d:'Features extracted and attributed — buildings, roads, water, vegetation, utilities — with topology cleaned and validated.',
+      out:'Attributed vector feature classes', gsd:'1:1,000 – 1:5,000', fmt:'GeoPackage, PostGIS', chk:'Topology + attribute rules',
+      capK:'Stage 03', capT:'Features extracted, attributed and validated' },
+    { t:'Deliverable',  d:'Cartographic map series, web viewer, and a documented database — with the accuracy statement and metadata attached.',
+      out:'Map sheets, tiles, spatial database', gsd:'As specified', fmt:'PDF, MBTiles, GPKG, QGZ', chk:'Independent QC sign-off',
+      capK:'Stage 04', capT:'Sheet series, tiles and documented database' }
+  ];
+
+  var layers = document.querySelectorAll('#geoLayers .layer');
+  var chips  = document.querySelectorAll('#geoChips .chip');
+  var dots   = document.querySelectorAll('#geoDots button');
+  var el = function (id) { return document.getElementById(id); };
+
+  function show(i) {
+    var s = STAGES[i];
+    layers.forEach(function (l, k) { l.dataset.on = (k === i) ? 'true' : 'false'; });
+    chips.forEach(function (c) { c.setAttribute('aria-pressed', +c.dataset.step === i ? 'true' : 'false'); });
+    dots.forEach(function (d) { d.setAttribute('aria-pressed', +d.dataset.step === i ? 'true' : 'false'); });
+    el('geoTitle').textContent = s.t;   el('geoDesc').textContent = s.d;
+    el('geoOut').textContent   = s.out; el('geoGsd').textContent  = s.gsd;
+    el('geoFmt').textContent   = s.fmt; el('geoChk').textContent  = s.chk;
+    el('geoCapK').textContent  = s.capK; el('geoCapT').textContent = s.capT;
+    el('geoStageNo').textContent = i + 1;
+  }
+
+  [].concat([].slice.call(chips), [].slice.call(dots)).forEach(function (b) {
+    b.addEventListener('click', function () { show(+b.dataset.step); });
+  });
+
+  /* scatter a pseudo point cloud — deterministic, no Math.random */
+  var cloud = document.getElementById('geoCloud');
+  if (cloud) {
+    var ns = 'http://www.w3.org/2000/svg', out = '';
+    for (var r = 0; r < 26; r++) {
+      for (var c = 0; c < 44; c++) {
+        var x = 12 + c * 14.4 + (r % 2) * 7;
+        var elev = Math.sin(c * 0.28 + r * 0.19) * 22 + Math.sin(c * 0.11 - r * 0.33) * 16;
+        var y = 70 + r * 13.6 - elev;
+        var norm = (elev + 38) / 76;                       // 0..1
+        var rad = (0.9 + norm * 1.5).toFixed(2);
+        var op = (0.18 + norm * 0.62).toFixed(2);
+        var col = norm > 0.62 ? '#7DF2DE' : (norm > 0.34 ? '#00C2A8' : '#1E5F7A');
+        out += '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="' + rad + '" fill="' + col + '" opacity="' + op + '"/>';
+      }
+    }
+    cloud.innerHTML = out;
+  }
+
+  show(0);
+});
+</script>
+</body>
+</html>
