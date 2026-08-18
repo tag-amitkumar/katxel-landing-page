@@ -13,7 +13,7 @@
   var ctx = cv.getContext('2d');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  var RGB = { geo: '0,194,168', ops: '99,102,241', risk: '255,122,0', learn: '236,72,153' };
+  var RGB = { geo: '0,194,168', ops: '99,102,241', risk: '255,122,0', learn: '34,197,94' };
   var ORDER = ['geo', 'ops', 'risk', 'learn'];
   var WHITE = '255,255,255';
 

@@ -43,7 +43,7 @@ the accent colour, set once on `<body>`:
 <body data-vertical="geo">   <!-- teal   #00C2A8 -->
 <body data-vertical="ops">   <!-- indigo #6366F1 -->
 <body data-vertical="risk">  <!-- orange #FF7A00 -->
-<body data-vertical="learn"> <!-- rose   #EC4899 -->
+<body data-vertical="learn"> <!-- green  #22C55E -->
 ```
 
 Every component reads `var(--accent)` / `var(--accent-rgb)`, so buttons, icons,
