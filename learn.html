@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Katxel Learn — IT &amp; GIS Training, Internships and Placement</title>
+<meta name="description" content="Project-based GIS and IT training with mentor-reviewed work, live projects, internship certification and placement support. Katxel Learn trains students and working teams in practical geospatial and software skills.">
+<link rel="canonical" href="https://katxel.in/learn">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Katxel">
+<meta property="og:url" content="https://katxel.in/learn">
+<meta property="og:title" content="Katxel Learn — IT & GIS Training, Internships and Placement">
+<meta property="og:description" content="GIS and IT training built on live projects, with internship certification and placement support.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script>document.documentElement.classList.add('anim')</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Katxel Learn",
+"url":"https://katxel.in/learn","email":"info.katxel@gmail.com","telephone":"+91-9971673480",
+"parentOrganization":{"@type":"Organization","name":"Katxel","url":"https://katxel.in/"},
+"address":{"@type":"PostalAddress","addressRegion":"Delhi NCR","addressCountry":"IN"},
+"description":"Project-based GIS and IT training with mentor-reviewed work, internship certification and placement support."}
+</script>
+</head>
+<body data-vertical="learn">
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="logo" aria-label="Katxel Learn home">
+      <svg class="mark" viewBox="0 0 128 128" role="img" aria-label="Katxel logo" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="kg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient>
+          <mask id="km"><rect width="128" height="128" fill="black"/><polygon fill="white" points="64,8 20,32 20,96 64,120 108,96 108,32"/><line x1="-20" y1="85.54" x2="148" y2="-4.92" stroke="black" stroke-width="14" stroke-linecap="round"/><line x1="-20" y1="42.46" x2="148" y2="132.92" stroke="black" stroke-width="14" stroke-linecap="round"/></mask>
+        </defs>
+        <g mask="url(#km)"><polygon fill="url(#kg)" points="64,8 20,32 20,96 64,120 108,96 108,32"/><polygon fill="none" stroke="#0EA5E9" stroke-width="3" points="64,8 20,32 20,96 64,120 108,96 108,32"/></g>
+      </svg>
+      KATXEL<span class="div-sep">/</span><span class="div-name">Learn</span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <div class="dd" data-open="false">
+        <button type="button" aria-expanded="false" aria-haspopup="true">Divisions
+          <svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="dd-panel">
+          <a class="dd-item" href="/geo"><i class="di-dot" style="background:var(--geo)"></i><span><b>Katxel Geo</b><span>GIS, survey, data collection &amp; processing</span></span></a>
+          <a class="dd-item" href="/ops"><i class="di-dot" style="background:var(--ops)"></i><span><b>Katxel Ops</b><span>HRMS, project planning &amp; internal tools</span></span></a>
+          <a class="dd-item" href="/risk"><i class="di-dot" style="background:var(--risk)"></i><span><b>Katxel Risk</b><span>Catastrophe &amp; climate risk modelling</span></span></a>
+          <a class="dd-item" href="/learn" aria-current="page"><i class="di-dot" style="background:var(--learn)"></i><span><b>Katxel Learn</b><span>IT &amp; GIS training, internships &amp; placement</span></span></a>
+        </div>
+      </div>
+      <a href="#tracks">Tracks</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#internships">Internships</a>
+      <a href="#process">How it works</a>
+      <a href="#contact" class="only-mobile">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-ghost">Talk to us</a>
+      <a href="#contact" class="btn btn-primary">Apply for a cohort</a>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">Katxel Learn · training &amp; placement</span>
+      <h1>Training that ends in <span class="hl">work you can show</span></h1>
+      <p class="sub">GIS and IT training run the way we run client projects — real data, mentor review, and a portfolio at the end. Internship certification on completion, and placement support for those who want it.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Apply for a cohort <span class="arrow">→</span></a>
+        <a href="#curriculum" class="btn btn-ghost">See the curriculum</a>
+      </div>
+      <div class="hero-tags">
+        <span>GIS</span><span>REMOTE SENSING</span><span>WEB DEV</span><span>DATA</span><span>INTERNSHIPS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat"><div class="num" data-count="4" data-suffix="">0</div><div class="lab">Training tracks</div></div>
+    <div class="stat"><div class="num" data-count="8" data-suffix="">0</div><div class="lab">Weeks per cohort</div></div>
+    <div class="stat"><div class="num" data-count="3" data-suffix="">0</div><div class="lab">Live projects per track</div></div>
+    <div class="stat"><div class="num" data-count="100" data-suffix="%">0<span class="suf">%</span></div><div class="lab">Mentor-reviewed work</div></div>
+  </div>
+</section>
+
+<!-- TRACKS -->
+<section class="pad" id="tracks">
+  <div class="wrap center reveal">
+    <span class="eyebrow">What we teach</span>
+    <h2 class="section-title">Four tracks, one way of working</h2>
+    <p class="section-lead">Every track is taught by the engineers who do this for clients, using the same tools and the same review standards.</p>
+  </div>
+  <div class="wrap">
+    <div class="grid-3 stagger">
+
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M9 3L3 6v15l6-3 6 3 6-3V3l-6 3-6-3zM9 3v15M15 6v15"/></svg></div>
+        <h3>GIS &amp; remote sensing</h3>
+        <p>QGIS and ArcGIS, coordinate systems done properly, digitisation, spatial analysis, and satellite image classification on real datasets.</p>
+        <span class="more">QGIS · PostGIS · GDAL →</span>
+      </div>
+
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/><path d="M9 12h6M12 9v6"/></svg></div>
+        <h3>Web &amp; application development</h3>
+        <p>HTML, CSS and JavaScript through to a working database-backed application, with version control and deployment from week one.</p>
+        <span class="more">JS · SQL · Git →</span>
+      </div>
+
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18M7 15l4-5 3 3 5-7"/></svg></div>
+        <h3>Data analysis &amp; visualisation</h3>
+        <p>Python and R for cleaning messy data, statistics that hold up, and dashboards someone other than the author can read.</p>
+        <span class="more">Python · R · dashboards →</span>
+      </div>
+
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 12l7-4-7-4-7 4 7 4zM5 8v6l7 4 7-4V8"/></svg></div>
+        <h3>Drone data processing</h3>
+        <p>From flight imagery to orthomosaics, DSM and DTM — the photogrammetry workflow our survey teams run on live sites.</p>
+        <span class="more">Photogrammetry →</span>
+      </div>
+
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3v6M12 21v-6M4.2 7.2l4.3 2.5M19.8 16.8l-4.3-2.5M4.2 16.8l4.3-2.5M19.8 7.2l-4.3 2.5"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Internship programme</h3>
+        <p>A supervised placement inside a live Katxel project — real tasks, real review, and a certificate that describes what you actually did.</p>
+        <span class="more">Supervised, certified →</span>
+      </div>
+
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0M16.5 5.5a3 3 0 0 1 0 5.6M18 20a5.6 5.6 0 0 0-3-4.6"/></svg></div>
+        <h3>Corporate &amp; team training</h3>
+        <p>Scoped to your stack and delivered at your office or online — for teams adopting GIS, moving off spreadsheets, or onboarding new hires.</p>
+        <span class="more">On-site or online →</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="pad soft" id="curriculum">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Curriculum</span>
+    <h2 class="section-title">Week by week, not topic by topic</h2>
+    <p class="section-lead">Pick a track to see how a cohort actually runs.</p>
+  </div>
+  <div class="wrap">
+    <div class="showcase">
+      <div class="reveal">
+        <div class="chips" id="trackChips" role="group" aria-label="Training track">
+          <button class="chip" type="button" data-track="0" aria-pressed="true"><i></i>GIS &amp; remote sensing</button>
+          <button class="chip" type="button" data-track="1" aria-pressed="false"><i></i>Web &amp; app dev</button>
+          <button class="chip" type="button" data-track="2" aria-pressed="false"><i></i>Data analysis</button>
+          <button class="chip" type="button" data-track="3" aria-pressed="false"><i></i>Drone processing</button>
+        </div>
+        <div class="panel">
+          <h3 id="trTitle">GIS &amp; remote sensing</h3>
+          <p class="desc" id="trDesc">Start from coordinate systems and finish with a classified satellite image and a published web map of your own.</p>
+          <div class="metrics">
+            <div class="hm"><div class="k">Duration</div><div class="v" id="trDur">8 weeks</div></div>
+            <div class="hm"><div class="k">Level</div><div class="v" id="trLvl">Beginner → intermediate</div></div>
+            <div class="hm"><div class="k">Prerequisites</div><div class="v" id="trPre">Basic computer literacy</div></div>
+            <div class="hm"><div class="k">You finish with</div><div class="v" id="trOut">3 portfolio projects</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="frame">
+          <div class="frame-bar">
+            <span class="fb-dot"></span><span class="fb-dot"></span><span class="fb-dot"></span>
+            <span class="fb-title">katxel-learn · cohort plan</span>
+            <span class="fb-live"><b></b>TRACK <span id="trNo">1</span>/4</span>
+          </div>
+          <div class="mods" id="trMods"></div>
+        </div>
+        <p class="frame-cap">Indicative plan. Cohorts are adjusted to the group's starting level, and corporate training is scoped to your own stack.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERNSHIPS -->
+<section class="pad" id="internships">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Internships &amp; certification</span>
+    <h2 class="section-title">A certificate that says something</h2>
+    <p class="section-lead">Anyone can print a completion slip. Ours names the project, the tools and the work you were responsible for — so it stands up in an interview.</p>
+  </div>
+  <div class="wrap">
+    <div class="showcase">
+      <div class="reveal">
+        <div class="cert">
+          <div class="cert-inner">
+            <div class="seal"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M8.5 13.5L7 22l5-2.5L17 22l-1.5-8.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="ct">Certificate of Internship</div>
+            <h3>Katxel Learn</h3>
+            <p>Awarded on completion of a supervised placement, naming the project worked on, the tools used, and the tasks carried out.</p>
+            <div class="rule"></div>
+            <div class="meta"><span>PROJECT NAMED</span><span>MENTOR SIGNED</span><span>VERIFIABLE</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="panel">
+          <h3>How the internship runs</h3>
+          <p class="desc">Interns join a live Katxel project rather than a training sandbox. The work is scoped to be genuinely useful but never on the critical path of a client deadline.</p>
+          <ul style="margin:22px 0 0;display:flex;flex-direction:column;gap:14px;list-style:none">
+            <li style="display:flex;gap:12px;align-items:flex-start;color:var(--slate);font-size:15.5px"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:var(--accent-soft);display:grid;place-items:center;margin-top:2px"><svg viewBox="0 0 24 24" style="width:12px;height:12px;stroke:var(--accent);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round"><path d="M5 13l4 4L19 7"/></svg></span>Assigned to a named mentor from the delivery team</li>
+            <li style="display:flex;gap:12px;align-items:flex-start;color:var(--slate);font-size:15.5px"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:var(--accent-soft);display:grid;place-items:center;margin-top:2px"><svg viewBox="0 0 24 24" style="width:12px;height:12px;stroke:var(--accent);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round"><path d="M5 13l4 4L19 7"/></svg></span>Weekly review against the same standard we apply to internal work</li>
+            <li style="display:flex;gap:12px;align-items:flex-start;color:var(--slate);font-size:15.5px"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:var(--accent-soft);display:grid;place-items:center;margin-top:2px"><svg viewBox="0 0 24 24" style="width:12px;height:12px;stroke:var(--accent);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round"><path d="M5 13l4 4L19 7"/></svg></span>A portfolio you keep and can show, not a certificate alone</li>
+            <li style="display:flex;gap:12px;align-items:flex-start;color:var(--slate);font-size:15.5px"><span style="flex:none;width:22px;height:22px;border-radius:50%;background:var(--accent-soft);display:grid;place-items:center;margin-top:2px"><svg viewBox="0 0 24 24" style="width:12px;height:12px;stroke:var(--accent);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round"><path d="M5 13l4 4L19 7"/></svg></span>Placement support: CV review, interview practice, and introductions where we can make them</li>
+          </ul>
+          <p style="margin-top:22px;color:var(--slate-2);font-size:14px">
+            We help with placement — we do not guarantee it, and you should be wary of anyone who does.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="pad soft" id="process">
+  <div class="wrap center reveal">
+    <span class="eyebrow">How it works</span>
+    <h2 class="section-title">From enquiry to certificate</h2>
+  </div>
+  <div class="wrap">
+    <div class="steps stagger">
+      <div class="step"><div class="bar"></div><h3>Talk first</h3><p>A short call to work out which track fits, what you already know, and whether we are honestly the right option for what you want next.</p></div>
+      <div class="step"><div class="bar"></div><h3>Cohort</h3><p>Taught sessions and supervised lab work in small groups, using real data rather than tidy textbook samples.</p></div>
+      <div class="step"><div class="bar"></div><h3>Project</h3><p>Three assessed projects that go into your portfolio, each reviewed the way we review internal work.</p></div>
+      <div class="step"><div class="bar"></div><h3>Internship</h3><p>Optional supervised placement on a live project, ending in a certificate that names what you did — plus placement support.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT IS FOR -->
+<section class="pad deep">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Who it's for</span>
+    <h2 class="section-title on-dark">Four kinds of people sit in these rooms</h2>
+  </div>
+  <div class="wrap">
+    <div class="grid-4 stagger">
+      <div class="tech-card"><div class="badge">STUDENTS</div><h3>Final <span>year</span></h3><p>Civil, geoinformatics, computer science and geography students who need a project and a credential with substance behind it.</p></div>
+      <div class="tech-card"><div class="badge">GRADUATES</div><h3>Career <span>starters</span></h3><p>Graduates with a degree but no portfolio, who need demonstrable work before anyone will interview them.</p></div>
+      <div class="tech-card"><div class="badge">PROFESSIONALS</div><h3>Switching <span>in</span></h3><p>Working professionals moving into GIS or software from an adjacent field, training around a job.</p></div>
+      <div class="tech-card"><div class="badge">TEAMS</div><h3>Corporate <span>groups</span></h3><p>Organisations adopting GIS or modernising internal tools, who need existing staff brought up to speed.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CROSS-LINKS -->
+<section class="pad-sm dark">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Also from Katxel</span>
+    <h2 class="section-title on-dark">The other three divisions</h2>
+  </div>
+  <div class="wrap">
+    <div class="cross stagger">
+      <a class="cross-card" href="/geo"><i class="cdot" style="background:var(--geo)"></i><span><b>Katxel Geo</b><span>GIS, survey, data collection and processing</span></span><span class="arrow">→</span></a>
+      <a class="cross-card" href="/ops"><i class="cdot" style="background:var(--ops)"></i><span><b>Katxel Ops</b><span>HRMS, project planning and internal tools</span></span><span class="arrow">→</span></a>
+      <a class="cross-card" href="/risk"><i class="cdot" style="background:var(--risk)"></i><span><b>Katxel Risk</b><span>Catastrophe and climate risk modelling</span></span><span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="pad" id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <span class="eyebrow">Get in touch</span>
+      <h2 class="section-title">Apply for a cohort</h2>
+      <p class="section-lead">Tell us where you are starting from and what you want to be able to do afterwards. We will tell you which track fits — or if none of them do.</p>
+      <div class="contact-info">
+        <div class="ci"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg></div><div><b>Email</b><a href="mailto:info.katxel@gmail.com"><span>info.katxel@gmail.com</span></a></div></div>
+        <div class="ci"><div class="ico"><svg viewBox="0 0 24 24"><path d="M21 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 3.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L7.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg></div><div><b>Mobile</b><a href="tel:+919971673480"><span>+91-9971673480</span></a></div></div>
+        <div class="ci"><div class="ico" style="background:rgba(37,211,102,.14)"><svg viewBox="0 0 24 24" fill="#25D366" stroke="none"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .15 11.9C.15 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.41 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.68-1.45L.06 24zM6.6 20.13c1.68 1 3.28 1.6 5.4 1.6 5.45 0 9.9-4.44 9.9-9.9 0-5.46-4.4-9.9-9.9-9.9-5.46 0-9.9 4.44-9.9 9.9 0 2.23.65 3.9 1.74 5.65l-1 3.62 3.76-.97z"/></svg></div><div><b>WhatsApp</b><a href="https://wa.me/919971673480" target="_blank" rel="noopener"><span>+91-9971673480</span></a></div></div>
+        <div class="ci"><div class="ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><b>Where</b><span>Delhi NCR, India · online cohorts worldwide</span></div></div>
+      </div>
+    </div>
+
+    <form class="form reveal" data-endpoint="" data-mailto="info.katxel@gmail.com" novalidate>
+      <input type="hidden" name="division" value="Katxel Learn">
+      <div class="row2">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" placeholder="Your full name" required></div>
+        <div class="field"><label for="f-company">College / company</label><input id="f-company" name="company" type="text" placeholder="Where you study or work"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" placeholder="you@example.com" required></div>
+        <div class="field"><label for="f-country">City</label><input id="f-country" name="country" type="text" placeholder="City"></div>
+      </div>
+      <div class="field"><label for="f-service">Track</label>
+        <select id="f-service" name="service">
+          <option>GIS &amp; remote sensing</option>
+          <option>Web &amp; application development</option>
+          <option>Data analysis &amp; visualisation</option>
+          <option>Drone data processing</option>
+          <option>Internship programme</option>
+          <option>Corporate / team training</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="field"><label for="f-msg">Where are you starting from?</label><textarea id="f-msg" name="message" placeholder="What you have studied or worked on so far, and what you want to be able to do afterwards" required></textarea></div>
+      <button class="btn btn-primary" type="submit">Send enquiry <span class="arrow">→</span></button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+      <p class="form-note">We reply within one business day. No spam, ever.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<a class="wa-float" href="https://wa.me/919971673480" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" stroke="none"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .15 11.9C.15 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.41 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.68-1.45L.06 24zM6.6 20.13c1.68 1 3.28 1.6 5.4 1.6 5.45 0 9.9-4.44 9.9-9.9 0-5.46-4.4-9.9-9.9-9.9-5.46 0-9.9 4.44-9.9 9.9 0 2.23.65 3.9 1.74 5.65l-1 3.62 3.76-.97zm11.39-5.55c-.07-.12-.27-.2-.57-.35-.3-.15-1.76-.87-2.03-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
+</a>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="/" class="logo"><svg class="mark" viewBox="0 0 128 128" role="img" aria-label="Katxel logo"><defs><linearGradient id="kgf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient><mask id="kmf"><rect width="128" height="128" fill="black"/><polygon fill="white" points="64,8 20,32 20,96 64,120 108,96 108,32"/><line x1="-20" y1="85.54" x2="148" y2="-4.92" stroke="black" stroke-width="14" stroke-linecap="round"/><line x1="-20" y1="42.46" x2="148" y2="132.92" stroke="black" stroke-width="14" stroke-linecap="round"/></mask></defs><g mask="url(#kmf)"><polygon fill="url(#kgf)" points="64,8 20,32 20,96 64,120 108,96 108,32"/><polygon fill="none" stroke="#0EA5E9" stroke-width="3" points="64,8 20,32 20,96 64,120 108,96 108,32"/></g></svg>KATXEL</a>
+        <p>Geospatial data, business software, catastrophe risk intelligence and technical training — engineered by one team.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Divisions</h4>
+        <a href="/geo">Katxel Geo</a><a href="/ops">Katxel Ops</a><a href="/risk">Katxel Risk</a><a href="/learn">Katxel Learn</a>
+      </div>
+      <div class="foot-col">
+        <h4>Learn</h4>
+        <a href="#tracks">Tracks</a><a href="#curriculum">Curriculum</a><a href="#internships">Internships</a><a href="#process">How it works</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="/#about">About</a><a href="/#engage">How we engage</a><a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> Katxel. All rights reserved · katxel.in</span>
+      <div class="socials">
+        <a href="https://wa.me/919971673480" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 20.5l1.8-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg></a>
+        <a href="mailto:info.katxel@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M4 7l8 6 8-6"/></svg></a>
+        <a href="tel:+919971673480" aria-label="Phone"><svg viewBox="0 0 24 24"><path d="M21 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 3.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L7.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
+<script src="assets/hero-lenses.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var TRACKS = [
+    { t:'GIS &amp; remote sensing',
+      d:'Start from coordinate systems and finish with a classified satellite image and a published web map of your own.',
+      dur:'8 weeks', lvl:'Beginner → intermediate', pre:'Basic computer literacy', out:'3 portfolio projects',
+      mods:[['W1–2','Coordinate systems, projections and data hygiene','FOUNDATION'],
+            ['W3','Digitisation and editing on real base maps','LAB'],
+            ['W4','Spatial analysis: buffers, overlays, joins','LAB'],
+            ['W5','Satellite imagery and band combinations','FOUNDATION'],
+            ['W6','Supervised classification and accuracy checks','PROJECT'],
+            ['W7','PostGIS and querying spatial data','LAB'],
+            ['W8','Publishing a web map and portfolio review','PROJECT']] },
+    { t:'Web &amp; application development',
+      d:'From first HTML page to a database-backed application, deployed and under version control from the first week.',
+      dur:'8 weeks', lvl:'Beginner → intermediate', pre:'None', out:'A deployed application',
+      mods:[['W1','HTML, CSS and how the browser actually works','FOUNDATION'],
+            ['W2','JavaScript fundamentals and the DOM','FOUNDATION'],
+            ['W3','Git, branching and working in a team','LAB'],
+            ['W4–5','Databases and SQL, modelling a real schema','LAB'],
+            ['W6','Server-side logic and APIs','PROJECT'],
+            ['W7','Authentication, validation and error handling','PROJECT'],
+            ['W8','Deployment, monitoring and handover','PROJECT']] },
+    { t:'Data analysis &amp; visualisation',
+      d:'Cleaning messy real-world data, applying statistics that survive scrutiny, and building dashboards other people can read.',
+      dur:'8 weeks', lvl:'Beginner → intermediate', pre:'Comfort with spreadsheets', out:'3 analyses + a dashboard',
+      mods:[['W1','Python basics and the data ecosystem','FOUNDATION'],
+            ['W2','Loading, cleaning and reshaping messy data','LAB'],
+            ['W3','Exploratory analysis and honest summary statistics','LAB'],
+            ['W4','Charting: what to use and what to avoid','FOUNDATION'],
+            ['W5','R for statistics and reporting','LAB'],
+            ['W6–7','Dashboard build on a live dataset','PROJECT'],
+            ['W8','Presenting findings and portfolio review','PROJECT']] },
+    { t:'Drone data processing',
+      d:'The photogrammetry workflow our survey teams run on live sites, from raw flight imagery to survey-grade deliverables.',
+      dur:'6 weeks', lvl:'Intermediate', pre:'Basic GIS knowledge', out:'Ortho, DSM and DTM outputs',
+      mods:[['W1','Flight planning, overlap and ground control','FOUNDATION'],
+            ['W2','Image quality checks and preprocessing','LAB'],
+            ['W3','Bundle adjustment and dense cloud generation','LAB'],
+            ['W4','Filtering to bare earth: DSM versus DTM','LAB'],
+            ['W5','Orthomosaic production and volumetrics','PROJECT'],
+            ['W6','Accuracy reporting and client deliverables','PROJECT']] }
+  ];
+
+  var el = function (id) { return document.getElementById(id); };
+  var chips = document.querySelectorAll('#trackChips .chip');
+
+  function show(i) {
+    var tr = TRACKS[i];
+    chips.forEach(function (c) { c.setAttribute('aria-pressed', +c.dataset.track === i ? 'true' : 'false'); });
+    el('trTitle').innerHTML = tr.t;   el('trDesc').textContent = tr.d;
+    el('trDur').textContent  = tr.dur; el('trLvl').textContent = tr.lvl;
+    el('trPre').textContent  = tr.pre; el('trOut').textContent = tr.out;
+    el('trNo').textContent   = i + 1;
+
+    var html = '<div class="mods-head"><b>' + tr.t + '</b><span>' + tr.mods.length + ' MODULES</span></div>';
+    tr.mods.forEach(function (m) {
+      html += '<div class="mod"><span class="wk">' + m[0] + '</span><b>' + m[1] + '</b><span class="kind">' + m[2] + '</span></div>';
+    });
+    html += '<div class="mods-foot">Every module ends in reviewed work, not a quiz.</div>';
+    el('trMods').innerHTML = html;
+  }
+
+  chips.forEach(function (c) { c.addEventListener('click', function () { show(+c.dataset.track); }); });
+  show(0);
+});
+</script>
+</body>
+</html>

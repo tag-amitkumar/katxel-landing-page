@@ -1,8 +1,8 @@
 /* ==========================================================================
-   Katxel homepage — "Three Lenses" hero canvas
-   One canvas, three visual states (geo / ops / risk) that crossfade into each
-   other. Auto-cycles on load so a passive visitor sees all three, then locks
-   to whichever division the visitor hovers or selects.
+   Katxel homepage — "Lenses" hero canvas
+   One canvas, four visual states (geo / ops / risk / learn) that crossfade
+   into each other. Auto-cycles on load so a passive visitor sees them all,
+   then locks to whichever division the visitor hovers or selects.
    Exposes window.KatxelLenses = { set, stopCycle }.
    ========================================================================== */
 (function () {
@@ -13,8 +13,8 @@
   var ctx = cv.getContext('2d');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  var RGB = { geo: '0,194,168', ops: '99,102,241', risk: '255,122,0' };
-  var ORDER = ['geo', 'ops', 'risk'];
+  var RGB = { geo: '0,194,168', ops: '99,102,241', risk: '255,122,0', learn: '236,72,153' };
+  var ORDER = ['geo', 'ops', 'risk', 'learn'];
   var WHITE = '255,255,255';
 
   var W = 0, H = 0, DPR = 1, raf = null, visible = true, ready = false;
@@ -271,7 +271,66 @@
     ctx.restore();
   }
 
-  var DRAW = { geo: drawGeo, ops: drawOps, risk: drawRisk };
+  /* ---------- lens: LEARN — curriculum tracks filling up ---------- */
+  var tracks = [
+    { y: .28, n: 6, ph: 0.0, sp: .30 },
+    { y: .50, n: 8, ph: 1.4, sp: .24 },
+    { y: .72, n: 5, ph: 2.6, sp: .34 }
+  ];
+
+  function drawLearn(t, rgb, alpha) {
+    ctx.save(); ctx.globalAlpha = alpha;
+
+    for (var r = 0; r < tracks.length; r++) {
+      var tr = tracks[r], y = tr.y * H;
+      var x0 = W * 0.08, x1 = W * 0.92, span = x1 - x0;
+      var prog = ((Math.sin(t * tr.sp + tr.ph) + 1) / 2);   // 0..1 sweep
+      var done = prog * (tr.n - 1);
+
+      // the track line: dim ahead, bright behind the sweep
+      ctx.beginPath(); ctx.moveTo(x0, y); ctx.lineTo(x1, y);
+      ctx.strokeStyle = 'rgba(' + rgb + ',.10)'; ctx.lineWidth = 2; ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(x0, y); ctx.lineTo(x0 + span * prog, y);
+      ctx.strokeStyle = 'rgba(' + rgb + ',.42)'; ctx.lineWidth = 2; ctx.stroke();
+
+      for (var i = 0; i < tr.n; i++) {
+        var nx = x0 + (span / (tr.n - 1)) * i;
+        var complete = i < Math.floor(done);
+        var current = i === Math.floor(done);
+
+        if (complete) {
+          ctx.fillStyle = 'rgba(' + rgb + ',.55)';
+          ctx.beginPath(); ctx.arc(nx, y, 5, 0, 6.2832); ctx.fill();
+        } else {
+          ctx.strokeStyle = 'rgba(' + rgb + ',.28)'; ctx.lineWidth = 1.4;
+          ctx.beginPath(); ctx.arc(nx, y, 5, 0, 6.2832); ctx.stroke();
+        }
+
+        // the module currently in progress carries a sweeping ring
+        if (current) {
+          var frac = done - Math.floor(done);
+          ctx.strokeStyle = 'rgba(' + rgb + ',.85)'; ctx.lineWidth = 2.2;
+          ctx.beginPath(); ctx.arc(nx, y, 11, -1.5708, -1.5708 + frac * 6.2832); ctx.stroke();
+          ctx.fillStyle = 'rgba(' + rgb + ',.9)';
+          ctx.beginPath(); ctx.arc(nx, y, 3.2, 0, 6.2832); ctx.fill();
+        }
+      }
+
+      // links down to the next track, suggesting a progression between levels
+      if (r < tracks.length - 1) {
+        var nyt = tracks[r + 1].y * H;
+        var lx = x0 + span * (0.22 + r * 0.3);
+        ctx.beginPath();
+        ctx.moveTo(lx, y + 6);
+        ctx.bezierCurveTo(lx, y + (nyt - y) * .5, lx + 46, y + (nyt - y) * .5, lx + 46, nyt - 6);
+        ctx.strokeStyle = 'rgba(' + rgb + ',.20)'; ctx.lineWidth = 1.2;
+        ctx.setLineDash([3, 5]); ctx.stroke(); ctx.setLineDash([]);
+      }
+    }
+    ctx.restore();
+  }
+
+  var DRAW = { geo: drawGeo, ops: drawOps, risk: drawRisk, learn: drawLearn };
 
   /* ---------- frame loop ---------- */
   var t0 = performance.now();
@@ -339,6 +398,19 @@
       ],
       bars: [92, 64, 78, 41, 86, 55, 70, 33],
       foot: 'Hazard → vulnerability → portfolio loss'
+    },
+    learn: {
+      h: 'Training that ends in <span class="hl">work you can show</span>',
+      s: 'GIS and IT training built on live projects, mentor-reviewed work, and an internship certificate — practical skills rather than slideware.',
+      title: 'Katxel Learn', tag: 'TRAINING',
+      cells: [
+        ['Training tracks', '4'],
+        ['Cohort length', '8 weeks'],
+        ['Live projects', '3 per track'],
+        ['On completion', 'Internship certificate']
+      ],
+      bars: [18, 29, 38, 50, 61, 73, 84, 95],
+      foot: 'Learn → build → review → certify'
     }
   };
   var h1 = document.getElementById('lensH1');

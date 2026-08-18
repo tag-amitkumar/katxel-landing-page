@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Katxel design system — shared by index / geo / ops / risk
+   Katxel design system — shared by index / geo / ops / risk / learn
    Accent colour is the only thing that changes per division. Every component
    reads var(--accent); pages set it once via body[data-vertical].
    ========================================================================== */
@@ -19,6 +19,7 @@
   --geo:#00C2A8;      --geo-rgb:0,194,168;
   --ops:#6366F1;      --ops-rgb:99,102,241;
   --risk:#FF7A00;     --risk-rgb:255,122,0;
+  --learn:#EC4899;    --learn-rgb:236,72,153;
 
   /* active accent — overridden per page below */
   --accent:#00C2A8;
@@ -38,6 +39,7 @@
 body[data-vertical="geo"] {--accent:var(--geo); --accent-rgb:var(--geo-rgb)}
 body[data-vertical="ops"] {--accent:var(--ops); --accent-rgb:var(--ops-rgb)}
 body[data-vertical="risk"]{--accent:var(--risk);--accent-rgb:var(--risk-rgb)}
+body[data-vertical="learn"]{--accent:var(--learn);--accent-rgb:var(--learn-rgb)}
 
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:84px}
@@ -205,7 +207,7 @@ section{position:relative}
   border-top:1px solid rgba(255,255,255,.08);
 }
 .lens-rail{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:40px 0 44px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:40px 0 44px;
 }
 .lens{
   position:relative;text-align:left;cursor:pointer;overflow:hidden;
@@ -230,12 +232,15 @@ section{position:relative}
 .lens[data-lens="geo"]  .go{color:var(--geo)}
 .lens[data-lens="ops"]  .go{color:var(--ops)}
 .lens[data-lens="risk"] .go{color:var(--risk)}
+.lens[data-lens="learn"] .go{color:var(--learn)}
 .lens[data-lens="geo"]  b i{background:var(--geo)}
 .lens[data-lens="ops"]  b i{background:var(--ops)}
 .lens[data-lens="risk"] b i{background:var(--risk)}
+.lens[data-lens="learn"] b i{background:var(--learn)}
 .lens[data-lens="geo"]::after {background:var(--geo)}
 .lens[data-lens="ops"]::after {background:var(--ops)}
 .lens[data-lens="risk"]::after{background:var(--risk)}
+.lens[data-lens="learn"]::after{background:var(--learn)}
 /* auto-cycle progress bar */
 .lens .tick{position:absolute;left:0;bottom:0;height:3px;width:100%;transform:scaleX(0);transform-origin:left;opacity:.55}
 .lens[data-active="true"][data-cycling="true"] .tick{animation:lensTick 4.2s linear forwards}
@@ -243,6 +248,7 @@ section{position:relative}
 .lens[data-lens="geo"] .tick {background:var(--geo)}
 .lens[data-lens="ops"] .tick {background:var(--ops)}
 .lens[data-lens="risk"] .tick{background:var(--risk)}
+.lens[data-lens="learn"] .tick{background:var(--learn)}
 
 /* ---------- stats ---------- */
 .stats{background:var(--navy-deep);color:#fff;border-top:1px solid rgba(255,255,255,.06)}
@@ -472,7 +478,7 @@ section{position:relative}
 .form-status[data-state="ok"]{color:var(--accent);font-weight:600}
 
 /* ---------- cross-links to other divisions ---------- */
-.cross{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px}
+.cross{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
 .cross-card{
   display:flex;align-items:center;gap:18px;padding:26px 28px;border-radius:var(--radius-lg);
   border:1px solid rgba(255,255,255,.11);background:rgba(255,255,255,.03);transition:.22s;
@@ -522,6 +528,9 @@ html.anim .stagger.in>*:nth-child(8){transition-delay:.49s}
 
 /* ---------- responsive ---------- */
 
+/* Four division cards stop fitting across at this point. */
+@media(max-width:1200px){ .lens-rail{grid-template-columns:1fr 1fr} }
+
 /* The secondary CTA is the first thing to go — the primary one still reads. */
 @media(max-width:1200px){ .nav-cta .btn-ghost{display:none} }
 
@@ -560,7 +569,7 @@ html.anim .stagger.in>*:nth-child(8){transition-delay:.49s}
   .lens-hero .hero-inner{grid-template-columns:1fr;gap:34px}
   .lens-hero .hero-copy{max-width:none}
   .lens-panel{display:none}
-  .lens-rail{grid-template-columns:1fr;gap:12px;padding:32px 0 36px}
+  .lens-rail{grid-template-columns:1fr 1fr;gap:14px;padding:32px 0 36px}
   .lens-copy{min-height:0}
   .hrms{grid-template-columns:1fr}
 }
@@ -568,6 +577,7 @@ html.anim .stagger.in>*:nth-child(8){transition-delay:.49s}
   body{font-size:16px}
   /* three stacked cards already make the hero long on a phone — the service
      breakdown is one tap away on each division page. */
+  .lens-rail{grid-template-columns:1fr}
   .lens-svcs{display:none}
   .lens{padding:22px 22px 24px}
   .grid-3,.grid-4,.ind-grid,.row2,.metrics,.steps,.foot-grid,.kb{grid-template-columns:1fr}
@@ -593,3 +603,37 @@ html.anim .stagger.in>*:nth-child(8){transition-delay:.49s}
 
 /* ---------- cross-page transition (progressive enhancement) ---------- */
 @view-transition{navigation:auto}
+
+/* ---------- learn: curriculum module list ---------- */
+.mods{padding:18px;background:#071427;min-height:392px;display:flex;flex-direction:column;gap:8px}
+.mods-head{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+.mods-head b{font-family:var(--font-display);font-size:15px;color:#fff}
+.mods-head span{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-left:auto}
+.mod{
+  display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:12px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  border-radius:10px;padding:11px 13px;transition:border-color .18s,background .18s;
+}
+.mod:hover{border-color:rgba(var(--accent-rgb),.45);background:rgba(var(--accent-rgb),.07)}
+.mod .wk{font-family:var(--font-mono);font-size:10px;letter-spacing:.07em;color:var(--accent)}
+.mod b{font-family:var(--font-body);font-size:13.5px;font-weight:600;color:#fff;line-height:1.35}
+.mod .kind{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.06em;padding:3px 8px;border-radius:5px;background:rgba(var(--accent-rgb),.16);color:var(--accent);white-space:nowrap}
+.mods-foot{margin-top:auto;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);font-family:var(--font-mono);font-size:10.5px;color:rgba(255,255,255,.45);display:flex;gap:8px;align-items:center}
+
+/* ---------- learn: certificate ---------- */
+.cert{
+  border-radius:var(--radius-lg);overflow:hidden;border:1px solid rgba(255,255,255,.14);
+  background:linear-gradient(160deg,var(--navy-deep),var(--navy));box-shadow:var(--shadow-md);padding:30px;
+}
+.cert-inner{border:1.5px solid rgba(var(--accent-rgb),.35);border-radius:14px;padding:28px 26px;text-align:center}
+.cert .seal{width:52px;height:52px;margin:0 auto 16px;border-radius:50%;background:rgba(var(--accent-rgb),.14);display:grid;place-items:center}
+.cert .seal svg{width:26px;height:26px;stroke:var(--accent);fill:none;stroke-width:2}
+.cert .ct{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.cert h3{font-family:var(--font-display);font-size:23px;color:#fff;margin:12px 0 6px}
+.cert p{font-size:14.5px;color:rgba(255,255,255,.62);max-width:420px;margin:0 auto}
+.cert .rule{height:1px;background:rgba(255,255,255,.12);margin:22px 0}
+.cert .meta{display:flex;justify-content:space-between;gap:16px;font-family:var(--font-mono);font-size:10.5px;color:rgba(255,255,255,.45);flex-wrap:wrap}
+@media(max-width:560px){
+  .mod{grid-template-columns:44px 1fr;row-gap:8px}
+  .mod .kind{grid-column:2}
+}
