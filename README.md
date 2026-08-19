@@ -135,5 +135,17 @@ Two things to keep in mind when editing:
   rewrite is added. Nobody sees the filename anyway — the homepage URL is
   just `katxel.in`.
 
+### Asset caching
+
+Asset filenames are not content-hashed (`site.css`, not `site.a1b2c3.css`), so
+Vercel's default four-hour cache meant a returning visitor kept the old
+stylesheet after a deploy. `vercel.json` therefore serves `/assets/*` with
+`max-age=0, must-revalidate`: the browser still caches the file but revalidates
+every load, so a change goes live immediately and an unchanged file costs only
+a 304.
+
+If you ever add content hashing to filenames, flip this back to a long
+`max-age` — revalidating a hashed filename is wasted work.
+
 Moving to a host without this feature (GitHub Pages, plain Apache) means
 either restoring the `.html` links or configuring equivalent rewrites.
