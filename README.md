@@ -52,8 +52,10 @@ Every component reads `var(--accent)` / `var(--accent-rgb)`, so buttons, icons,
 eyebrows, chart strokes and focus rings all follow automatically. Don't
 hard-code division colours in a component — set the variable instead.
 
-On the homepage, `hero-lenses.js` rewrites `data-vertical` as the visitor moves
-between the four lenses, which is what makes the whole page shift colour.
+The homepage sets `data-vertical="geo"` only so shared components have an
+accent to fall back on; its four door panels each carry their own `--c` inline,
+which is why all four colours can sit on screen at once. `hero-lenses.js` is no
+longer loaded there — it now serves the division-page heroes only.
 
 ### Adding a page
 
