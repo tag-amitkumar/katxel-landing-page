@@ -4,7 +4,7 @@ Static marketing site for Katxel and its four divisions. No build step, no
 dependencies: the files in this repo *are* the site.
 
 ```
-index.html      Umbrella homepage — lens hero that routes to a division
+index.html      Homepage — "Four Doors" division selector plus the story below it
 geo.html        Katxel Geo   — GIS, survey, data collection & processing
 ops.html        Katxel Ops   — HRMS, project planning, internal tools
 risk.html       Katxel Risk  — catastrophe & climate risk modelling
@@ -14,7 +14,9 @@ vercel.json     Clean-URL config (see Deploying)
 assets/
   site.css          Shared design system (all five pages)
   site.js           Shared behaviour: nav, dropdown, reveal, counters, contact form
-  hero-lenses.js    Hero canvas — four-state on the homepage, single-state elsewhere
+  home.css          Homepage-only: the doors, through-line, marquee, dark contact
+  home.js           Homepage-only: door canvas, scroll-scrubbed diagram, counters
+  hero-lenses.js    Division-page hero canvas (one locked state per division)
   favicon.svg       Browser tab icon
 
 flood_ganges.gif        Ganges floodplain model output — shown on risk.html

@@ -3,20 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Katxel — Geospatial, Business Software &amp; Catastrophe Risk</title>
-<meta name="description" content="Katxel builds three things well: geospatial survey and data processing, business software like HRMS and project planning, and catastrophe & climate risk modelling. One engineering team, three disciplines.">
+<title>Katxel — Geospatial, Business Software, Catastrophe Risk &amp; Training</title>
+<meta name="description" content="Katxel builds four things well: geospatial survey and data processing, business software like HRMS and project planning, catastrophe &amp; climate risk modelling, and IT and GIS training with placement. One engineering team, four disciplines.">
 <link rel="canonical" href="https://katxel.in/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Katxel">
 <meta property="og:url" content="https://katxel.in/">
-<meta property="og:title" content="Katxel — Geospatial, Business Software & Catastrophe Risk">
-<meta property="og:description" content="Three disciplines, one engineering team: Katxel Geo, Katxel Ops, and Katxel Risk.">
+<meta property="og:title" content="Katxel — Geospatial, Business Software, Catastrophe Risk & Training">
+<meta property="og:description" content="Four disciplines, one engineering team: Katxel Geo, Katxel Ops, Katxel Risk and Katxel Learn.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/home.css">
 <script>document.documentElement.classList.add('anim')</script>
 <script type="application/ld+json">
 {
@@ -27,7 +28,7 @@
   "email":"info.katxel@gmail.com",
   "telephone":"+91-9971673480",
   "address":{"@type":"PostalAddress","addressRegion":"Delhi NCR","addressCountry":"IN"},
-  "description":"Geospatial data services, business software engineering, and catastrophe & climate risk modelling.",
+  "description":"Geospatial data services, business software engineering, catastrophe & climate risk modelling, and technical training.",
   "department":[
     {"@type":"Organization","name":"Katxel Geo","url":"https://katxel.in/geo"},
     {"@type":"Organization","name":"Katxel Ops","url":"https://katxel.in/ops"},
@@ -37,7 +38,7 @@
 }
 </script>
 </head>
-<body data-vertical="geo">
+<body class="home" data-vertical="geo">
 <a class="skip" href="#main">Skip to content</a>
 
 <!-- NAV -->
@@ -65,8 +66,8 @@
           <a class="dd-item" href="/learn"><i class="di-dot" style="background:var(--learn)"></i><span><b>Katxel Learn</b><span>IT &amp; GIS training, internships &amp; placement</span></span></a>
         </div>
       </div>
+      <a href="#method">Method</a>
       <a href="#why">Why Katxel</a>
-      <a href="#industries">Industries</a>
       <a href="#engage">How we engage</a>
       <a href="#about">About</a>
       <a href="#contact" class="only-mobile">Contact</a>
@@ -81,203 +82,184 @@
 
 <main id="main">
 
-<!-- HERO — three lenses -->
-<section class="hero lens-hero" id="top">
-  <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
-  <div class="hero-scrim" aria-hidden="true"></div>
-  <div class="wrap hero-inner">
-    <div class="hero-copy lens-copy">
-      <span class="eyebrow">One engineering team · three disciplines</span>
-      <h1 class="lens-h1"><span class="lens-swap" id="lensH1">Precision <span class="hl">geospatial data</span>, ground to insight</span></h1>
-      <p class="sub lens-sub"><span class="lens-swap" id="lensSub">Survey, capture, and processing that turns terrain into decision-ready layers — for planners, utilities, and infrastructure owners.</span></p>
-      <div class="hero-cta">
-        <a href="#contact" class="btn btn-primary">Start a project <span class="arrow">→</span></a>
-        <a href="#divisions" class="btn btn-ghost">See what we do</a>
+<!-- ================= FOUR DOORS ================= -->
+<div class="doors" id="doors">
+  <canvas id="doorCanvas" aria-hidden="true"></canvas>
+
+  <div class="door" data-open="true" data-k="geo" data-href="/geo" style="--c:var(--geo-rgb);--k:9.6cqw">
+    <span class="glow"></span><span class="veil"></span>
+    <div class="inner">
+      <span class="hk">Geospatial</span>
+      <h2>Katxel Geo</h2>
+      <p class="glimpse">Survey, capture and processing — field to finished layer.</p>
+      <div class="more"><div>
+        <div class="services"><span>Topographic survey</span><span>Drone &amp; LiDAR</span><span>Remote sensing</span><span>Web GIS</span></div>
+        <a class="enter" href="/geo">Enter Geo <span class="arw">→</span></a>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="door" data-k="ops" data-href="/ops" style="--c:var(--ops-rgb);--k:12cqw">
+    <span class="glow"></span><span class="veil"></span>
+    <div class="inner">
+      <span class="hk">Software</span>
+      <h2>Katxel Ops</h2>
+      <p class="glimpse">HRMS, planning and internal tools shaped to how you work.</p>
+      <div class="more"><div>
+        <div class="services"><span>HRMS &amp; payroll</span><span>Project planning</span><span>Dashboards</span><span>Automation</span></div>
+        <a class="enter" href="/ops">Enter Ops <span class="arw">→</span></a>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="door" data-k="risk" data-href="/risk" style="--c:var(--risk-rgb);--k:19cqw">
+    <span class="glow"></span><span class="veil"></span>
+    <div class="inner">
+      <span class="hk">Risk</span>
+      <h2>Katxel Risk</h2>
+      <p class="glimpse">Catastrophe and climate modelling, hazard through to loss.</p>
+      <div class="more"><div>
+        <div class="services"><span>Flood</span><span>Earthquake</span><span>Cyclone</span><span>Portfolio loss</span></div>
+        <a class="enter" href="/risk">Enter Risk <span class="arw">→</span></a>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="door" data-k="learn" data-href="/learn" style="--c:var(--learn-rgb);--k:12cqw">
+    <span class="glow"></span><span class="veil"></span>
+    <div class="inner">
+      <span class="hk">Training</span>
+      <h2>Katxel Learn</h2>
+      <p class="glimpse">IT and GIS training, internships and placement support.</p>
+      <div class="more"><div>
+        <div class="services"><span>GIS training</span><span>Web &amp; data</span><span>Internships</span><span>Corporate</span></div>
+        <a class="enter" href="/learn">Enter Learn <span class="arw">→</span></a>
+      </div></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="scrollcue"><i></i> Or read how we work <i></i></div>
+
+<!-- ================= THROUGH-LINE ================= -->
+<section class="thread" id="method">
+  <div class="wrap">
+    <div class="hhead hrv">
+      <span class="hk">The through-line</span>
+      <h2>Four disciplines, one habit</h2>
+      <p>Surveying a floodplain, building a web application, modelling the flood, teaching a cohort — they
+         look unrelated. They are the same move: take the world as it actually is, and turn it into
+         something a decision can rest on.</p>
+    </div>
+
+    <div class="thread-stage hrv">
+      <svg viewBox="0 0 1200 400" id="threadSvg" role="img" aria-label="Four division strands converging into a single line through capture, structure, model and deliver.">
+        <g>
+          <line class="stage-tick" x1="150" y1="42" x2="150" y2="358"/>
+          <line class="stage-tick" x1="420" y1="42" x2="420" y2="358"/>
+          <line class="stage-tick" x1="690" y1="42" x2="690" y2="358"/>
+          <line class="stage-tick" x1="940" y1="42" x2="940" y2="358"/>
+          <text class="stage-label" x="150" y="30" text-anchor="middle">Capture</text>
+          <text class="stage-label" x="420" y="30" text-anchor="middle">Structure</text>
+          <text class="stage-label" x="690" y="30" text-anchor="middle">Model</text>
+          <text class="stage-label" x="940" y="30" text-anchor="middle">Deliver</text>
+        </g>
+        <path class="thread-strand" data-s style="stroke:#00C2A8" d="M0 80  C 300 80, 460 96, 600 148 S 760 196 840 200"/>
+        <path class="thread-strand" data-s style="stroke:#6366F1" d="M0 160 C 300 160, 470 170, 620 186 S 780 199 840 200"/>
+        <path class="thread-strand" data-s style="stroke:#FF7A00" d="M0 240 C 300 240, 470 230, 620 214 S 780 201 840 200"/>
+        <path class="thread-strand" data-s style="stroke:#22C55E" d="M0 320 C 300 320, 460 304, 600 252 S 760 204 840 200"/>
+        <path class="thread-trunk" data-t d="M840 200 H1090"/>
+        <circle id="threadDot" cx="840" cy="200" r="5.5" fill="#fff" opacity="0"/>
+        <text class="thread-out" x="1110" y="206" opacity="0" id="threadOut">A decision you can defend</text>
+      </svg>
+      <div class="thread-legend">
+        <span><i style="background:var(--geo)"></i>Geo</span>
+        <span><i style="background:var(--ops)"></i>Ops</span>
+        <span><i style="background:var(--risk)"></i>Risk</span>
+        <span><i style="background:var(--learn)"></i>Learn</span>
       </div>
     </div>
-
-    <aside class="lens-panel" id="lensPanel" aria-label="Selected division at a glance">
-      <div class="lp-head">
-        <span class="lp-dot" aria-hidden="true"></span>
-        <b id="lpTitle">Katxel Geo</b>
-        <span class="lp-tag" id="lpTag">GEOSPATIAL</span>
-      </div>
-      <div class="lp-grid">
-        <div class="lp-cell"><span class="k" id="lpK1">Survey accuracy</span><span class="v" id="lpV1">5 cm</span></div>
-        <div class="lp-cell"><span class="k" id="lpK2">Capture GSD</span><span class="v" id="lpV2">2 – 5 cm</span></div>
-        <div class="lp-cell"><span class="k" id="lpK3">Delivered as</span><span class="v" id="lpV3">GeoPackage · PostGIS</span></div>
-        <div class="lp-cell"><span class="k" id="lpK4">Scale</span><span class="v" id="lpV4">Site → district</span></div>
-      </div>
-      <div class="lp-bars" id="lpBars" aria-hidden="true"></div>
-      <p class="lp-foot" id="lpFoot">Field capture → processing → finished layer</p>
-    </aside>
   </div>
 </section>
 
-<!-- DIVISION RAIL — its own band so the hero canvas never sits behind the cards -->
-<section class="lens-band">
+<!-- ================= STATS ================= -->
+<section class="hstats">
   <div class="wrap">
-    <div class="lens-rail" id="lensRail" role="group" aria-label="Katxel divisions">
-      <a class="lens" data-lens="geo" data-active="true" href="/geo">
-        <span class="tick" aria-hidden="true"></span>
-        <span class="lens-n">01 — GEOSPATIAL</span>
-        <b><i aria-hidden="true"></i>Katxel Geo</b>
-        <p>GIS, survey, data collection and processing. Field to finished layer.</p>
-        <span class="lens-svcs">Topographic &amp; cadastral survey · Drone &amp; LiDAR · Remote sensing · GIS database build · Web mapping</span>
-        <span class="go">Explore Geo →</span>
-      </a>
-      <a class="lens" data-lens="ops" data-active="false" href="/ops">
-        <span class="tick" aria-hidden="true"></span>
-        <span class="lens-n">02 — SOFTWARE</span>
-        <b><i aria-hidden="true"></i>Katxel Ops</b>
-        <p>HRMS, project planning and internal tools built around how you actually work.</p>
-        <span class="lens-svcs">HRMS &amp; payroll · Project planning · Dashboards · Workflow automation · Spreadsheet migration</span>
-        <span class="go">Explore Ops →</span>
-      </a>
-      <a class="lens" data-lens="risk" data-active="false" href="/risk">
-        <span class="tick" aria-hidden="true"></span>
-        <span class="lens-n">03 — RISK</span>
-        <b><i aria-hidden="true"></i>Katxel Risk</b>
-        <p>Catastrophe and climate modelling for insurers, governments and infrastructure.</p>
-        <span class="lens-svcs">Flood · Earthquake · Cyclone · Wildfire · Climate analytics · Portfolio loss</span>
-        <span class="go">Explore Risk →</span>
-      </a>
-      <a class="lens" data-lens="learn" data-active="false" href="/learn">
-        <span class="tick" aria-hidden="true"></span>
-        <span class="lens-n">04 — TRAINING</span>
-        <b><i aria-hidden="true"></i>Katxel Learn</b>
-        <p>IT and GIS training with live projects, internships and placement support.</p>
-        <span class="lens-svcs">GIS &amp; remote sensing · Web &amp; data engineering · Live projects · Internship certificate · Placement support</span>
-        <span class="go">Explore Learn →</span>
-      </a>
+    <div class="hstat hrv"><div class="n" data-to="4">0</div><div class="l">Specialist divisions</div></div>
+    <div class="hstat hrv hrv-d1"><div class="n" data-to="10" data-suf="+">0</div><div class="l">Years of engineering practice</div></div>
+    <div class="hstat hrv hrv-d2"><div class="n" data-to="6" data-suf="+">0</div><div class="l">Hazard models built</div></div>
+    <div class="hstat hrv hrv-d3"><div class="n" data-to="1">0</div><div class="l">Team, end to end</div></div>
+  </div>
+</section>
+
+<!-- ================= WHY ================= -->
+<section class="hwhy" id="why">
+  <div class="wrap">
+    <div class="hhead hrv">
+      <span class="hk">Why Katxel</span>
+      <h2>Built differently, on purpose</h2>
+      <p>Four commitments that hold across every division.</p>
+    </div>
+    <div class="hpillars">
+      <div class="hpillar hrv" style="color:var(--geo)"><h3>Engineering, not resale</h3><p>We build what we ship. No white-labelled platform with our name on the login screen.</p></div>
+      <div class="hpillar hrv hrv-d1" style="color:var(--ops)"><h3>Transparent by default</h3><p>Open methods and inspectable assumptions — trace any number we give you back to its source.</p></div>
+      <div class="hpillar hrv hrv-d2" style="color:var(--risk)"><h3>You own the output</h3><p>Data, models and source stay yours. No lock-in, no hostage licensing, clean handover on request.</p></div>
+      <div class="hpillar hrv hrv-d3" style="color:var(--learn)"><h3>One team across all four</h3><p>The people who model your flood risk can geocode your exposure and build the tool your team reads it in.</p></div>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<section class="stats">
-  <div class="wrap stats-grid">
-    <div class="stat"><div class="num" data-count="4" data-suffix="">0</div><div class="lab">Specialist divisions</div></div>
-    <div class="stat"><div class="num" data-count="10" data-suffix="+">0<span class="suf">+</span></div><div class="lab">Years of engineering practice</div></div>
-    <div class="stat"><div class="num" data-count="5" data-suffix="+">0<span class="suf">+</span></div><div class="lab">Hazard models built</div></div>
-    <div class="stat"><div class="num" data-count="1" data-suffix="">0</div><div class="lab">Team, end to end</div></div>
+<!-- ================= INDUSTRIES ================= -->
+<section class="hinds">
+  <span class="hk">Industries served</span>
+  <div class="marquee">
+    <div class="track" id="t1"></div>
+    <div class="track rev" id="t2"></div>
   </div>
 </section>
 
-<!-- DIVISIONS -->
-<section class="pad" id="divisions">
-  <div class="wrap center reveal">
-    <span class="eyebrow">What we do</span>
-    <h2 class="section-title">Three disciplines that keep meeting</h2>
-    <p class="section-lead">Geospatial data, working software, and risk science are the same problem seen from three angles — take the messy real world and make it something a decision can rest on.</p>
-  </div>
-
+<!-- ================= ENGAGE ================= -->
+<section class="hengage" id="engage">
   <div class="wrap">
-    <div class="grid-4 stagger">
-
-      <a class="card" href="/geo" style="--accent:var(--geo);--accent-rgb:var(--geo-rgb)">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M9 3L3 6v15l6-3 6 3 6-3V3l-6 3-6-3zM9 3v15M15 6v15"/></svg></div>
-        <h3>Katxel Geo</h3>
-        <p>GIS and remote sensing, topographic and drone survey, field data collection, and the processing pipeline that turns raw capture into clean, analysis-ready layers.</p>
-        <span class="more">Survey → processing → delivery →</span>
-      </a>
-
-      <a class="card" href="/ops" style="--accent:var(--ops);--accent-rgb:var(--ops-rgb)">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 12h10M4 19h7"/><circle cx="18" cy="12" r="2"/><circle cx="14" cy="19" r="2"/></svg></div>
-        <h3>Katxel Ops</h3>
-        <p>Internal business software — HRMS, attendance and payroll, project planning and scheduling — designed around your existing process rather than a vendor's template.</p>
-        <span class="more">Scope → build → run →</span>
-      </a>
-
-      <a class="card" href="/risk" style="--accent:var(--risk);--accent-rgb:var(--risk-rgb)">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 18c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 10c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg></div>
-        <h3>Katxel Risk</h3>
-        <p>Catastrophe and climate risk modelling — flood, earthquake, cyclone, wildfire — with hazard layers, vulnerability curves and portfolio loss analytics.</p>
-        <span class="more">Hazard → vulnerability → loss →</span>
-      </a>
-
-      <a class="card" href="/learn" style="--accent:var(--learn);--accent-rgb:var(--learn-rgb)">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 4L2 9l10 5 10-5-10-5z"/><path d="M6 11.5V17c0 1.1 2.7 2 6 2s6-.9 6-2v-5.5"/><path d="M22 9v6"/></svg></div>
-        <h3>Katxel Learn</h3>
-        <p>IT and GIS training run as real projects rather than lectures — with mentor review, an internship certificate on completion, and placement support.</p>
-        <span class="more">Learn → build → certify →</span>
-      </a>
-
+    <div class="hhead hrv">
+      <span class="hk">How we engage</span>
+      <h2>Four steps, no surprises</h2>
+      <p>The same shape whether it is a survey campaign, an HRMS rollout, a national flood model, or a training cohort.</p>
+    </div>
+    <div class="rail" id="rail">
+      <svg viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true">
+        <path class="rail-line" d="M8 17 H1192"/>
+        <path class="rail-fill" id="railFill" d="M8 17 H1192"/>
+      </svg>
+    </div>
+    <div class="hsteps">
+      <div class="hstep hrv"><span class="lab">Step one</span><h3>Scope</h3><p>A short discovery to pin down the actual question, the data you already hold, and what "done" looks like.</p></div>
+      <div class="hstep hrv hrv-d1"><span class="lab">Step two</span><h3>Pilot</h3><p>A bounded first slice — one district, one department, one peril — so you see real output before scaling.</p></div>
+      <div class="hstep hrv hrv-d2"><span class="lab">Step three</span><h3>Build</h3><p>Delivery in reviewable increments. You see working output throughout, not a single reveal at the end.</p></div>
+      <div class="hstep hrv hrv-d3"><span class="lab">Step four</span><h3>Handover</h3><p>Documentation, training, and source or data handover. Ongoing support if you want it, not because you are stuck.</p></div>
     </div>
   </div>
 </section>
 
-<!-- WHY -->
-<section class="pad dark" id="why">
-  <div class="wrap center reveal">
-    <span class="eyebrow">Why Katxel</span>
-    <h2 class="section-title on-dark">Built differently, on purpose</h2>
-    <p class="section-lead on-dark">Four commitments that hold across all three divisions.</p>
-  </div>
+<!-- ================= ABOUT ================= -->
+<section class="habout" id="about">
   <div class="wrap">
-    <div class="grid-4 stagger">
-      <div class="pillar"><div class="n">01</div><h3>Engineering, not resale</h3><p>We build what we ship. No white-labelled third-party platform with our name on the login screen.</p></div>
-      <div class="pillar"><div class="n">02</div><h3>Transparent by default</h3><p>Open methods and inspectable assumptions — you can trace any number we give you back to its source.</p></div>
-      <div class="pillar"><div class="n">03</div><h3>You own the output</h3><p>Data, models, and source stay yours. No lock-in, no hostage licensing, clean handover on request.</p></div>
-      <div class="pillar"><div class="n">04</div><h3>One team across all three</h3><p>The people who model your flood risk can also geocode your exposure and build the tool your team uses to read it.</p></div>
+    <div class="hrv">
+      <span class="hk">About Katxel</span>
+      <h2>Resilience, made measurable</h2>
+      <p>Katxel pairs earth science with modern software engineering to give organisations a clear,
+         honest view of the ground they stand on — physically and operationally. One team in Delhi NCR,
+         working across India and abroad.</p>
+    </div>
+    <div class="hmv">
+      <div class="hrv hrv-d1"><span class="k">Mission</span><p>To turn complex spatial, operational and hazard data into decisions our clients can defend.</p></div>
+      <div class="hrv hrv-d2"><span class="k">Vision</span><p>To be the engineering partner organisations call when the problem spans the map, the model and the software.</p></div>
     </div>
   </div>
 </section>
-
-<!-- INDUSTRIES -->
-<section class="pad-sm" id="industries">
-  <div class="wrap center reveal">
-    <span class="eyebrow">Industries served</span>
-    <h2 class="section-title">Who we work with</h2>
-  </div>
-  <div class="wrap">
-    <div class="ind-grid stagger">
-      <div class="ind"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z"/></svg>Insurance</div>
-      <div class="ind"><svg viewBox="0 0 24 24"><path d="M4 9l8-5 8 5M4 9v10h16V9M9 19v-6h6v6"/></svg>Reinsurance</div>
-      <div class="ind"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 12h.01M15 12h.01"/></svg>Government</div>
-      <div class="ind"><svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V8h4v12M14 20V4h4v16"/></svg>Infrastructure</div>
-      <div class="ind"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Energy &amp; utilities</div>
-      <div class="ind"><svg viewBox="0 0 24 24"><path d="M3 10l9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>Real estate</div>
-      <div class="ind"><svg viewBox="0 0 24 24"><path d="M2 20h20M5 20V10M12 20V6M19 20v-8M5 10l7-4 7 6"/></svg>Engineering &amp; EPC</div>
-      <div class="ind"><svg viewBox="0 0 24 24"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>Banking</div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW WE ENGAGE -->
-<section class="pad soft" id="engage">
-  <div class="wrap center reveal">
-    <span class="eyebrow">How we engage</span>
-    <h2 class="section-title">Four steps, no surprises</h2>
-    <p class="section-lead">The same shape whether it's a survey campaign, an HRMS rollout, or a national flood model.</p>
-  </div>
-  <div class="wrap">
-    <div class="steps stagger">
-      <div class="step"><div class="bar"></div><h3>Scope</h3><p>A short paid or free discovery to pin down the actual question, the data you already hold, and what "done" looks like.</p></div>
-      <div class="step"><div class="bar"></div><h3>Pilot</h3><p>A bounded first slice — one district, one department, one peril — so you see real output before committing to scale.</p></div>
-      <div class="step"><div class="bar"></div><h3>Build</h3><p>Delivery in reviewable increments. You see working output throughout, not a single reveal at the end.</p></div>
-      <div class="step"><div class="bar"></div><h3>Handover</h3><p>Documentation, training, and source or data handover. Ongoing support if you want it, not because you're stuck.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="pad dark" id="about">
-  <div class="wrap center reveal">
-    <span class="eyebrow">About Katxel</span>
-    <h2 class="section-title on-dark">Resilience, made measurable</h2>
-    <p class="section-lead on-dark">Katxel pairs earth science with modern software engineering to give organisations a clear, honest view of the ground they stand on — physically and operationally.</p>
-  </div>
-  <div class="wrap">
-    <div class="grid-2 stagger">
-      <div class="mv"><div class="label">Mission</div><p>To turn complex spatial, operational, and hazard data into decisions our clients can defend.</p></div>
-      <div class="mv"><div class="label">Vision</div><p>To be the engineering partner organisations call when the problem spans the map, the model, and the software.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="pad" id="contact">
+<section class="hcontact" id="contact">
+  <canvas id="ctaCanvas" aria-hidden="true"></canvas>
   <div class="wrap contact-grid">
     <div class="reveal">
       <span class="eyebrow">Get in touch</span>
@@ -358,6 +340,6 @@
 </footer>
 
 <script src="assets/site.js" defer></script>
-<script src="assets/hero-lenses.js" defer></script>
+<script src="assets/home.js" defer></script>
 </body>
 </html>

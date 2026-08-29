@@ -1,0 +1,219 @@
+/* ==========================================================================
+   Katxel homepage — "Four Doors" front door and the story beneath it.
+   Loaded only by index.html. Everything here builds on the tokens in
+   site.css; nothing is redefined.
+
+   The homepage runs dark end to end on purpose: it is a threshold, and the
+   light content lives on the division page you step through into.
+   ========================================================================== */
+
+.home{
+  --hair:rgba(255,255,255,.10);
+  --muted:rgba(255,255,255,.64);
+  --faint:rgba(255,255,255,.40);
+  --ghost:rgba(255,255,255,.24);
+  background:var(--navy-deep);
+}
+
+/* The front door bar runs the full width so the mark sits near the left edge
+   rather than being pushed in by the centred 1320px column. */
+.home header.nav .wrap{max-width:none;padding:0 clamp(20px,2.2vw,40px)}
+
+.home h2,.home h3{color:#fff}
+.hk{
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--faint);display:block;
+}
+
+/* ==========================================================================
+   FOUR DOORS
+   One canvas sits behind the row and paints each division across that door's
+   full box, so the artwork fills the panel instead of sitting in a strip.
+   ========================================================================== */
+.doors{position:relative;display:flex;height:clamp(390px,58svh,545px)}
+#doorCanvas{position:absolute;inset:0;z-index:0;width:100%;height:100%;display:block}
+
+.door{
+  position:relative;z-index:1;flex:1;overflow:hidden;
+  border-left:1px solid var(--hair);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:30px 28px 32px;color:#fff;
+  transition:flex-grow .6s cubic-bezier(.22,.7,.24,1);
+  /* the panel is the sizing context, so the category word scales with it and
+     keeps growing through the open transition */
+  container-type:inline-size;
+}
+.door:first-child{border-left:none}
+
+.door .glow{
+  position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.34;
+  background:radial-gradient(125% 62% at 50% 116%, rgba(var(--c),.55), transparent 70%);
+  transition:opacity .45s ease;
+}
+/* keeps the copy legible over moving artwork */
+.door .veil{
+  position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(180deg, rgba(7,20,39,.42) 0%, rgba(7,20,39,.10) 34%, rgba(7,20,39,.80) 88%);
+}
+.door .inner{position:relative;z-index:2;display:flex;flex-direction:column;gap:9px}
+
+/* --k is tuned per word so four-letter RISK and ten-letter GEOSPATIAL take a
+   comparable share of their panel instead of one dwarfing the other. */
+.door .hk{
+  color:rgb(var(--c));
+  font-size:clamp(21px, var(--k,10cqw), 62px);
+  letter-spacing:.05em;line-height:1;margin-bottom:2px;
+}
+.door h2{font-family:var(--font-display);font-weight:600;letter-spacing:-.02em;font-size:clamp(21px,1.7vw,28px)}
+.door .glimpse{color:var(--muted);font-size:17px;line-height:1.5;max-width:32ch}
+.door .more{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .6s cubic-bezier(.22,.7,.24,1),opacity .35s ease}
+.door .more>div{overflow:hidden;min-height:0}
+.door .services{display:flex;flex-wrap:wrap;gap:7px;padding-top:14px}
+.door .services span{
+  font-family:var(--font-mono);font-size:11.5px;letter-spacing:.04em;
+  padding:5px 10px;border-radius:999px;border:1px solid rgba(var(--c),.42);color:rgb(var(--c));
+}
+.door .enter{
+  display:inline-flex;align-items:center;gap:9px;margin-top:17px;
+  font-weight:600;font-size:15.5px;padding:13px 22px;border-radius:999px;
+  background:rgb(var(--c));color:var(--navy-deep);width:fit-content;
+}
+.door .enter .arw{transition:transform .2s ease}
+.door:hover .enter .arw{transform:translateX(4px)}
+.doors[data-open] .door{flex-grow:.74}
+.doors .door[data-open="true"]{flex-grow:2.5}
+.doors .door[data-open="true"] .glow{opacity:.95}
+
+.scrollcue{
+  display:flex;align-items:center;justify-content:center;gap:11px;
+  padding:22px 0 28px;font-family:var(--font-mono);font-size:12.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ghost);background:var(--navy-deep);
+}
+.scrollcue i{display:block;width:1px;height:18px;background:linear-gradient(180deg,var(--ghost),transparent);animation:cue 2.2s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:translateY(-4px);opacity:.3}50%{transform:translateY(4px);opacity:1}}
+
+/* ==========================================================================
+   Section heads — centred, wide measure so the supporting line fills the
+   column instead of trailing off to the left.
+   ========================================================================== */
+.hhead{
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  gap:18px;margin:0 auto 54px;
+}
+.hhead h2{font-size:clamp(30px,3.4vw,46px);max-width:24ch;line-height:1.05;text-wrap:balance}
+.hhead p{color:var(--muted);font-size:19.5px;line-height:1.62;max-width:76ch}
+
+/* ==========================================================================
+   THROUGH-LINE — scroll-scrubbed
+   ========================================================================== */
+.thread{background:linear-gradient(180deg,var(--navy-deep),var(--navy));padding:104px 0 92px;border-top:1px solid var(--hair)}
+.thread-stage{position:relative;border:1px solid var(--hair);border-radius:20px;background:rgba(255,255,255,.025);padding:26px 22px;overflow:hidden}
+.thread-stage svg{width:100%;height:auto;display:block}
+.thread-strand{fill:none;stroke-width:2.2;stroke-linecap:round}
+.thread-trunk{fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round}
+.stage-label{font-family:var(--font-mono);font-size:13px;letter-spacing:.14em;fill:rgba(255,255,255,.42);text-transform:uppercase}
+.stage-tick{stroke:rgba(255,255,255,.16);stroke-width:1}
+.thread-out{font-family:var(--font-display);font-size:21px;font-weight:600;fill:#fff}
+.thread-legend{display:flex;flex-wrap:wrap;gap:20px;margin-top:22px;font-family:var(--font-mono);font-size:12.5px;color:var(--faint);letter-spacing:.04em}
+.thread-legend span{display:flex;align-items:center;gap:8px}
+.thread-legend i{width:16px;height:2px;border-radius:2px;display:block}
+
+/* ==========================================================================
+   STATS · WHY · INDUSTRIES · ENGAGE · ABOUT
+   ========================================================================== */
+.hstats{background:var(--navy);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.hstats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;padding-top:52px;padding-bottom:52px}
+.hstat .n{font-family:var(--font-display);font-size:clamp(32px,3.6vw,46px);font-weight:700;letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:#fff}
+.hstat .l{color:var(--faint);font-size:15px;margin-top:6px;line-height:1.4}
+
+.hwhy{background:var(--navy);padding:104px 0}
+.hpillars{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.hpillar{
+  position:relative;border:1px solid var(--hair);border-radius:16px;padding:28px 24px;
+  background:rgba(255,255,255,.028);overflow:hidden;
+  transition:background .3s,transform .3s;
+}
+.hpillar:hover{background:rgba(255,255,255,.06);transform:translateY(-4px)}
+.hpillar::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:currentColor;transform:scaleY(0);transform-origin:top;transition:transform .5s cubic-bezier(.22,.7,.24,1)}
+.hpillar.in::before{transform:scaleY(1)}
+.hpillar h3{font-size:19.5px;margin-bottom:9px;font-family:var(--font-display);font-weight:600}
+.hpillar p{font-size:15.5px;color:var(--muted);line-height:1.6}
+
+.hinds{background:var(--navy-deep);padding:78px 0 84px;border-top:1px solid var(--hair);overflow:hidden}
+.hinds .hk{text-align:center;margin-bottom:34px}
+.marquee{position:relative}
+.track{display:flex;gap:14px;width:max-content;animation:slide 46s linear infinite}
+.track.rev{animation-direction:reverse;margin-top:14px}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.chipi{
+  font-family:var(--font-mono);font-size:14px;letter-spacing:.05em;white-space:nowrap;
+  padding:12px 22px;border-radius:999px;border:1px solid var(--hair);
+  color:var(--muted);background:rgba(255,255,255,.025);
+}
+.marquee::before,.marquee::after{content:"";position:absolute;top:0;bottom:0;width:140px;z-index:2;pointer-events:none}
+.marquee::before{left:0;background:linear-gradient(90deg,var(--navy-deep),transparent)}
+.marquee::after{right:0;background:linear-gradient(270deg,var(--navy-deep),transparent)}
+
+.hengage{background:linear-gradient(180deg,var(--navy-deep),var(--navy-2));padding:104px 0}
+.rail{position:relative;margin-bottom:34px}
+.rail svg{width:100%;height:34px;overflow:visible;display:block}
+.rail-line{fill:none;stroke:rgba(255,255,255,.16);stroke-width:2}
+.rail-fill{fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round}
+.hsteps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.hstep h3{font-size:20.5px;margin-bottom:9px;font-family:var(--font-display);font-weight:600}
+.hstep p{color:var(--muted);font-size:15.5px;line-height:1.6}
+.hstep .lab{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.12em;color:var(--faint);text-transform:uppercase;margin-bottom:12px;display:block}
+
+.habout{background:var(--navy-2);padding:104px 0;border-top:1px solid var(--hair)}
+.habout .wrap{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.habout h2{font-size:clamp(26px,3vw,38px);margin:14px 0 16px;font-family:var(--font-display);font-weight:600;letter-spacing:-.02em}
+.habout p{color:var(--muted);font-size:18px}
+.hmv{display:flex;flex-direction:column;gap:16px}
+.hmv div{border:1px solid var(--hair);border-radius:16px;padding:26px 24px;background:rgba(255,255,255,.03)}
+.hmv .k{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.hmv p{font-family:var(--font-display);font-size:20.5px;line-height:1.4;color:#fff;margin-top:11px;letter-spacing:-.01em}
+
+/* ==========================================================================
+   CONTACT — dark, with the four division colours drifting behind it
+   ========================================================================== */
+.hcontact{position:relative;background:var(--navy-deep);padding:104px 0;overflow:hidden;border-top:1px solid var(--hair)}
+#ctaCanvas{position:absolute;inset:0;width:100%;height:100%;opacity:.5;z-index:0}
+.hcontact .wrap{position:relative;z-index:1}
+.hcontact .section-title{color:#fff}
+.hcontact .section-lead{color:var(--muted)}
+.hcontact .ci b{color:#fff}
+.hcontact .ci span{color:var(--muted)}
+
+/* ==========================================================================
+   Reveal — visible by default, hidden only once <html class="anim"> is set
+   ========================================================================== */
+html.anim .hrv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+html.anim .hrv.in{opacity:1;transform:none}
+.hrv-d1{transition-delay:.08s}.hrv-d2{transition-delay:.16s}.hrv-d3{transition-delay:.24s}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media(max-width:1000px){
+  .hstats .wrap,.hpillars,.hsteps{grid-template-columns:1fr 1fr}
+  .habout .wrap{grid-template-columns:1fr}
+  .rail{display:none}
+}
+@media(max-width:900px){
+  .doors{flex-direction:column;height:auto}
+  .door{border-left:none;border-top:1px solid var(--hair);padding:24px 22px 26px;min-height:148px}
+  .doors[data-open] .door,.doors .door[data-open="true"]{flex-grow:0}
+  .doors .door .more{grid-template-rows:1fr;opacity:1}
+  .door .veil{background:linear-gradient(180deg, rgba(7,20,39,.34) 0%, rgba(7,20,39,.62) 100%)}
+}
+@media(max-width:680px){
+  .hstats .wrap,.hpillars,.hsteps{grid-template-columns:1fr}
+  .thread{padding:72px 0 64px}
+  .hwhy,.hengage,.habout,.hcontact{padding:72px 0}
+  .hhead{margin-bottom:40px}
+}
+@media(prefers-reduced-motion:reduce){
+  .track{animation:none}
+  html.anim .hrv{opacity:1;transform:none}
+}

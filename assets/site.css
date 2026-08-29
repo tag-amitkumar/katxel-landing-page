@@ -44,7 +44,7 @@ body[data-vertical="risk"]{--accent:var(--risk);--accent-rgb:var(--risk-rgb)}
 body[data-vertical="learn"]{--accent:var(--learn);--accent-rgb:var(--learn-rgb)}
 
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:84px}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:104px}
 body{
   font-family:var(--font-body);color:var(--ink);background:var(--white);
   line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden;
@@ -89,9 +89,9 @@ header.nav{
   position:sticky;top:0;z-index:80;backdrop-filter:blur(14px);
   background:rgba(7,20,39,.72);border-bottom:1px solid rgba(255,255,255,.08);
 }
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
-.logo{display:flex;align-items:center;gap:11px;color:#fff;font-family:var(--font-display);font-weight:700;font-size:21px;letter-spacing:-.02em;flex:none}
-.logo .mark{width:34px;height:34px}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:88px;gap:20px}
+.logo{display:flex;align-items:center;gap:14px;color:#fff;font-family:var(--font-display);font-weight:700;font-size:26px;letter-spacing:-.025em;flex:none}
+.logo .mark{width:42px;height:42px}
 .logo .div-name{color:var(--accent);font-weight:600;transition:color .3s ease}
 .logo .div-sep{color:rgba(255,255,255,.3);font-weight:400;margin:0 -2px}
 .nav-links{display:flex;gap:22px;align-items:center}
@@ -550,9 +550,9 @@ html.anim .stagger.in>*:nth-child(8){transition-delay:.49s}
   .nav-links{display:none}
   .burger{display:flex}
   .nav-links.open{
-    display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:flex-start;
+    display:flex;position:absolute;top:88px;left:0;right:0;flex-direction:column;align-items:flex-start;
     background:var(--navy-deep);padding:20px 28px 26px;gap:20px;border-bottom:1px solid rgba(255,255,255,.1);
-    max-height:calc(100vh - 72px);overflow-y:auto;
+    max-height:calc(100vh - 88px);overflow-y:auto;
   }
   .nav-links.open .dd{width:100%}
   .nav-links.open .dd-panel{
@@ -577,6 +577,11 @@ html.anim .stagger.in>*:nth-child(8){transition-delay:.49s}
 }
 @media(max-width:680px){
   body{font-size:16px}
+  /* keep the enlarged mark proportionate on phones */
+  .nav-inner{height:74px}
+  .logo{font-size:22px;gap:11px}
+  .logo .mark{width:35px;height:35px}
+  .nav-links.open{top:74px;max-height:calc(100vh - 74px)}
   /* three stacked cards already make the hero long on a phone — the service
      breakdown is one tap away on each division page. */
   .lens-rail{grid-template-columns:1fr}
