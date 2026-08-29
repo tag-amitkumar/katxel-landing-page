@@ -644,3 +644,29 @@ html.anim .stagger.in>*:nth-child(8){transition-delay:.49s}
   .mod{grid-template-columns:44px 1fr;row-gap:8px}
   .mod .kind{grid-column:2}
 }
+
+/* ---------- family divider (groups of cards within a section) ---------- */
+.fam{
+  font-family:var(--font-mono);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;margin:54px 0 20px;
+  display:flex;align-items:center;gap:16px;
+}
+.fam::after{content:"";flex:1;height:1px;background:var(--line)}
+.deep .fam::after,.dark .fam::after{background:rgba(255,255,255,.12)}
+
+/* ---------- student testimonials (read from students/testimonials.csv) ---------- */
+.stu{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);
+  padding:28px 26px;display:flex;flex-direction:column;gap:16px;margin:0;
+}
+.stu .mark{font-family:var(--font-display);font-size:44px;color:var(--accent);line-height:.6;height:22px}
+.stu blockquote{font-size:15.5px;color:var(--ink);line-height:1.6;margin:0}
+.stu .who{display:flex;align-items:center;gap:14px;margin-top:auto}
+.stu .who img{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;background:var(--bg-soft)}
+.stu .who b{display:block;font-size:15px;font-family:var(--font-display);font-weight:600}
+.stu .who>span>span{display:block;font-size:13px;color:var(--slate-2);margin-top:2px}
+.stu-flag{
+  display:inline-block;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;padding:4px 10px;border-radius:999px;
+  border:1px solid rgba(var(--accent-rgb),.45);color:var(--accent);margin-left:6px;vertical-align:2px;
+}

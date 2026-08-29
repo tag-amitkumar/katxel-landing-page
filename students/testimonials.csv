@@ -1,0 +1,6 @@
+id,image,name,programme,completed,status,message
+S-001,images/student-01.svg,Ananya R.,GIS & remote sensing,2026-05,demo,"I came in able to open QGIS and not much else. The classification project is the thing I actually show people — it is on my CV with the accuracy numbers attached."
+S-002,images/student-02.svg,Vikram K.,Web & application development,2026-04,demo,"Git from week one felt like overkill until the group project. By the end I could branch, review and deploy without anyone holding my hand."
+S-003,images/student-03.svg,Sana M.,Data analysis & visualisation,2026-06,demo,"Most of the course was cleaning messy data, which is exactly what my job turned out to be. The dashboard I built in week seven got me the interview."
+S-004,images/student-04.svg,Pooja D.,Internship programme,2026-03,demo,"I was given real tickets on a live project, not a sandbox. My certificate names the project and what I did on it, so I could talk about it properly in interviews."
+S-005,images/student-05.svg,Nikhil J.,Drone data processing,2026-02,demo,"Flight planning through to a checked orthomosaic in six weeks. The accuracy reporting section is what my employer cared about most."

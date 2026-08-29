@@ -11,6 +11,10 @@ risk.html       Katxel Risk  — catastrophe & climate risk modelling
 learn.html      Katxel Learn — IT & GIS training, internships & placement
 vercel.json     Clean-URL config (see Deploying)
 
+students/       Student testimonials shown on /learn — see students/README.md
+  testimonials.csv   one row per student
+  images/            one image per student
+
 assets/
   site.css          Shared design system (all five pages)
   site.js           Shared behaviour: nav, dropdown, reveal, counters, contact form

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Placeholder portrait">
+  <defs>
+    <linearGradient id="g02" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1"/><stop offset="100%" stop-color="#3F41B0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="#0B1F3A"/>
+  <circle cx="200" cy="200" r="150" fill="url(#g02)" opacity=".18"/>
+  <circle cx="200" cy="163" r="58" fill="url(#g02)"/>
+  <path d="M92 340a108 108 0 0 1 216 0z" fill="url(#g02)"/>
+  <text x="200" y="212" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,sans-serif"
+        font-size="58" font-weight="700" fill="#0B1F3A" opacity=".55">VK</text>
+</svg>
