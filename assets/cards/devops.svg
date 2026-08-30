@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 240" width="560" height="240" role="img" aria-hidden="true" focusable="false">
+  <g stroke="#fff" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".06">
+    <path d="M0 60h560M0 120h560M0 180h560M140 0v240M280 0v240M420 0v240"/>
+  </g>
+  <g stroke="#fff" fill="none" stroke-width="2.2" opacity=".85">
+    <rect x="120" y="98" width="70" height="46" rx="10"/>
+    <rect x="246" y="98" width="70" height="46" rx="10"/>
+    <rect x="372" y="98" width="70" height="46" rx="10"/>
+  </g>
+  <g stroke="#fff" fill="none" stroke-width="2.4" opacity=".6">
+    <path d="M190 121h44M234 111l12 10-12 10"/>
+    <path d="M316 121h44M360 111l12 10-12 10"/>
+  </g>
+  <g stroke="#fff" fill="none" stroke-width="1.8" opacity=".45" stroke-dasharray="5 6">
+    <path d="M407 144v34H155v-34"/>
+  </g>
+  <g fill="#fff" opacity=".5">
+    <rect x="138" y="114" width="34" height="6" rx="3"/><rect x="138" y="126" width="22" height="6" rx="3"/>
+    <rect x="264" y="114" width="34" height="6" rx="3"/><rect x="264" y="126" width="22" height="6" rx="3"/>
+    <rect x="390" y="114" width="34" height="6" rx="3"/><rect x="390" y="126" width="22" height="6" rx="3"/>
+  </g>
+</svg>

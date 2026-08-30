@@ -670,3 +670,24 @@ html.anim .stagger.in>*:nth-child(8){transition-delay:.49s}
   text-transform:uppercase;padding:4px 10px;border-radius:999px;
   border:1px solid rgba(var(--accent-rgb),.45);color:var(--accent);margin-left:6px;vertical-align:2px;
 }
+
+/* ---------- card illustration banner ----------
+   Full-bleed across the top of a card (the card's own overflow:hidden clips
+   it to the rounded corners). The artwork files are colour-agnostic white
+   line art, so the division accent comes from this gradient — one SVG works
+   on any page. Swap the <img> src for a photograph whenever you have one.
+   -------------------------------------------------------------------------- */
+.card .cvis{
+  margin:-30px -28px 20px;
+  aspect-ratio:560/240;
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(120% 100% at 20% 0%, rgba(var(--accent-rgb),.42), transparent 64%),
+    linear-gradient(160deg,var(--navy),var(--navy-deep));
+}
+.card .cvis img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .5s cubic-bezier(.22,.7,.24,1);
+}
+.card:hover .cvis img{transform:scale(1.045)}
+@media(prefers-reduced-motion:reduce){ .card:hover .cvis img{transform:none} }

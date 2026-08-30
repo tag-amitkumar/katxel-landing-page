@@ -22,6 +22,7 @@ assets/
   home.js           Homepage-only: door canvas, scroll-scrubbed diagram, counters
   hero-lenses.js    Division-page hero canvas (one locked state per division)
   favicon.svg       Browser tab icon
+  cards/            One illustration per service/track card — see below
 
 flood_ganges.gif        Ganges floodplain model output — shown on risk.html
 hero_anim_preview.jpg   Social/OG preview image for risk.html
@@ -60,6 +61,15 @@ The homepage sets `data-vertical="geo"` only so shared components have an
 accent to fall back on; its four door panels each carry their own `--c` inline,
 which is why all four colours can sit on screen at once. `hero-lenses.js` is no
 longer loaded there — it now serves the division-page heroes only.
+
+### Card illustrations
+
+Every service and track card carries a full-bleed banner from `assets/cards/`.
+The artwork is deliberately colour-agnostic — white line art on a transparent
+field — and the division accent comes from the gradient behind it, so the same
+file works on any page (`remote-sensing.svg` and `drone.svg` are each used on
+two). To swap one for a photograph, just point the `<img src>` at your image;
+it is object-fit cover at 560x240, so a wide crop works best.
 
 ### Adding a page
 
