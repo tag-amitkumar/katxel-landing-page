@@ -3,8 +3,11 @@
 Print-ready one-pagers built from the site content.
 
 ```
-katxel-learn-flyer.html   the editable source — this is what you change
-katxel-learn-a4.pdf       the rendered output, A4 portrait, single page
+katxel-learn-flyer.html    minimal one-pager — source
+katxel-learn-a4.pdf        minimal one-pager — rendered, A4, single page
+katxel-learn-poster.html   full-detail poster — source
+katxel-learn-poster-a4.pdf full-detail poster — rendered, A4, single page
+qr-learn.svg               QR code for https://www.katxel.in/learn
 ```
 
 ## Editing
@@ -33,6 +36,24 @@ option the navy header and footer print white.
   unbacked placement figure is the first thing a sceptical parent checks.
 - The eight tracks, cohort length and project count mirror `/learn`. If you
   change them there, change them here — they are not linked.
+
+## The QR code
+
+`qr-learn.svg` encodes `https://www.katxel.in/learn`. It is a version-3,
+error-correction-M code generated from scratch and checked three ways: the
+Reed-Solomon syndromes are all zero, the format bits match the published
+standard table for all eight masks, and the finished matrix reads back to the
+exact URL. **Scan it once with your own phone before a print run** — the checks
+prove the encoding is correct, they do not prove your printer reproduced it.
+
+If the URL ever changes the whole code changes; it cannot be edited by hand.
+
+## Fitting the poster on one page
+
+The poster is dense and sits within about 1mm of the bottom of the sheet. If
+you add a bullet or lengthen a heading it will silently push to a second page.
+After any edit, open it in the browser at A4 and check the footer still lands
+on the first sheet before re-rendering.
 
 ## Sizes
 

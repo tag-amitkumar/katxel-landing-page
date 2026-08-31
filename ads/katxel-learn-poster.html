@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Katxel Learn — A4 poster</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   Katxel Learn — full-detail A4 poster.
+   Print: Chrome/Edge → Print → A4, margins None, Background graphics ON.
+   ========================================================================== */
+@page{ size:A4; margin:0 }
+:root{
+  --navy:#0B1F3A; --navy-deep:#071427; --navy-2:#122F52;
+  --green:#8CC63F; --green-d:#5E9420;
+  --teal:#00C2A8; --indigo:#6366F1; --orange:#FF7A00;
+  --ink:#0E2035; --slate:#4A5C74; --slate-2:#8494A8;
+  --line:#E2E8F0; --paper:#fff; --wash:#F4F7FA;
+  --dsp:'Space Grotesk',"Segoe UI",system-ui,sans-serif;
+  --bdy:'Inter',"Segoe UI",system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:210mm;height:297mm}
+body{font-family:var(--bdy);color:var(--ink);background:var(--paper);
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;-webkit-font-smoothing:antialiased}
+.page{width:210mm;height:297mm;display:flex;flex-direction:column;overflow:hidden}
+
+/* ---------------- header ---------------- */
+.hero{flex:none;position:relative;background:var(--navy-deep);color:#fff;padding:5mm 11mm 4.6mm;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(90% 120% at 78% 20%, rgba(140,198,63,.22), transparent 60%)}
+.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.06fr .94fr;gap:8mm;align-items:center}
+.brand{display:flex;align-items:center;gap:2.6mm;margin-bottom:3.4mm}
+.brand svg{width:9mm;height:9mm}
+.brand .wm{line-height:1}
+.brand .wm b{display:block;font-family:var(--dsp);font-weight:700;font-size:6mm;letter-spacing:-.02em}
+.brand .wm i{display:block;font-style:normal;font-family:var(--mono);font-weight:600;
+  font-size:2.7mm;letter-spacing:.42em;color:var(--green);margin-top:1mm;margin-left:.4mm}
+h1{font-family:var(--dsp);font-weight:700;font-size:6.8mm;line-height:1.06;letter-spacing:-.02em;text-transform:uppercase}
+h1 em{font-style:normal;color:var(--green)}
+.rule{width:26mm;height:.7mm;background:var(--green);margin:2.4mm 0 2.2mm;border-radius:.4mm}
+.strap{font-family:var(--bdy);font-weight:600;font-size:3.1mm;letter-spacing:.02em;color:#fff}
+.strap i{font-style:normal;color:rgba(255,255,255,.34);margin:0 2mm}
+.intro{font-size:2.7mm;line-height:1.45;color:rgba(255,255,255,.76);margin-top:2.4mm;max-width:92mm}
+
+.pills{display:flex;flex-direction:column;gap:1.5mm;background:rgba(255,255,255,.07);
+  border:.3mm solid rgba(255,255,255,.14);border-radius:2.5mm;padding:3.2mm 4mm}
+.pill{display:flex;align-items:center;gap:2.6mm;font-size:2.8mm;font-weight:600}
+.pill svg{width:4.4mm;height:4.4mm;flex:none;stroke:var(--green);fill:none;stroke-width:1.8}
+
+/* ---------------- section titles ---------------- */
+.st{text-align:center;margin-bottom:1.9mm}
+.st b{font-family:var(--dsp);font-weight:700;font-size:4mm;letter-spacing:-.01em;color:var(--navy);
+  display:inline-flex;align-items:center;gap:4mm}
+.st b::before,.st b::after{content:"";width:16mm;height:.4mm;background:var(--green);display:block}
+.st span{display:block;font-size:2.6mm;color:var(--slate);margin-top:.9mm}
+
+/* ---------------- programs ---------------- */
+.mid{padding:3.6mm 11mm 0;flex:1 1 auto;min-height:0;display:flex;flex-direction:column;gap:2.6mm}
+.mid>*{flex:none}
+.progs{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm}
+.prog{border:.3mm solid var(--line);border-radius:2.5mm;padding:2.5mm;background:var(--paper)}
+.prog .ic{width:6.6mm;height:6.6mm;border-radius:1.6mm;display:grid;place-items:center;margin-bottom:1.6mm}
+.prog .ic svg{width:3.9mm;height:3.9mm;stroke:#fff;fill:none;stroke-width:2}
+.prog h3{font-family:var(--dsp);font-weight:700;font-size:3.05mm;line-height:1.18;text-transform:uppercase;
+  letter-spacing:.01em;color:var(--navy);min-height:6mm}
+.prog ul{list-style:none;margin-top:1.3mm;border-top:.3mm solid var(--line);padding-top:1.3mm}
+.prog li{font-size:2.4mm;line-height:1.38;color:var(--slate);padding-left:3mm;position:relative}
+.prog li::before{content:"";position:absolute;left:0;top:1.5mm;width:1.2mm;height:1.2mm;border-radius:50%;background:var(--green)}
+
+/* ---------------- why band ---------------- */
+.why{background:var(--navy);border-radius:3mm;padding:3.2mm 4.4mm 3.4mm;color:#fff;position:relative;overflow:hidden}
+.why::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(70% 160% at 12% 100%, rgba(0,194,168,.16), transparent 60%)}
+.why-in{position:relative;z-index:2}
+.why .st b{color:#fff}
+.why-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2.6mm;margin-top:2mm}
+.why-grid>div{text-align:center;padding:0 1mm;border-left:.3mm solid rgba(255,255,255,.12)}
+.why-grid>div:first-child{border-left:none}
+.why-grid svg{width:6mm;height:6mm;stroke:var(--green);fill:none;stroke-width:1.7;margin:0 auto 1.4mm}
+.why-grid b{display:block;font-family:var(--mono);font-size:2.3mm;letter-spacing:.06em;text-transform:uppercase;color:var(--green);margin-bottom:1.2mm}
+.why-grid p{font-size:2.4mm;line-height:1.34;color:rgba(255,255,255,.72)}
+
+/* ---------------- how it works ---------------- */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:start;margin-top:1mm}
+.fs{text-align:center;position:relative;padding:0 2mm}
+.fs::after{content:"";position:absolute;top:4.5mm;right:-4mm;width:8mm;height:.3mm;background:var(--line)}
+.fs:last-child::after{display:none}
+.fs .rd{width:9mm;height:9mm;border-radius:50%;border:.4mm solid;display:grid;place-items:center;margin:0 auto 1.4mm;background:#fff}
+.fs .rd svg{width:4.4mm;height:4.4mm;fill:none;stroke-width:1.9}
+.fs b{display:block;font-family:var(--dsp);font-weight:700;font-size:2.85mm;text-transform:uppercase;color:var(--navy)}
+.fs span{display:block;font-size:2.4mm;line-height:1.3;color:var(--slate);margin-top:.8mm}
+
+/* ---------------- lower blocks ---------------- */
+.low{display:grid;grid-template-columns:1fr 1fr 1fr .92fr;gap:3mm;align-items:stretch}
+.blk{background:var(--wash);border:.3mm solid var(--line);border-radius:2.5mm;padding:2.6mm}
+.blk h4{font-family:var(--dsp);font-weight:700;font-size:2.95mm;text-transform:uppercase;color:var(--navy);margin-bottom:1.6mm;
+  display:flex;align-items:center;gap:2mm}
+.blk h4 svg{width:4.2mm;height:4.2mm;stroke:var(--green-d);fill:none;stroke-width:1.9}
+.blk li{list-style:none;font-size:2.42mm;line-height:1.36;color:var(--slate);padding-left:3.6mm;position:relative;margin-bottom:.9mm}
+.blk li::before{content:"";position:absolute;left:0;top:.8mm;width:2.3mm;height:2.3mm;border-radius:50%;background:var(--green)}
+.blk li::after{content:"";position:absolute;left:.7mm;top:1.5mm;width:1mm;height:.5mm;
+  border-left:.4mm solid #fff;border-bottom:.4mm solid #fff;transform:rotate(-45deg)}
+.blk p{font-size:2.42mm;line-height:1.4;color:var(--slate)}
+.impact{background:var(--navy);border:none;color:#fff;position:relative;overflow:hidden}
+.impact::after{content:"";position:absolute;inset:0;background:radial-gradient(80% 140% at 90% 0%, rgba(140,198,63,.20), transparent 62%)}
+.impact>*{position:relative;z-index:2}
+.impact h4{color:#fff}
+.impact .n{font-family:var(--dsp);font-weight:700;font-size:5.2mm;line-height:1;color:var(--green);letter-spacing:-.02em}
+.impact .n small{display:block;font-family:var(--bdy);font-weight:500;font-size:2.4mm;color:rgba(255,255,255,.74);margin-top:1mm;letter-spacing:0}
+.impact .n+.n{margin-top:1.7mm}
+
+/* ---------------- cta ---------------- */
+.cta{display:grid;grid-template-columns:auto 1fr auto;gap:5mm;align-items:center;
+  border-top:.4mm solid var(--line);padding:2.8mm 0 2.6mm;margin-top:auto}
+.qr{width:19mm;height:19mm;border:.5mm solid var(--line);border-radius:2mm;padding:1.2mm;background:#fff}
+.qr img{width:100%;height:100%;display:block}
+.cta .txt b{display:block;font-family:var(--dsp);font-weight:700;font-size:3.6mm;color:var(--green-d);text-transform:uppercase;letter-spacing:-.01em}
+.cta .txt span{display:block;font-size:2.9mm;color:var(--slate);margin:1.2mm 0 2.4mm}
+.cta .url{display:inline-flex;align-items:center;gap:2.4mm;background:var(--green);color:#fff;
+  font-family:var(--mono);font-weight:600;font-size:3.1mm;padding:1.9mm 4.4mm;border-radius:99mm;letter-spacing:.02em}
+.cta .url svg{width:4mm;height:4mm;stroke:#fff;fill:none;stroke-width:1.9}
+.modes{display:flex;gap:5mm}
+.mode{text-align:center;width:22mm}
+.mode svg{width:5.8mm;height:5.8mm;stroke:var(--navy);fill:none;stroke-width:1.7;margin:0 auto 1.6mm}
+.mode b{display:block;font-family:var(--dsp);font-weight:700;font-size:2.7mm;text-transform:uppercase;line-height:1.25;color:var(--navy)}
+
+/* ---------------- footer ---------------- */
+.foot{flex:none;background:var(--navy-deep);color:#fff;padding:2.8mm 11mm;display:flex;
+  align-items:center;justify-content:space-between;gap:4mm;font-size:3mm}
+.foot div{display:flex;align-items:center;gap:2.4mm}
+.foot svg{width:4.4mm;height:4.4mm;stroke:var(--green);fill:none;stroke-width:1.8}
+.foot .sep{width:.3mm;height:5mm;background:rgba(255,255,255,.18)}
+
+/* ---- final fit pass: brings the page to exactly one A4 sheet ---- */
+h1{font-size:6.2mm}
+.mid{gap:2.2mm}
+.prog h3{min-height:5mm;font-size:2.95mm}
+.prog li{font-size:2.3mm;line-height:1.32}
+.why-grid svg{width:5.4mm;height:5.4mm;margin-bottom:1.1mm}
+.why-grid p{line-height:1.28;font-size:2.35mm}
+.fs .rd{width:8mm;height:8mm;margin-bottom:1.1mm}
+.fs .rd svg{width:4mm;height:4mm}
+.fs::after{top:4mm}
+.fs span{line-height:1.26}
+.blk li{line-height:1.3;margin-bottom:.7mm}
+.blk p{line-height:1.34}
+.qr{width:17mm;height:17mm}
+.cta .txt span{margin:.9mm 0 1.8mm}
+.cta{padding:2.4mm 0 2.2mm}
+.hero{padding:4.2mm 11mm 4mm}
+.mid{padding-top:2.8mm}
+.prog li{line-height:1.26}
+.blk li{margin-bottom:.5mm}
+.cta{padding:2mm 0 1.8mm}
+.foot{padding:2.4mm 11mm}
+.mid{padding-top:2.2mm}
+.foot{padding:2.2mm 11mm}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ======== HERO ======== -->
+  <header class="hero">
+    <div class="hero-in">
+      <div>
+        <div class="brand">
+          <svg viewBox="0 0 128 128" aria-hidden="true">
+            <defs>
+              <linearGradient id="kg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/>
+              </linearGradient>
+              <mask id="km"><rect width="128" height="128" fill="black"/><polygon fill="white" points="64,8 20,32 20,96 64,120 108,96 108,32"/><line x1="-20" y1="85.54" x2="148" y2="-4.92" stroke="black" stroke-width="14" stroke-linecap="round"/><line x1="-20" y1="42.46" x2="148" y2="132.92" stroke="black" stroke-width="14" stroke-linecap="round"/></mask>
+            </defs>
+            <g mask="url(#km)"><polygon fill="url(#kg)" points="64,8 20,32 20,96 64,120 108,96 108,32"/><polygon fill="none" stroke="#0EA5E9" stroke-width="3" points="64,8 20,32 20,96 64,120 108,96 108,32"/></g>
+          </svg>
+          <span class="wm"><b>KATXEL</b><i>LEARN</i></span>
+        </div>
+
+        <h1>Learn skills.<br>Work on real projects.<br><em>Build your career.</em></h1>
+        <div class="rule"></div>
+        <div class="strap">IT &amp; GIS TRAINING<i>|</i>INTERNSHIPS<i>|</i>PLACEMENT SUPPORT</div>
+        <p class="intro">The training and internship initiative of Katxel, created to bridge the gap between
+          learning and real-world work. Gain practical skills, work on live projects, build your
+          portfolio, and get placement support to start your career.</p>
+      </div>
+
+      <div class="pills">
+        <div class="pill"><svg viewBox="0 0 24 24"><path d="M4 6h16v13H4z"/><path d="M4 10h16M9 19v2M15 19v2"/></svg>Real Projects</div>
+        <div class="pill"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 19a6 6 0 0 1 12 0M17 6.5a3 3 0 0 1 0 5.6M19 19a5.6 5.6 0 0 0-3-4.6"/></svg>Mentor Guidance</div>
+        <div class="pill"><svg viewBox="0 0 24 24"><path d="M3 7h6l2 3h10v9H3z"/><path d="M3 7V5h6"/></svg>Portfolio Building</div>
+        <div class="pill"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M8.5 13.5L7 22l5-2.5L17 22l-1.5-8.5"/></svg>Internship Certificate</div>
+        <div class="pill"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 4V2M20 12h2"/></svg>Placement Support</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======== MIDDLE ======== -->
+  <div class="mid">
+
+    <!-- programs -->
+    <section>
+      <div class="st"><b>Our Programs</b></div>
+      <div class="progs">
+        <div class="prog">
+          <div class="ic" style="background:var(--indigo)"><svg viewBox="0 0 24 24"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/></svg></div>
+          <h3>Software Development</h3>
+          <ul><li>Full stack development</li><li>Frontend development</li><li>Backend development</li></ul>
+        </div>
+        <div class="prog">
+          <div class="ic" style="background:var(--teal)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M8.5 12l2.5 2.5 5-5"/></svg></div>
+          <h3>QA &amp; Testing</h3>
+          <ul><li>Manual testing</li><li>Automation testing</li><li>API &amp; regression testing</li></ul>
+        </div>
+        <div class="prog">
+          <div class="ic" style="background:var(--orange)"><svg viewBox="0 0 24 24"><path d="M7 12a3 3 0 1 1 3 3c-3 0-3-6-6-6a3 3 0 1 0 0 6c3 0 3-6 6-6"/><path d="M14 12a3 3 0 1 0 3 3c3 0 3-6 0-6a3 3 0 0 0-3 3"/></svg></div>
+          <h3>DevOps &amp; Deployment</h3>
+          <ul><li>CI/CD pipelines</li><li>Docker &amp; cloud basics</li><li>Monitoring &amp; rollback</li></ul>
+        </div>
+        <div class="prog">
+          <div class="ic" style="background:#7C3AED"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20V8"/></svg></div>
+          <h3>Data Analysis &amp; Visualization</h3>
+          <ul><li>Python &amp; R for analysis</li><li>Dashboards &amp; reporting</li><li>Data visualization</li></ul>
+        </div>
+
+        <div class="prog">
+          <div class="ic" style="background:#22C55E"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg></div>
+          <h3>GIS &amp; Data Digitization</h3>
+          <ul><li>Projections &amp; datums</li><li>Map digitization</li><li>Topology &amp; QC</li></ul>
+        </div>
+        <div class="prog">
+          <div class="ic" style="background:#0EA5E9"><svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></div>
+          <h3>Spatial Analysis</h3>
+          <ul><li>Raster analysis</li><li>Vector analysis</li><li>Geoprocessing</li></ul>
+        </div>
+        <div class="prog">
+          <div class="ic" style="background:#2563EB"><svg viewBox="0 0 24 24"><rect x="7" y="4" width="10" height="7" rx="2"/><path d="M7 8H3M17 8h4M12 11v9M8 20h8"/></svg></div>
+          <h3>Remote Sensing</h3>
+          <ul><li>Image processing</li><li>Land use / land cover</li><li>Change detection</li></ul>
+        </div>
+        <div class="prog">
+          <div class="ic" style="background:#0D9488"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M9 9L5 5M15 9l4-4M9 15l-4 4M15 15l4 4"/></svg></div>
+          <h3>Drone Data Processing</h3>
+          <ul><li>Photogrammetry</li><li>2D mapping &amp; ortho</li><li>3D modelling, DSM/DTM</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- why -->
+    <section class="why">
+      <div class="why-in">
+        <div class="st"><b>Why Choose Katxel Learn?</b></div>
+        <div class="why-grid">
+          <div><svg viewBox="0 0 24 24"><path d="M5 4h10l4 4v12H5z"/><path d="M15 4v4h4M8 13h6M8 16h4"/></svg>
+            <b>Real Projects</b><p>Work on live projects with real data and industry workflows.</p></div>
+          <div><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 19a6 6 0 0 1 12 0M17 6.5a3 3 0 0 1 0 5.6M19 19a5.6 5.6 0 0 0-3-4.6"/></svg>
+            <b>Mentor Guidance</b><p>Learn from working engineers with hands-on review.</p></div>
+          <div><svg viewBox="0 0 24 24"><path d="M3 7h6l2 3h10v9H3z"/><path d="M3 7V5h6"/></svg>
+            <b>Portfolio Building</b><p>Build a portfolio that shows your skills and your projects.</p></div>
+          <div><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M8.5 13.5L7 22l5-2.5L17 22l-1.5-8.5"/></svg>
+            <b>Internship Certificate</b><p>Earn a certificate naming the project you worked on.</p></div>
+          <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 4V2M20 12h2"/></svg>
+            <b>Placement Support</b><p>Resume building, interview prep and placement assistance.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- how it works -->
+    <section>
+      <div class="st"><b>How It Works</b></div>
+      <div class="flow">
+        <div class="fs"><div class="rd" style="border-color:var(--indigo)"><svg viewBox="0 0 24 24" style="stroke:var(--indigo)"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 13l2 2 4-4"/></svg></div>
+          <b>1. Enroll</b><span>Choose your program and enroll.</span></div>
+        <div class="fs"><div class="rd" style="border-color:var(--teal)"><svg viewBox="0 0 24 24" style="stroke:var(--teal)"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5z"/></svg></div>
+          <b>2. Learn</b><span>Concepts with practical assignments.</span></div>
+        <div class="fs"><div class="rd" style="border-color:var(--green-d)"><svg viewBox="0 0 24 24" style="stroke:var(--green-d)"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div>
+          <b>3. Work on Projects</b><span>Apply skills on real-world projects.</span></div>
+        <div class="fs"><div class="rd" style="border-color:var(--orange)"><svg viewBox="0 0 24 24" style="stroke:var(--orange)"><circle cx="12" cy="9" r="5"/><path d="M8.5 13.5L7 22l5-2.5L17 22l-1.5-8.5"/></svg></div>
+          <b>4. Internship</b><span>Work under mentor supervision.</span></div>
+        <div class="fs"><div class="rd" style="border-color:#7C3AED"><svg viewBox="0 0 24 24" style="stroke:#7C3AED"><circle cx="12" cy="8" r="3.6"/><path d="M5 20a7 7 0 0 1 14 0"/></svg></div>
+          <b>5. Get Placed</b><span>Placement support and career guidance.</span></div>
+      </div>
+    </section>
+
+    <!-- lower blocks -->
+    <section class="low">
+      <div class="blk">
+        <h4><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 19a6 6 0 0 1 12 0M17 6.5a3 3 0 0 1 0 5.6"/></svg>Who Can Join?</h4>
+        <ul>
+          <li>Students (UG / PG)</li>
+          <li>Fresh graduates</li>
+          <li>Career switchers</li>
+          <li>Anyone building a career in IT &amp; GIS</li>
+        </ul>
+      </div>
+      <div class="blk">
+        <h4><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg>Why Katxel?</h4>
+        <p>Katxel is a GIS &amp; IT services company delivering geospatial, software and risk
+          solutions across industries and geographies. With Katxel Learn we are training the next
+          generation of skilled professionals — taught by the engineers who do this work for clients.</p>
+      </div>
+      <div class="blk">
+        <h4><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>Key Highlights</h4>
+        <ul>
+          <li>Industry-relevant curriculum</li>
+          <li>Live projects &amp; real data</li>
+          <li>Flexible learning options</li>
+          <li>Experienced mentors</li>
+          <li>Certificate of completion</li>
+        </ul>
+      </div>
+      <div class="blk impact">
+        <h4>Our Impact</h4>
+        <div class="n">8<small>Training tracks</small></div>
+        <div class="n">6–8<small>Weeks per cohort</small></div>
+        <div class="n">3<small>Live projects per track</small></div>
+      </div>
+    </section>
+
+    <!-- cta -->
+    <section class="cta">
+      <div class="qr"><img src="qr-learn.svg" alt="QR code to www.katxel.in/learn"></div>
+      <div class="txt">
+        <b>Start your career journey today!</b>
+        <span>Scan the QR code to enrol, or visit us online.</span>
+        <span class="url"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg>www.katxel.in/learn</span>
+      </div>
+      <div class="modes">
+        <div class="mode"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg><b>Online &amp;<br>Offline Classes</b></div>
+        <div class="mode"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20a7 7 0 0 1 14 0"/></svg><b>Expert<br>Mentors</b></div>
+        <div class="mode"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 4v16"/></svg><b>Flexible<br>Batches</b></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="foot">
+    <div><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg>learn@katxel.in</div>
+    <span class="sep"></span>
+    <div><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Delhi NCR, India</div>
+    <span class="sep"></span>
+    <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg>www.katxel.in</div>
+  </footer>
+
+</div>
+</body>
+</html>
