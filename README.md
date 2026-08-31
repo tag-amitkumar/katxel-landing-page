@@ -11,6 +11,8 @@ risk.html       Katxel Risk  — catastrophe & climate risk modelling
 learn.html      Katxel Learn — IT & GIS training, internships & placement
 vercel.json     Clean-URL config (see Deploying)
 
+ads/            Print-ready adverts (A4 flyer source + PDF) — see ads/README.md
+
 students/       Student testimonials shown on /learn — see students/README.md
   testimonials.csv   one row per student
   images/            one image per student

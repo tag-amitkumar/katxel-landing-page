@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Katxel Learn — A4 advert</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   Katxel Learn — single-page A4 advert.
+   Print with: Chrome/Edge → Print → Save as PDF → A4, margins None,
+   "Background graphics" ON. Or use the committed PDF next to this file.
+   ========================================================================== */
+@page{ size:A4; margin:0 }
+
+:root{
+  --navy:#0B1F3A;
+  --navy-deep:#071427;
+  --learn:#22C55E;
+  --learn-deep:#15803D;
+  --ink:#0B1F3A;
+  --slate:#4A5C74;
+  --slate-2:#7C8CA1;
+  --line:#DFE6EF;
+  --paper:#FFFFFF;
+  --tint:#F2F7F4;
+  --display:'Space Grotesk',"Segoe UI",system-ui,sans-serif;
+  --body:'Inter',"Segoe UI",system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:210mm;height:297mm}
+body{
+  font-family:var(--body);color:var(--ink);background:var(--paper);
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;
+  -webkit-font-smoothing:antialiased;
+}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;display:flex;flex-direction:column}
+
+/* ---------------- header ---------------- */
+.head{
+  position:relative;background:var(--navy-deep);color:#fff;
+  padding:13mm 14mm 20mm;overflow:hidden;
+}
+.head::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(120% 110% at 82% 8%, rgba(34,197,94,.30), transparent 62%);
+}
+.motif{position:absolute;right:-6mm;top:4mm;width:96mm;height:60mm;opacity:.5}
+.head-in{position:relative;z-index:2}
+
+.brand{display:flex;align-items:center;gap:4mm;margin-bottom:9mm}
+.brand svg.mark{width:13mm;height:13mm}
+.brand .wm{font-family:var(--display);font-weight:700;font-size:8.4mm;letter-spacing:-.02em;line-height:1}
+.brand .wm i{font-style:normal;color:rgba(255,255,255,.34);font-weight:400;margin:0 .8mm}
+.brand .wm b{color:var(--learn);font-weight:600}
+
+.eyebrow{
+  font-family:var(--mono);font-size:2.7mm;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--learn);margin-bottom:4mm;display:block;
+}
+h1{
+  font-family:var(--display);font-weight:600;font-size:12.2mm;line-height:1.02;
+  letter-spacing:-.03em;max-width:135mm;
+}
+h1 em{font-style:normal;color:var(--learn)}
+.lede{font-size:3.9mm;line-height:1.5;color:rgba(255,255,255,.80);max-width:118mm;margin-top:5mm}
+
+/* ---------------- stats card ---------------- */
+.stats{
+  margin:-13mm 14mm 0;position:relative;z-index:5;
+  background:var(--paper);border:1px solid var(--line);border-radius:3mm;
+  box-shadow:0 4mm 12mm rgba(11,31,58,.14);
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.stats div{padding:5.5mm 4mm;text-align:center;border-left:1px solid var(--line)}
+.stats div:first-child{border-left:none}
+.stats .n{font-family:var(--display);font-weight:700;font-size:8mm;line-height:1;color:var(--learn-deep);letter-spacing:-.02em}
+.stats .l{font-family:var(--mono);font-size:2.5mm;letter-spacing:.1em;text-transform:uppercase;color:var(--slate-2);margin-top:2mm}
+
+/* ---------------- body ---------------- */
+.body{flex:1;padding:9mm 14mm 0;display:flex;flex-direction:column;gap:7mm}
+
+.sec-t{
+  font-family:var(--mono);font-size:2.8mm;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--learn-deep);font-weight:600;display:flex;align-items:center;gap:3mm;margin-bottom:4mm;
+}
+.sec-t::after{content:"";flex:1;height:.3mm;background:var(--line)}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:9mm}
+.trk{display:flex;gap:3mm;padding:2.6mm 0;border-bottom:.3mm dotted var(--line)}
+.trk:last-child{border-bottom:none}
+.trk .bul{flex:none;width:2.4mm;height:2.4mm;border-radius:.6mm;background:var(--learn);margin-top:1.6mm}
+.trk b{display:block;font-family:var(--display);font-weight:600;font-size:3.9mm;letter-spacing:-.01em;line-height:1.25}
+.trk span{display:block;font-family:var(--mono);font-size:2.6mm;color:var(--slate-2);letter-spacing:.04em;margin-top:1mm}
+
+/* ---------------- outcome band ---------------- */
+.band{background:var(--tint);border-left:1.2mm solid var(--learn);border-radius:0 2mm 2mm 0;padding:5mm 6mm}
+.band h2{font-family:var(--display);font-size:4.6mm;font-weight:600;letter-spacing:-.01em;margin-bottom:3.5mm}
+.band ul{list-style:none;display:grid;grid-template-columns:1fr 1fr 1fr;gap:4mm}
+.band li{font-size:3.3mm;line-height:1.45;color:var(--slate);padding-left:5mm;position:relative}
+.band li::before{
+  content:"";position:absolute;left:0;top:1.1mm;width:3mm;height:3mm;border-radius:50%;
+  background:var(--learn);
+}
+.band li::after{
+  content:"";position:absolute;left:.95mm;top:2.1mm;width:1.1mm;height:.6mm;
+  border-left:.45mm solid #fff;border-bottom:.45mm solid #fff;transform:rotate(-45deg);
+}
+.band li b{color:var(--ink);font-weight:600}
+
+/* ---------------- lower row ---------------- */
+.low{display:grid;grid-template-columns:1.05fr 1fr;gap:9mm}
+.who{display:grid;grid-template-columns:1fr 1fr;gap:2.5mm 4mm}
+.who p{font-size:3.2mm;line-height:1.4;color:var(--slate)}
+.who p b{display:block;color:var(--ink);font-family:var(--display);font-weight:600;font-size:3.5mm}
+.steps{display:flex;flex-direction:column;gap:2.6mm}
+.step{display:flex;gap:3mm;align-items:baseline}
+.step i{
+  font-style:normal;font-family:var(--mono);font-size:2.5mm;color:var(--learn-deep);
+  border:.3mm solid var(--learn);border-radius:50%;width:5.4mm;height:5.4mm;
+  display:inline-flex;align-items:center;justify-content:center;flex:none;font-weight:600;
+}
+.step b{font-family:var(--display);font-size:3.5mm;font-weight:600}
+.step span{font-size:3mm;color:var(--slate)}
+
+/* ---------------- footer ---------------- */
+.foot{
+  margin-top:auto;background:var(--navy);color:#fff;padding:7mm 14mm;
+  display:flex;align-items:center;justify-content:space-between;gap:8mm;position:relative;overflow:hidden;
+}
+.foot::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(90% 240% at 88% 50%, rgba(34,197,94,.26), transparent 60%);
+}
+.foot>*{position:relative;z-index:2}
+.foot .cta b{display:block;font-family:var(--display);font-size:5.6mm;font-weight:600;letter-spacing:-.02em}
+.foot .cta span{display:block;font-size:3.2mm;color:rgba(255,255,255,.72);margin-top:1.5mm}
+.foot .reach{text-align:right;font-family:var(--mono);font-size:3.1mm;line-height:1.75;letter-spacing:.02em}
+.foot .reach .site{color:var(--learn);font-weight:600;font-size:3.8mm;letter-spacing:.04em}
+.foot .reach .loc{color:rgba(255,255,255,.55);font-size:2.7mm}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ============ HEADER ============ -->
+  <header class="head">
+    <svg class="motif" viewBox="0 0 480 300" aria-hidden="true">
+      <g stroke="#22C55E" fill="none" stroke-width="2.4" stroke-linecap="round">
+        <path d="M40 60h400" opacity=".16"/><path d="M40 60h250" opacity=".55"/>
+        <path d="M40 120h400" opacity=".16"/><path d="M40 120h170" opacity=".45"/>
+        <path d="M40 180h400" opacity=".16"/><path d="M40 180h320" opacity=".38"/>
+        <path d="M40 240h400" opacity=".16"/><path d="M40 240h120" opacity=".3"/>
+      </g>
+      <g fill="#22C55E">
+        <circle cx="40" cy="60" r="6" opacity=".8"/><circle cx="140" cy="60" r="6" opacity=".8"/>
+        <circle cx="240" cy="60" r="6" opacity=".8"/><circle cx="40" cy="120" r="6" opacity=".7"/>
+        <circle cx="140" cy="120" r="6" opacity=".7"/><circle cx="40" cy="180" r="6" opacity=".6"/>
+        <circle cx="180" cy="180" r="6" opacity=".6"/><circle cx="320" cy="180" r="6" opacity=".55"/>
+        <circle cx="40" cy="240" r="6" opacity=".5"/>
+      </g>
+      <g stroke="#22C55E" fill="none" stroke-width="3">
+        <circle cx="290" cy="60" r="14" opacity=".8"/>
+        <circle cx="210" cy="120" r="14" opacity=".6"/>
+        <circle cx="360" cy="180" r="14" opacity=".5"/>
+      </g>
+    </svg>
+
+    <div class="head-in">
+      <div class="brand">
+        <svg class="mark" viewBox="0 0 128 128" aria-hidden="true">
+          <defs>
+            <linearGradient id="kg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/>
+            </linearGradient>
+            <mask id="km"><rect width="128" height="128" fill="black"/><polygon fill="white" points="64,8 20,32 20,96 64,120 108,96 108,32"/><line x1="-20" y1="85.54" x2="148" y2="-4.92" stroke="black" stroke-width="14" stroke-linecap="round"/><line x1="-20" y1="42.46" x2="148" y2="132.92" stroke="black" stroke-width="14" stroke-linecap="round"/></mask>
+          </defs>
+          <g mask="url(#km)"><polygon fill="url(#kg)" points="64,8 20,32 20,96 64,120 108,96 108,32"/><polygon fill="none" stroke="#0EA5E9" stroke-width="3" points="64,8 20,32 20,96 64,120 108,96 108,32"/></g>
+        </svg>
+        <span class="wm">KATXEL<i>/</i><b>Learn</b></span>
+      </div>
+
+      <span class="eyebrow">IT &amp; GIS training · Internships · Placement support</span>
+      <h1>Training that ends in <em>work you can show</em></h1>
+      <p class="lede">GIS and IT training run the way we run client projects — real data, mentor
+        review, and a portfolio at the end. Taught by the engineers who do this for clients.</p>
+    </div>
+  </header>
+
+  <!-- ============ STATS ============ -->
+  <section class="stats">
+    <div><div class="n">8</div><div class="l">Training tracks</div></div>
+    <div><div class="n">6–8</div><div class="l">Weeks per cohort</div></div>
+    <div><div class="n">3</div><div class="l">Live projects each</div></div>
+    <div><div class="n">100%</div><div class="l">Mentor-reviewed</div></div>
+  </section>
+
+  <!-- ============ BODY ============ -->
+  <div class="body">
+
+    <section>
+      <div class="cols">
+        <div>
+          <div class="sec-t">IT training</div>
+          <div class="trk"><span class="bul"></span><span><b>Software development</b><span>JavaScript · SQL · Git · deployment</span></span></div>
+          <div class="trk"><span class="bul"></span><span><b>QA and testing</b><span>Manual · automated · API · regression</span></span></div>
+          <div class="trk"><span class="bul"></span><span><b>DevOps and deployment</b><span>Linux · Docker · CI/CD · monitoring</span></span></div>
+          <div class="trk"><span class="bul"></span><span><b>Data analysis &amp; visualisation</b><span>Python · R · dashboards</span></span></div>
+        </div>
+        <div>
+          <div class="sec-t">GIS training</div>
+          <div class="trk"><span class="bul"></span><span><b>GIS fundamentals &amp; digitization</b><span>QGIS · ArcGIS · projections · topology</span></span></div>
+          <div class="trk"><span class="bul"></span><span><b>Spatial analysis</b><span>Overlay · network · terrain · PostGIS</span></span></div>
+          <div class="trk"><span class="bul"></span><span><b>Remote sensing &amp; image analysis</b><span>LULC · indices · change detection</span></span></div>
+          <div class="trk"><span class="bul"></span><span><b>Drone data processing</b><span>Photogrammetry · ortho · DSM/DTM</span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <h2>What you finish with</h2>
+      <ul>
+        <li><b>A portfolio</b>, not just a pass — three assessed projects reviewed the way we review client work.</li>
+        <li><b>An internship certificate</b> that names the project, the tools and the tasks you were responsible for.</li>
+        <li><b>Placement support</b> — CV review, interview practice, and introductions where we can make them.</li>
+      </ul>
+    </section>
+
+    <section class="low">
+      <div>
+        <div class="sec-t">Who it's for</div>
+        <div class="who">
+          <p><b>Final-year students</b>Civil, geoinformatics, CS, geography</p>
+          <p><b>Recent graduates</b>A degree, but nothing to show yet</p>
+          <p><b>Working professionals</b>Switching in from an adjacent field</p>
+          <p><b>Corporate teams</b>On-site or online, scoped to your stack</p>
+        </div>
+      </div>
+      <div>
+        <div class="sec-t">How it works</div>
+        <div class="steps">
+          <div class="step"><i>1</i><span><b>Talk first.</b> <span>A short call to find the right track.</span></span></div>
+          <div class="step"><i>2</i><span><b>Cohort.</b> <span>Small groups, real data, supervised lab work.</span></span></div>
+          <div class="step"><i>3</i><span><b>Project.</b> <span>Three assessed builds for your portfolio.</span></span></div>
+          <div class="step"><i>4</i><span><b>Internship.</b> <span>Optional placement on a live project.</span></span></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="foot">
+    <div class="cta">
+      <b>Ask about the next cohort</b>
+      <span>Tell us where you're starting from — we'll tell you which track fits, or if none of them do.</span>
+    </div>
+    <div class="reach">
+      <div class="site">katxel.in/learn</div>
+      <div>info.katxel@gmail.com</div>
+      <div class="loc">Delhi NCR, India · online cohorts worldwide</div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
