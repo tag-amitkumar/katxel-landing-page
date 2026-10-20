@@ -183,6 +183,13 @@ stylesheet after a deploy. `vercel.json` therefore serves `/assets/*` with
 every load, so a change goes live immediately and an unchanged file costs only
 a 304.
 
+**Cloudflare overrides this.** katxel.in is proxied through Cloudflare,
+whose *Browser Cache TTL* rewrites the header to `max-age=14400` (4 hours).
+So when you change a shared asset, bump its `?v=` query on the pages that
+need the new version (learn.html links `site.css`, `site.js` and
+`internship.js` with `?v=YYYY-MM-DD`). Alternatively set Cloudflare →
+Caching → Configuration → Browser Cache TTL to *Respect Existing Headers*.
+
 If you ever add content hashing to filenames, flip this back to a long
 `max-age` — revalidating a hashed filename is wasted work.
 
