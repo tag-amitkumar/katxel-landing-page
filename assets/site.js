@@ -97,7 +97,7 @@
      everything pre-filled. Set data-endpoint on the <form> (e.g. a Formspree URL)
      and it POSTs instead — see README.
   ------------------------------------- */
-  document.querySelectorAll('form.form').forEach(function (form) {
+  document.querySelectorAll('form.form:not([data-custom])').forEach(function (form) {
     var status = form.querySelector('.form-status');
     var btn = form.querySelector('button[type="submit"]');
     var btnHTML = btn ? btn.innerHTML : '';
