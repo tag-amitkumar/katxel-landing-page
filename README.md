@@ -102,7 +102,8 @@ carries a hidden `division` field (`Katxel`, `Katxel Geo`, `Katxel Ops`,
 
 ## Internship applications
 
-`learn.html#apply-internship` collects everything needed to issue an offer
+`learn.html#apply-internship` is a full-width form (domain cards, then a
+12-column grid) that collects everything needed to issue an offer
 letter and internship certificate (title, name, S/o–D/o and father's name,
 contact, address, college, domain, start date, duration, work mode).
 Domains: GIS, CS & IT – Developer, CS & IT – Tester, Marketing.
@@ -110,7 +111,8 @@ Domains: GIS, CS & IT – Developer, CS & IT – Tester, Marketing.
 `assets/internship.js` POSTs the application as JSON to the form's
 `data-endpoint`, `https://training.katxel.in/api/apply` — the Katxel Training
 app (separate repo, Cloudflare Pages), which stores it and lets HR turn it
-into an offer letter with one click. If that endpoint can't be reached, the
+into an offer letter with one click, and emails the applicant a copy of their
+details plus an alert to the Katxel team. If that endpoint can't be reached, the
 script falls back to opening the visitor's mail client with every field
 pre-filled, addressed to `data-mailto`, so no application is lost before the
 training app is live. `site.js` skips this form (`data-custom`), so the

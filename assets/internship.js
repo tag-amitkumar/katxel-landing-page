@@ -17,6 +17,7 @@
   var title = form.querySelector('[name="title"]');
   var relation = form.querySelector('[name="relation"]');
   var start = form.querySelector('[name="startDate"]');
+  var openedAt = Date.now(); // sent as `elapsed`; instant submissions are treated as bots
 
   var DOMAINS = { gis: 'GIS', developer: 'CS & IT - Developer', tester: 'CS & IT - Tester', marketing: 'Marketing' };
 
@@ -69,7 +70,7 @@
     }
 
     var data = clean(Object.fromEntries(new FormData(form).entries()));
-    if (data.website) { say('Thanks — your application has been received.', 'ok'); form.reset(); return; } // honeypot
+    data.elapsed = Date.now() - openedAt;
 
     btn.disabled = true; btn.textContent = 'Submitting…'; say('', '');
     var finish = function (ok, msg) { btn.disabled = false; btn.innerHTML = btnHTML; say(msg, ok ? 'ok' : 'error'); if (ok) form.reset(); };
@@ -84,8 +85,8 @@
     })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, status: r.status, body: j }; }); })
       .then(function (res) {
-        if (res.ok) return finish(true, 'Application received (ID ' + (res.body.id || '—') + '). We will email you within three business days.');
-        if (res.status === 400 && res.body.error) return finish(false, res.body.error);
+        if (res.ok) return finish(true, 'Application received (ID ' + (res.body.id || '—') + '). A copy is on its way to ' + data.email + '.');
+        if ((res.status === 400 || res.status === 429) && res.body.error) return finish(false, res.body.error);
         throw new Error('HTTP ' + res.status);
       })
       .catch(function () {
