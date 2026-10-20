@@ -479,23 +479,52 @@ section{position:relative}
 .form-status[data-state="error"]{color:#E5484D}
 .form-status[data-state="ok"]{color:var(--accent);font-weight:600}
 
-/* internship application (learn.html #apply-internship) */
-.form fieldset{border:0;padding:0;margin:0 0 8px}
-.form legend{font-family:var(--font-display);font-size:17px;font-weight:600;color:var(--ink);margin-bottom:14px;padding:0}
-.form legend small,.field label small{font-family:var(--font-body);font-size:12px;font-weight:400;color:var(--slate-2);text-transform:none;letter-spacing:0}
-.form fieldset+fieldset{border-top:1px solid var(--line);padding-top:22px}
-.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
-.row-name{display:grid;grid-template-columns:110px 1fr;gap:16px}
+/* internship application (learn.html #apply-internship) — full-width form */
+.apply-form{max-width:1180px;margin:0 auto;padding:28px 32px}
+.apply-form fieldset{border:0;padding:0;margin:0 0 18px}
+.apply-form legend{font-family:var(--font-display);font-size:17px;font-weight:600;color:var(--ink);margin-bottom:12px;padding:0}
+.field label small{font-family:var(--font-body);font-size:11.5px;font-weight:400;color:var(--slate-2);text-transform:none;letter-spacing:0}
+.dom-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.dom-opt{position:relative;display:block;border:1.5px solid var(--line);border-radius:14px;padding:14px 16px 14px 44px;cursor:pointer;background:#fff;transition:.15s}
+.dom-opt input{position:absolute;left:16px;top:17px;width:18px;height:18px;margin:0;accent-color:var(--accent)}
+.dom-opt b{display:block;font-family:var(--font-display);font-size:15.5px;font-weight:600;color:var(--ink)}
+.dom-opt span{display:block;color:var(--slate);font-size:13px;line-height:1.4;margin-top:3px}
+.dom-opt:hover{border-color:rgba(var(--accent-rgb),.6)}
+.dom-opt:has(input:checked){border-color:var(--accent);background:rgba(var(--accent-rgb),.06);box-shadow:0 0 0 3px rgba(var(--accent-rgb),.12)}
+.dom-opt:has(input:focus-visible){box-shadow:0 0 0 3px rgba(var(--accent-rgb),.3)}
+.dom-grid:has(input[aria-invalid="true"]) .dom-opt{border-color:#E5484D}
+.af-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:0 16px}
+.af-grid .field{margin-bottom:14px;min-width:0}
+.af-grid .field input,.af-grid .field select,.af-grid .field textarea{padding:11px 13px}
+.af-grid .field textarea{min-height:0}
+.c1{grid-column:span 1}.c2{grid-column:span 2}.c3{grid-column:span 3}.c4{grid-column:span 4}.c5{grid-column:span 5}.c12{grid-column:span 12}
+.af-grid .c1 select{padding-left:10px;padding-right:4px}
 .field select[aria-invalid="true"]{border-color:#E5484D}
-.check{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--slate);margin:6px 0 18px;cursor:pointer}
+.af-foot{display:flex;align-items:center;gap:24px;margin-top:4px}
+.apply-form .af-foot .btn{width:auto;flex:none;margin:0;padding-left:28px;padding-right:28px}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--slate);cursor:pointer;flex:1}
 .check input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:var(--accent)}
 .check input[aria-invalid="true"]{outline:2px solid #E5484D;outline-offset:2px}
-.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.intern-domains{margin-top:28px;display:grid;gap:12px}
-.idm{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:14px 16px;background:#fff}
-.idm b{display:block;font-family:var(--font-display);font-size:16px;font-weight:600}
-.idm span{display:block;color:var(--slate);font-size:14px;margin-top:3px}
-@media(max-width:560px){ .row3{grid-template-columns:1fr} .row-name{grid-template-columns:96px 1fr} }
+@media(max-width:980px){
+  .dom-grid{grid-template-columns:1fr 1fr}
+  .af-grid .field{grid-column:span 6}
+  .af-grid .c1{grid-column:span 2}
+  .af-grid .c1+.c5{grid-column:span 10}
+  .af-grid .c12{grid-column:span 12}
+}
+@media(max-width:620px){
+  .apply-form{padding:22px 18px}
+  .dom-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .dom-opt{padding:12px 10px 12px 38px}
+  .dom-opt input{left:12px;top:14px}
+  .dom-opt b{font-size:14px}
+  .dom-opt span{display:none}
+  .af-grid .field{grid-column:span 12}
+  .af-grid .c1{grid-column:span 4}.af-grid .c1+.c5{grid-column:span 8}
+  .af-grid .c2{grid-column:span 6}
+  .af-foot{flex-direction:column;align-items:stretch;gap:14px}
+  .apply-form .af-foot .btn{width:100%;justify-content:center}
+}
 
 /* ---------- cross-links to other divisions ---------- */
 .cross{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
