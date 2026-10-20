@@ -57,6 +57,7 @@
       <a href="#tracks">Tracks</a>
       <a href="#curriculum">Curriculum</a>
       <a href="#internships">Internships</a>
+      <a href="#apply-internship">Apply</a>
       <a href="#students">Students</a>
       <a href="#process">How it works</a>
       <a href="#contact" class="only-mobile">Contact</a>
@@ -187,7 +188,7 @@
         <div class="cvis"><img src="assets/cards/internship.svg" alt="" loading="lazy" decoding="async" width="560" height="240"></div>
         <h3>Internship programme</h3>
         <p>A supervised placement inside a live Katxel project — real tasks, real review, and a certificate that describes what you actually did. Open to students from any of the eight tracks.</p>
-        <span class="more">Supervised, certified →</span>
+        <a class="more" href="#apply-internship">Apply for an internship →</a>
       </div>
 
       <div class="card">
@@ -282,9 +283,114 @@
           <p style="margin-top:22px;color:var(--slate-2);font-size:14px">
             We help with placement — we do not guarantee it, and you should be wary of anyone who does.
           </p>
+          <a href="#apply-internship" class="btn btn-primary" style="margin-top:22px">Apply for an internship <span class="arrow">→</span></a>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- APPLY FOR INTERNSHIP -->
+<section class="pad soft" id="apply-internship">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <span class="eyebrow">Apply for an internship</span>
+      <h2 class="section-title">Internships in GIS, IT and marketing</h2>
+      <p class="section-lead">Tell us who you are and which internship you want. What you enter here is printed on your offer letter and internship certificate, so write your name and your father's name exactly as they appear on your college records.</p>
+      <div class="intern-domains">
+        <div class="idm"><b>GIS</b><span>Digitization, GIS data creation, map production and map QA/QC on live geospatial projects.</span></div>
+        <div class="idm"><b>CS &amp; IT · Developer</b><span>Web and application features, APIs, databases and deployment, all reviewed in pull requests.</span></div>
+        <div class="idm"><b>CS &amp; IT · Tester</b><span>Test cases, manual and automated testing, defect tracking and release sign-off.</span></div>
+        <div class="idm"><b>Marketing</b><span>Digital campaigns, content, lead generation and campaign reporting.</span></div>
+      </div>
+    </div>
+
+    <form class="form reveal" id="internForm" data-custom="internship"
+          data-endpoint="https://training.katxel.in/api/apply" data-mailto="info.katxel@gmail.com" novalidate>
+      <input type="hidden" name="division" value="Katxel Learn">
+      <div class="hp" aria-hidden="true"><label for="i-website">Website</label><input id="i-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+
+      <fieldset>
+        <legend>Internship</legend>
+        <div class="field"><label for="i-domain">Internship domain</label>
+          <select id="i-domain" name="domain" required>
+            <option value="" disabled selected>Choose a domain</option>
+            <option value="gis">GIS</option>
+            <option value="developer">CS &amp; IT · Developer</option>
+            <option value="tester">CS &amp; IT · Tester</option>
+            <option value="marketing">Marketing</option>
+          </select>
+        </div>
+        <div class="row3">
+          <div class="field"><label for="i-start">Preferred start date</label><input id="i-start" name="startDate" type="date" required></div>
+          <div class="field"><label for="i-duration">Duration</label>
+            <select id="i-duration" name="duration" required>
+              <option value="1">1 month</option>
+              <option value="1.5">6 weeks</option>
+              <option value="2">2 months</option>
+              <option value="3" selected>3 months</option>
+              <option value="6">6 months</option>
+            </select>
+          </div>
+          <div class="field"><label for="i-mode">Work mode</label>
+            <select id="i-mode" name="workMode" required>
+              <option>Remote</option>
+              <option selected>Hybrid / Remote</option>
+              <option>Hybrid</option>
+              <option>On-site</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>About you <small>(printed on your letter and certificate)</small></legend>
+        <div class="row-name">
+          <div class="field"><label for="i-title">Title</label>
+            <select id="i-title" name="title" required><option>Mr.</option><option>Ms.</option></select>
+          </div>
+          <div class="field"><label for="i-name">Full name</label><input id="i-name" name="name" type="text" autocomplete="name" placeholder="As on your college records" required maxlength="80"></div>
+        </div>
+        <div class="row-name">
+          <div class="field"><label for="i-rel">Relation</label>
+            <select id="i-rel" name="relation" required><option value="S/o">S/o</option><option value="D/o">D/o</option></select>
+          </div>
+          <div class="field"><label for="i-father">Father's / guardian's name</label><input id="i-father" name="father" type="text" placeholder="Without Mr. / Shri" required maxlength="80"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="i-email">Email</label><input id="i-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required maxlength="120"></div>
+          <div class="field"><label for="i-mobile">Mobile</label><input id="i-mobile" name="mobile" type="tel" autocomplete="tel-national" inputmode="numeric" placeholder="10-digit mobile number" pattern="(\+?91[\s-]?)?[6-9][0-9]{9}" required></div>
+        </div>
+        <div class="field"><label for="i-address">Address</label><input id="i-address" name="address" type="text" autocomplete="street-address" placeholder="House / street / locality" required maxlength="160"></div>
+        <div class="row3">
+          <div class="field"><label for="i-city">City</label><input id="i-city" name="city" type="text" autocomplete="address-level2" required maxlength="60"></div>
+          <div class="field"><label for="i-state">State</label><input id="i-state" name="state" type="text" autocomplete="address-level1" required maxlength="60"></div>
+          <div class="field"><label for="i-pin">PIN code</label><input id="i-pin" name="pin" type="text" inputmode="numeric" autocomplete="postal-code" pattern="[1-9][0-9]{5}" required></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Education &amp; skills</legend>
+        <div class="field"><label for="i-college">College / university</label><input id="i-college" name="college" type="text" required maxlength="120"></div>
+        <div class="row2">
+          <div class="field"><label for="i-course">Course &amp; branch</label><input id="i-course" name="course" type="text" placeholder="e.g. B.Tech CSE, M.Sc Geoinformatics, BBA" required maxlength="100"></div>
+          <div class="field"><label for="i-year">Current year</label>
+            <select id="i-year" name="year" required>
+              <option>1st year</option><option>2nd year</option><option selected>3rd year</option><option>4th year</option><option>Final year (PG)</option><option>Graduated</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="i-skills">Skills &amp; tools you know</label><input id="i-skills" name="skills" type="text" placeholder="e.g. QGIS, ArcGIS / Python, React / Selenium / Canva, Meta Ads" maxlength="200"></div>
+        <div class="field"><label for="i-link">Resume, LinkedIn or portfolio link <small>(optional)</small></label><input id="i-link" name="link" type="url" placeholder="https://" maxlength="300"></div>
+        <div class="field"><label for="i-msg">Why this internship? <small>(optional)</small></label><textarea id="i-msg" name="message" maxlength="1500" placeholder="What you have worked on so far and what you want to learn"></textarea></div>
+      </fieldset>
+
+      <label class="check"><input type="checkbox" name="declaration" value="yes" required> <span>I confirm these details are correct and may be printed on my offer letter and internship certificate.</span></label>
+
+      <button class="btn btn-primary" type="submit">Submit application <span class="arrow">→</span></button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+      <p class="form-note">We review applications within three business days and send the offer letter by email.</p>
+    </form>
   </div>
 </section>
 
@@ -437,6 +543,7 @@
 </footer>
 
 <script src="assets/site.js" defer></script>
+<script src="assets/internship.js" defer></script>
 <script src="assets/hero-lenses.js" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {

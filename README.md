@@ -20,6 +20,7 @@ students/       Student testimonials shown on /learn — see students/README.md
 assets/
   site.css          Shared design system (all five pages)
   site.js           Shared behaviour: nav, dropdown, reveal, counters, contact form
+  internship.js     learn.html only: the internship application form
   home.css          Homepage-only: the doors, through-line, marquee, dark contact
   home.js           Homepage-only: door canvas, scroll-scrubbed diagram, counters
   hero-lenses.js    Division-page hero canvas (one locked state per division)
@@ -98,6 +99,22 @@ To collect submissions properly instead, create a form on
 `site.js` then POSTs JSON and shows an inline success message. Every submission
 carries a hidden `division` field (`Katxel`, `Katxel Geo`, `Katxel Ops`,
 `Katxel Risk`, `Katxel Learn`) so a shared inbox can route by source.
+
+## Internship applications
+
+`learn.html#apply-internship` collects everything needed to issue an offer
+letter and internship certificate (title, name, S/o–D/o and father's name,
+contact, address, college, domain, start date, duration, work mode).
+Domains: GIS, CS & IT – Developer, CS & IT – Tester, Marketing.
+
+`assets/internship.js` POSTs the application as JSON to the form's
+`data-endpoint`, `https://training.katxel.in/api/apply` — the Katxel Training
+app (separate repo, Cloudflare Pages), which stores it and lets HR turn it
+into an offer letter with one click. If that endpoint can't be reached, the
+script falls back to opening the visitor's mail client with every field
+pre-filled, addressed to `data-mailto`, so no application is lost before the
+training app is live. `site.js` skips this form (`data-custom`), so the
+generic contact-form handler doesn't also fire.
 
 ## Before this goes live
 

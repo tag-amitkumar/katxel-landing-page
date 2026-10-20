@@ -479,6 +479,24 @@ section{position:relative}
 .form-status[data-state="error"]{color:#E5484D}
 .form-status[data-state="ok"]{color:var(--accent);font-weight:600}
 
+/* internship application (learn.html #apply-internship) */
+.form fieldset{border:0;padding:0;margin:0 0 8px}
+.form legend{font-family:var(--font-display);font-size:17px;font-weight:600;color:var(--ink);margin-bottom:14px;padding:0}
+.form legend small,.field label small{font-family:var(--font-body);font-size:12px;font-weight:400;color:var(--slate-2);text-transform:none;letter-spacing:0}
+.form fieldset+fieldset{border-top:1px solid var(--line);padding-top:22px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.row-name{display:grid;grid-template-columns:110px 1fr;gap:16px}
+.field select[aria-invalid="true"]{border-color:#E5484D}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--slate);margin:6px 0 18px;cursor:pointer}
+.check input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:var(--accent)}
+.check input[aria-invalid="true"]{outline:2px solid #E5484D;outline-offset:2px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.intern-domains{margin-top:28px;display:grid;gap:12px}
+.idm{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:14px 16px;background:#fff}
+.idm b{display:block;font-family:var(--font-display);font-size:16px;font-weight:600}
+.idm span{display:block;color:var(--slate);font-size:14px;margin-top:3px}
+@media(max-width:560px){ .row3{grid-template-columns:1fr} .row-name{grid-template-columns:96px 1fr} }
+
 /* ---------- cross-links to other divisions ---------- */
 .cross{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
 .cross-card{
