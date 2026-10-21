@@ -95,8 +95,11 @@ small Vercel functions in `api/` (Node, `nodemailer` over SMTP):
 
 | Form | Function | Your mailbox receives | The sender receives |
 |---|---|---|---|
-| Internship application, `learn.html#apply-internship` | `api/apply.js` | every field, an application ID, and a one-row CSV attachment for your register | an acknowledgement with a copy of their details |
-| Enquiry form at the bottom of every page | `api/contact.js` | name, email, company, city, interest, message, page | an acknowledgement with a copy of their message |
+| Internship application, `learn.html#apply-internship` | `api/apply.js` | every field in a table, an application ID (`KL-…`), and a one-row CSV attachment for your register | an acknowledgement with the ID and a copy of their details |
+| Enquiry form at the bottom of every page | `api/contact.js` | the same format: every field, an enquiry ID (`KQ-…`), and a one-row CSV attachment | an acknowledgement with the ID and a copy of their message |
+
+Keep any new form in this format (reference ID, details table, CSV row,
+Reply-To = sender) using the helpers in `api/_lib/mail.js`.
 
 Mail is sent **from** your mailbox, so it shows in its Sent folder, and every
 alert has **Reply-To set to the candidate**: press Reply and you are

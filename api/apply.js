@@ -5,7 +5,6 @@
 // 2. Emails the candidate an acknowledgement with a copy of what they sent.
 // 3. If TRAINING_APPLY_URL and INTAKE_TOKEN are set, forwards the application
 //    to the Katxel Training app (training.katxel.in) for its offer-letter inbox.
-const crypto = require('crypto');
 const m = require('./_lib/mail');
 
 const DOMAINS = { gis: 'GIS', developer: 'CS & IT - Developer', tester: 'CS & IT - Tester', marketing: 'Marketing' };
@@ -42,7 +41,7 @@ function validate(body) {
 function rows(app) {
   return [
     ['Application ID', app.id],
-    ['Submitted', new Date(app.submittedAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short' }) + ' IST'],
+    ['Submitted', m.istTime(app.submittedAt)],
     ['Internship', DOMAINS[app.domain]],
     ['Preferred start', niceDate(app.startDate)],
     ['Duration', DURATIONS[app.duration] || app.duration + ' months'],
@@ -126,7 +125,7 @@ module.exports = async function handler(req, res) {
   if (error) return m.reply(res, 400, { error });
 
   const now = new Date();
-  app.id = 'KL-' + now.toISOString().slice(2, 10).replace(/-/g, '') + '-' + crypto.randomBytes(3).toString('hex').toUpperCase();
+  app.id = m.refId('KL', now);
   app.submittedAt = now.toISOString();
   app.ip = ip;
 
