@@ -93,11 +93,12 @@
   }
 
   /* ---------- contact form ----------
-     Works with no backend: falls back to opening the visitor's mail client with
-     everything pre-filled. Set data-endpoint on the <form> (e.g. a Formspree URL)
-     and it POSTs instead — see README.
+     POSTs JSON to data-endpoint (/api/contact, which emails the Katxel mailbox
+     and acknowledges the sender — see README). If there is no endpoint, or it
+     fails, it opens the visitor's mail client with everything pre-filled.
   ------------------------------------- */
   document.querySelectorAll('form.form:not([data-custom])').forEach(function (form) {
+    var openedAt = Date.now(); // sent as `elapsed`; instant submissions are treated as bots
     var status = form.querySelector('.form-status');
     var btn = form.querySelector('button[type="submit"]');
     var btnHTML = btn ? btn.innerHTML : '';
@@ -122,6 +123,8 @@
       form.querySelectorAll('[aria-invalid]').forEach(function (f) { f.removeAttribute('aria-invalid'); });
 
       var data = Object.fromEntries(new FormData(form).entries());
+      data.elapsed = Date.now() - openedAt;
+      data.page = location.pathname;
       var endpoint = form.dataset.endpoint;
 
       if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
@@ -140,16 +143,25 @@
           body: JSON.stringify(data)
         })
           .then(function (r) {
-            if (!r.ok) throw new Error('HTTP ' + r.status);
-            done(true, 'Thanks — we’ll be in touch within one business day.');
+            if (r.ok) return done(true, 'Thanks — we’ve emailed you a copy and will reply within one business day.');
+            return r.json().catch(function () { return {}; }).then(function (j) {
+              if ((r.status === 400 || r.status === 429) && j.error) return done(false, j.error);
+              throw new Error('HTTP ' + r.status);
+            });
           })
           .catch(function () {
-            done(false, 'Something went wrong. Please email info.katxel@gmail.com directly.');
+            mailto(data);
+            done(true, 'Our form service is unreachable, so we opened your email client with your message — press send.');
           });
         return;
       }
 
-      // No endpoint configured — hand off to the visitor's mail client.
+      mailto(data);
+      done(true, 'Opening your email client — press send and we’ll take it from there.');
+    });
+
+    // Hand off to the visitor's mail client with everything pre-filled.
+    function mailto(data) {
       var to = form.dataset.mailto || 'info.katxel@gmail.com';
       var subject = '[' + (data.division || 'Katxel') + '] Enquiry from ' + (data.name || 'website');
       var lines = [
@@ -165,8 +177,7 @@
       window.location.href = 'mailto:' + to +
         '?subject=' + encodeURIComponent(subject) +
         '&body=' + encodeURIComponent(lines);
-      done(true, 'Opening your email client — press send and we’ll take it from there.');
-    });
+    }
   });
 
   /* ---------- footer year ---------- */

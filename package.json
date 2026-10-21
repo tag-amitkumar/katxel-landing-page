@@ -1,0 +1,9 @@
+{
+  "name": "katxel-landing-page",
+  "private": true,
+  "description": "Static katxel.in site plus two Vercel functions (api/) that email form submissions through the Hostinger mailbox.",
+  "engines": { "node": "22.x" },
+  "dependencies": {
+    "nodemailer": "6.9.16"
+  }
+}

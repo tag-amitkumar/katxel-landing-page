@@ -9,3 +9,6 @@ desktop.ini
 # local scratch
 *.log
 .cache/
+
+# dependencies for api/ (installed by Vercel)
+node_modules/
