@@ -1,9 +1,9 @@
 /* ==========================================================================
    Katxel Learn — internship application form (learn.html #apply-internship)
 
-   POSTs the application as JSON to data-endpoint (the training.katxel.in
-   Pages Function, which stores it for the offer-letter generator). If the
-   endpoint can't be reached it falls back to opening the visitor's mail
+   POSTs the application as JSON to data-endpoint (/api/apply, which emails it
+   to the Katxel mailbox, acknowledges the candidate and forwards it to the
+   training app). If that fails it falls back to opening the visitor's mail
    client with every field pre-filled, so no application is ever lost.
    ========================================================================== */
 (function () {
@@ -85,7 +85,7 @@
     })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, status: r.status, body: j }; }); })
       .then(function (res) {
-        if (res.ok) return finish(true, 'Application received (ID ' + (res.body.id || '—') + '). A copy is on its way to ' + data.email + '.');
+        if (res.ok) return finish(true, 'Application received (ID ' + (res.body.id || '—') + ').' + (res.body.emailed === false ? ' We will be in touch by email.' : ' A copy is on its way to ' + data.email + '.'));
         if ((res.status === 400 || res.status === 429) && res.body.error) return finish(false, res.body.error);
         throw new Error('HTTP ' + res.status);
       })

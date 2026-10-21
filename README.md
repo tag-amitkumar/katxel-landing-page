@@ -1,7 +1,7 @@
 # Katxel — landing site
 
-Static marketing site for Katxel and its four divisions. No build step, no
-dependencies: the files in this repo *are* the site.
+Static marketing site for Katxel and its four divisions. No build step: the
+files in this repo *are* the site, plus two small email functions in `api/`.
 
 ```
 index.html      Homepage — "Four Doors" division selector plus the story below it
@@ -21,6 +21,12 @@ assets/
   site.css          Shared design system (all five pages)
   site.js           Shared behaviour: nav, dropdown, reveal, counters, contact form
   internship.js     learn.html only: the internship application form
+
+api/              Vercel functions that email form submissions (see Forms and email)
+  apply.js          internship application  -> mailbox + candidate acknowledgement
+  contact.js        enquiry form            -> mailbox + sender acknowledgement
+  _lib/mail.js      shared SMTP / template helpers (not a function itself)
+package.json      the one dependency of api/ (nodemailer); Vercel installs it
   home.css          Homepage-only: the doors, through-line, marquee, dark contact
   home.js           Homepage-only: door canvas, scroll-scrubbed diagram, counters
   hero-lenses.js    Division-page hero canvas (one locked state per division)
@@ -82,41 +88,64 @@ description, `<link rel="canonical">`, the OG tags, `data-vertical`, the nav
 footer markup are duplicated across pages on purpose — it keeps the site
 buildless and keeps every link crawlable.
 
-## Contact form
+## Forms and email (Hostinger mailbox)
 
-The form works with no backend. If `data-endpoint` is empty it opens the
-visitor's mail client with every field pre-filled and addressed to
-`data-mailto`. That is the current state — leads arrive as ordinary email.
+Both forms send email through the Katxel mailbox on **Hostinger**, using two
+small Vercel functions in `api/` (Node, `nodemailer` over SMTP):
 
-To collect submissions properly instead, create a form on
-[Formspree](https://formspree.io) (or similar) and set the endpoint on all five
-`<form class="form">` elements:
+| Form | Function | Your mailbox receives | The sender receives |
+|---|---|---|---|
+| Internship application, `learn.html#apply-internship` | `api/apply.js` | every field, an application ID, and a one-row CSV attachment for your register | an acknowledgement with a copy of their details |
+| Enquiry form at the bottom of every page | `api/contact.js` | name, email, company, city, interest, message, page | an acknowledgement with a copy of their message |
 
-```html
-<form class="form" data-endpoint="https://formspree.io/f/YOUR_ID" ...>
-```
+Mail is sent **from** your mailbox, so it shows in its Sent folder, and every
+alert has **Reply-To set to the candidate**: press Reply and you are
+answering them. The candidate's acknowledgement has Reply-To set to your
+mailbox, so their replies land with you too.
 
-`site.js` then POSTs JSON and shows an inline success message. Every submission
-carries a hidden `division` field (`Katxel`, `Katxel Geo`, `Katxel Ops`,
-`Katxel Risk`, `Katxel Learn`) so a shared inbox can route by source.
+If the function can't send (for example before the settings below exist), the
+browser falls back to opening the visitor's mail client with everything
+pre-filled, addressed to the form's `data-mailto`, so nothing is lost.
 
-## Internship applications
+### Setup (one time)
 
-`learn.html#apply-internship` is a full-width form (domain cards, then a
-12-column grid) that collects everything needed to issue an offer
-letter and internship certificate (title, name, S/o–D/o and father's name,
-contact, address, college, domain, start date, duration, work mode).
-Domains: GIS, CS & IT – Developer, CS & IT – Tester, Marketing.
+1. **Vercel → katxel-landing-page → Settings → Environment Variables**, for
+   *Production* (and *Preview* if you want to test on preview links):
 
-`assets/internship.js` POSTs the application as JSON to the form's
-`data-endpoint`, `https://training.katxel.in/api/apply` — the Katxel Training
-app (separate repo, Cloudflare Pages), which stores it and lets HR turn it
-into an offer letter with one click, and emails the applicant a copy of their
-details plus an alert to the Katxel team. If that endpoint can't be reached, the
-script falls back to opening the visitor's mail client with every field
-pre-filled, addressed to `data-mailto`, so no application is lost before the
-training app is live. `site.js` skips this form (`data-custom`), so the
-generic contact-form handler doesn't also fire.
+   | Name | Value |
+   |---|---|
+   | `SMTP_USER` | your full Hostinger mailbox address, e.g. `info@katxel.in` |
+   | `SMTP_PASS` | that mailbox's password (mark it *Sensitive*) |
+   | `NOTIFY_EMAIL` | optional — where alerts go if not `SMTP_USER`; comma-separate several |
+
+   Hostinger's SMTP server (`smtp.hostinger.com`, port 465, SSL) is the
+   default; override with `SMTP_HOST` / `SMTP_PORT` / `SMTP_SECURE` only if
+   Hostinger tells you otherwise.
+2. **Deployments → ⋯ → Redeploy** so the functions pick the variables up.
+3. **Turn on DKIM so the acknowledgements don't land in spam.** katxel.in
+   already has Hostinger's SPF record but no DKIM key. In Hostinger hPanel →
+   Emails → katxel.in → *DNS / email authentication*, copy the DKIM records
+   it lists and add them in **Cloudflare → katxel.in → DNS** (type as shown,
+   proxy status *DNS only*). Leave the existing MX and SPF records alone.
+4. Send yourself a test from katxel.in/learn — you should get the alert and,
+   at the address you entered, the acknowledgement.
+
+To also feed the offer-letter generator's Applications inbox once
+training.katxel.in is live, add `TRAINING_APPLY_URL` =
+`https://training.katxel.in/api/apply` and `INTAKE_TOKEN` = a long random
+string (the same value as `INTAKE_TOKEN` on the Cloudflare project).
+
+### Spam protection
+
+Both functions ignore forms submitted within 3 seconds of the page opening,
+and limit each IP address (5 applications / 8 enquiries per hour on a warm
+instance). If spam gets through, add Cloudflare Turnstile to the forms.
+
+### Running the functions locally
+
+`npm install`, then `npx vercel dev` with the variables in a git-ignored
+`.env.local`. A plain static server serves the pages but not `api/`, so the
+forms fall back to the pre-filled email there.
 
 ## Before this goes live
 
@@ -186,8 +215,8 @@ a 304.
 **Cloudflare overrides this.** katxel.in is proxied through Cloudflare,
 whose *Browser Cache TTL* rewrites the header to `max-age=14400` (4 hours).
 So when you change a shared asset, bump its `?v=` query on the pages that
-need the new version (learn.html links `site.css`, `site.js` and
-`internship.js` with `?v=YYYY-MM-DD`). Alternatively set Cloudflare →
+need the new version (every page links its `assets/` files with
+`?v=YYYY-MM-DD`). Alternatively set Cloudflare →
 Caching → Configuration → Browser Cache TTL to *Respect Existing Headers*.
 
 If you ever add content hashing to filenames, flip this back to a long
