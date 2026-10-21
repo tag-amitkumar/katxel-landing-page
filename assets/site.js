@@ -143,8 +143,9 @@
           body: JSON.stringify(data)
         })
           .then(function (r) {
-            if (r.ok) return done(true, 'Thanks — we’ve emailed you a copy and will reply within one business day.');
             return r.json().catch(function () { return {}; }).then(function (j) {
+              if (r.ok) return done(true, 'Thanks — enquiry received' + (j.id ? ' (ID ' + j.id + ')' : '') + '. ' +
+                (j.emailed === false ? 'We will reply within one business day.' : 'We’ve emailed you a copy and will reply within one business day.'));
               if ((r.status === 400 || r.status === 429) && j.error) return done(false, j.error);
               throw new Error('HTTP ' + r.status);
             });

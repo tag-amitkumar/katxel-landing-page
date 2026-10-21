@@ -1,7 +1,53 @@
-// POST /api/contact — the "Talk to us" / enquiry form on every page.
-// Emails the enquiry to the Katxel mailbox (reply-to = the sender) and sends
-// the sender an acknowledgement with a copy of their message.
+// POST /api/contact — the enquiry form at the bottom of every page.
+// Same format as internship applications (api/apply.js): the Katxel mailbox
+// gets every field with a reference ID and a one-row CSV attachment for the
+// enquiries register (Reply-To = the sender), and the sender gets an
+// acknowledgement with a copy of their message.
 const m = require('./_lib/mail');
+
+function rows(q) {
+  return [
+    ['Enquiry ID', q.id],
+    ['Submitted', m.istTime(q.submittedAt)],
+    ['Division', q.division],
+    ['Interested in', q.service],
+    ['Name', q.name],
+    ['Email', q.email],
+    ['College / company', q.company],
+    ['City / country', q.country],
+    ['Message', q.message],
+    ['Sent from', q.page]
+  ];
+}
+
+function teamMail(q) {
+  const r = rows(q);
+  return {
+    from: m.from('Katxel Website'),
+    to: m.teamAddresses(),
+    replyTo: { name: q.name, address: q.email },
+    subject: `Enquiry: ${q.name} - ${q.division}${q.service ? ' - ' + q.service : ''} (${q.id})`,
+    html: m.page([`<b>${m.esc(q.name)}</b> sent an enquiry via the <b>${m.esc(q.division)}</b> page.`], r,
+      ['Press <b>Reply</b> to answer them directly. The attached CSV row can be pasted into your enquiries register.']),
+    text: `${q.name} sent an enquiry via the ${q.division} page.\n\n${m.textTable(r)}\n\nReply to this email to answer them directly.\n`,
+    attachments: [{ filename: `${q.id}.csv`, content: m.csv(r), contentType: 'text/csv; charset=utf-8' }]
+  };
+}
+
+function senderMail(q) {
+  const r = rows(q).filter(([k]) => !['Submitted', 'Sent from'].includes(k));
+  const first = q.name.split(' ')[0];
+  return {
+    from: m.from(q.division),
+    to: { name: q.name, address: q.email },
+    replyTo: m.teamAddresses()[0],
+    subject: `We've received your enquiry (${q.id})`,
+    html: m.page([`Dear ${m.esc(first)},`, `Thank you for contacting ${m.esc(q.division)}. We have received your message and will reply within one business day. A copy of what you sent is below.`],
+      r, ['Warm regards,<br>Team Katxel']),
+    text: `Dear ${first},\n\nThank you for contacting ${q.division}. We have received your message and will reply within one business day. A copy of what you sent is below.\n\n` +
+      m.textTable(r) + '\n\nWarm regards,\nTeam Katxel\n'
+  };
+}
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') { res.setHeader('Allow', 'POST'); return m.reply(res, 405, { error: 'Method not allowed' }); }
@@ -23,41 +69,13 @@ module.exports = async function handler(req, res) {
   if (!q.name || !q.email || !q.message) return m.reply(res, 400, { error: 'Please fill in your name, email and message.' });
   if (!m.EMAIL_RE.test(q.email)) return m.reply(res, 400, { error: 'Please enter a valid email address.' });
 
-  const rows = [
-    ['Division', q.division],
-    ['Name', q.name],
-    ['Email', q.email],
-    ['College / company', q.company],
-    ['City / country', q.country],
-    ['Interested in', q.service],
-    ['Message', q.message],
-    ['Sent from', q.page],
-    ['Received', new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short' }) + ' IST']
-  ];
-  const first = q.name.split(' ')[0];
+  const now = new Date();
+  q.id = m.refId('KQ', now);
+  q.submittedAt = now.toISOString();
 
-  const [team, sender] = await Promise.all([
-    m.send({
-      from: m.from('Katxel Website'),
-      to: m.teamAddresses(),
-      replyTo: { name: q.name, address: q.email },
-      subject: `[${q.division}] Enquiry from ${q.name}${q.service ? ' - ' + q.service : ''}`,
-      html: m.page([`New enquiry from <b>${m.esc(q.name)}</b> via the ${m.esc(q.division)} page.`], rows, ['Press <b>Reply</b> to answer them directly.']),
-      text: `New enquiry from ${q.name} via the ${q.division} page.\n\n${m.textTable(rows)}\n\nReply to this email to answer them directly.\n`
-    }),
-    m.send({
-      from: m.from(q.division),
-      to: { name: q.name, address: q.email },
-      replyTo: m.teamAddresses()[0],
-      subject: `Thanks for contacting ${q.division}`,
-      html: m.page([`Dear ${m.esc(first)},`, 'Thank you for getting in touch. We have received your message and will reply within one business day. A copy of what you sent is below.'],
-        rows.filter(([k]) => !['Sent from', 'Received', 'Division'].includes(k)), ['Warm regards,<br>Team Katxel']),
-      text: `Dear ${first},\n\nThank you for getting in touch. We have received your message and will reply within one business day. A copy of what you sent is below.\n\n` +
-        m.textTable(rows.filter(([k]) => !['Sent from', 'Received', 'Division'].includes(k))) + '\n\nWarm regards,\nTeam Katxel\n'
-    })
-  ]);
-  console.log('enquiry', q.email, { team, sender });
+  const [team, sender] = await Promise.all([m.send(teamMail(q)), m.send(senderMail(q))]);
+  console.log('enquiry', q.id, { team, sender });
 
   if (!m.ok(team)) return m.reply(res, 503, { error: 'Could not deliver the message.' });
-  return m.reply(res, 200, { ok: true });
+  return m.reply(res, 200, { ok: true, id: q.id, emailed: m.ok(sender) });
 };
