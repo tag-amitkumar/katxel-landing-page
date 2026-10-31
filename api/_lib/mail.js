@@ -9,6 +9,7 @@
 //   NOTIFY_EMAIL  who receives new enquiries/applications (comma-separated)   — default SMTP_USER
 //   SMTP_HOST / SMTP_PORT / SMTP_SECURE   default smtp.hostinger.com / 465 / true
 //   MAIL_FROM_NAME  display name on outgoing mail                            — default "Katxel"
+const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 
 let transporter = null;
@@ -83,6 +84,15 @@ function tooFast(body, minMs = 3000) {
   return e > 0 && e < minMs;
 }
 
+/* ------------------------------------------------- reference ids and dates */
+// e.g. KL-261021-905623 (applications) / KQ-261021-1A2B3C (enquiries)
+function refId(prefix, now = new Date()) {
+  return prefix + '-' + now.toISOString().slice(2, 10).replace(/-/g, '') + '-' + crypto.randomBytes(3).toString('hex').toUpperCase();
+}
+function istTime(d) {
+  return new Date(d).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short' }) + ' IST';
+}
+
 /* ---------------------------------------------------------------- templates */
 function esc(s) {
   return String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -112,5 +122,5 @@ function csv(rows) {
 module.exports = {
   send, ok, mailbox, teamAddresses, from, transport,
   readBody, clientIp, reply, clean, cleanText, EMAIL_RE, throttled, tooFast,
-  esc, page, textTable, csv
+  esc, page, textTable, csv, refId, istTime
 };
